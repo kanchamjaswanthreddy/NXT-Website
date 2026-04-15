@@ -32,9 +32,10 @@ const Referral = () => {
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}
-            style={{ 
-              padding: '60px', 
-              maxWidth: '800px', 
+            className="referral-card"
+            style={{
+              padding: '60px',
+              maxWidth: '800px',
               margin: '0 auto', 
               boxShadow: 'var(--glass-shadow)',
               background: 'var(--glass-bg)',
@@ -58,7 +59,7 @@ const Referral = () => {
               <input type="hidden" name="_subject" value="New Referral from NXT Financial Website" />
               <input type="hidden" name="_template" value="table" />
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+              <div className="form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                 <div>
                   <label style={labelStyle}>Your Name (Referrer)</label>
                   <input type="text" name="referrer_name" placeholder="John Doe" required style={inputStyle} />
@@ -73,7 +74,7 @@ const Referral = () => {
               
               <h3 style={{ fontSize: '1.5rem', color: 'var(--color-heading)', margin: 0 }}>Who are you referring?</h3>
               
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
+              <div className="form-grid-2" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '24px' }}>
                 <div>
                   <label style={labelStyle}>Friend's Name</label>
                   <input type="text" name="referral_name" placeholder="Jane Smith" required style={inputStyle} />

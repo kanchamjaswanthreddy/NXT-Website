@@ -11,7 +11,7 @@ const NavBar = () => {
         <div className="container" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', width: '100%', padding: '8px 0' }}>
 
           <Link to="/" style={{ display: 'flex', alignItems: 'center', flexShrink: 0 }}>
-            <img src="/logo.svg" alt="NXT Financial Group" style={{ height: '100px', objectFit: 'contain', marginTop: '2px' }} />
+            <img src="/logo.svg" alt="NXT Financial Group" className="nav-logo" style={{ height: '100px', objectFit: 'contain', marginTop: '2px' }} />
           </Link>
 
           <div className="nav-links mobile-hide" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
@@ -30,7 +30,7 @@ const NavBar = () => {
           {/* Mobile menu toggle */}
           <button
             className="mobile-only"
-            style={{ display: 'none', background: 'transparent', padding: '10px' }}
+            style={{ background: 'transparent', padding: '10px' }}
             onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
           >
             {mobileMenuOpen ? <X size={28} color="#0a2540" /> : <Menu size={28} color="#0a2540" />}
@@ -40,13 +40,13 @@ const NavBar = () => {
 
       {/* Mobile Menu Overlay */}
       {mobileMenuOpen && (
-        <div style={{ position: 'fixed', top: '100px', left: 0, right: 0, bottom: 0, background: 'white', zIndex: 999, padding: '20px', display: 'flex', flexDirection: 'column', gap: '15px', overflowY: 'auto' }}>
-          <Link to="/insurances" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeee' }}>Coverage</Link>
-          <Link to="/carriers" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeee' }}>Carriers</Link>
-          <Link to="/resources" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeee' }}>Resources</Link>
-          <Link to="/partner" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeee' }}>Partner with Us</Link>
-          <Link to="/about" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeee' }}>About Us</Link>
-          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeee' }}>Support</Link>
+        <div className="mobile-nav-overlay" style={{ position: 'fixed', top: '100px', left: 0, right: 0, bottom: 0, background: 'white', zIndex: 999, padding: '20px', display: 'flex', flexDirection: 'column', gap: '15px', overflowY: 'auto' }}>
+          <Link to="/insurances" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeeee' }}>Coverage</Link>
+          <Link to="/carriers" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeeee' }}>Carriers</Link>
+          <Link to="/resources" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeeee' }}>Resources</Link>
+          <Link to="/partner" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeeee' }}>Partner with Us</Link>
+          <Link to="/about" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeeee' }}>About Us</Link>
+          <Link to="/contact" onClick={() => setMobileMenuOpen(false)} style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeeee' }}>Support</Link>
 
           <div style={{ display: 'flex', flexDirection: 'column', gap: '15px', marginTop: 'auto', paddingTop: '40px' }}>
             <Link to="/contact" onClick={() => setMobileMenuOpen(false)} className="btn-primary" style={{ justifyContent: 'center', width: '100%', padding: '15px' }}>Get Instant Quote</Link>

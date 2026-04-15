@@ -91,24 +91,56 @@ button { font-family: inherit; border: none; cursor: pointer; }
   /* Layout Collapses */
   .grid-5, .grid-4, .grid-3 { grid-template-columns: 1fr; gap: 32px; }
   .container { padding: 0 16px; }
-  
+
   /* Visibility Toggles */
   .mobile-hide { display: none !important; }
   .mobile-only { display: block !important; }
-  
+
   /* Typography Scaling */
-  h1 { font-size: clamp(2.25rem, 5vw, 2.75rem) !important; }
-  h2 { font-size: clamp(2rem, 4.5vw, 2.25rem) !important; }
+  h1 { font-size: clamp(2rem, 6vw, 2.75rem) !important; }
+  h2 { font-size: clamp(1.75rem, 5vw, 2.25rem) !important; }
+  h3 { font-size: clamp(1.2rem, 4vw, 1.6rem) !important; }
   .text-large { font-size: 1.05rem !important; }
   p { font-size: 1rem !important; }
-  
+
   /* Section Spacing Scaling */
   .section-pad { padding: 56px 0 !important; }
   .section-mb { margin-bottom: 56px !important; }
   .pt-nav { padding-top: 40px !important; }
-  
+
   /* Global Element Adjustments */
   .card-solid { padding: 24px !important; }
+
+  /* Navbar */
+  .navbar { padding: 10px 16px !important; }
+  .nav-logo { height: 65px !important; }
+  .mobile-nav-overlay { top: 80px !important; }
+
+  /* Footer */
+  .footer-root { padding: 50px 20px 36px !important; }
+  .footer-inner { flex-direction: column !important; gap: 40px !important; }
+  .footer-brand { max-width: 100% !important; }
+  .footer-cols { min-width: unset !important; width: 100% !important; flex-direction: column !important; }
+
+  /* Home page */
+  .home-hero-section { padding-top: 60px !important; padding-bottom: 60px !important; }
+  .home-floating-card { display: none !important; }
+  .home-dark-section { padding: 80px 0 !important; margin-top: 60px !important; }
+
+  /* About team section */
+  .team-section { padding: 40px 20px !important; }
+
+  /* Forms */
+  .form-grid-2 { grid-template-columns: 1fr !important; }
+  .referral-card { padding: 32px 20px !important; }
+  .contact-card { padding: 40px 20px !important; }
+
+  /* Insurances */
+  .dark-cta-block { padding: 40px 20px !important; margin-top: 60px !important; }
+  .insurances-hero { padding-top: 80px !important; padding-bottom: 60px !important; }
+
+  /* Carriers */
+  .carriers-hero { padding-top: 80px !important; padding-bottom: 50px !important; }
 }
 @media (min-width: 769px) {
   .mobile-only { display: none !important; }

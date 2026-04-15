@@ -12,7 +12,7 @@ const Contact = () => {
             initial={{ opacity: 0, scale: 0.95 }}
             animate={{ opacity: 1, scale: 1 }}
             transition={{ duration: 0.8 }}
-            className="white-bg radius-lg" 
+            className="white-bg radius-lg contact-card"
             style={{ padding: '80px', maxWidth: '800px', margin: '0 auto', boxShadow: 'var(--shadow-md)' }}
           >
             <span className="eyebrow" style={{ textAlign: "center" }}>GET IN TOUCH</span>

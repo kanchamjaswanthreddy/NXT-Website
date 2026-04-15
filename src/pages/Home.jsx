@@ -13,7 +13,7 @@ const Home = () => {
         <div className="stripe-bg"></div>
 
         {/* HERO SECTION */}
-        <section style={{ paddingTop: '120px', paddingBottom: '120px', position: 'relative' }}>
+        <section className="home-hero-section" style={{ paddingTop: '120px', paddingBottom: '120px', position: 'relative' }}>
           <div className="container grid-2" style={{ alignItems: 'center', gap: '60px' }}>
             <motion.div 
               initial={{ opacity: 0, y: 30 }}
@@ -47,7 +47,8 @@ const Home = () => {
               <img src="/home_hero_new_office.png" alt="Corporate Office" style={{ width: '100%', borderRadius: '16px', boxShadow: 'var(--shadow-lg)', border: '1px solid rgba(0,0,0,0.05)' }} />
               
               {/* Floating Element */}
-              <motion.div 
+              <motion.div
+                className="home-floating-card"
                 animate={{ y: [0, -15, 0] }}
                 transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
                 style={{ position: 'absolute', bottom: '-20px', left: '-40px', background: 'var(--glass-bg)', backdropFilter: 'var(--glass-blur)', WebkitBackdropFilter: 'var(--glass-blur)', border: '1px solid var(--glass-border)', padding: '20px', borderRadius: '12px', boxShadow: 'var(--glass-shadow)', display: 'flex', gap: '15px', alignItems: 'center' }}
@@ -117,7 +118,7 @@ const Home = () => {
         </section>
 
         {/* SLANTED DARK SECTION */}
-        <section style={{ background: '#0a2540', color: 'white', padding: '160px 0', transform: 'skewY(-6deg)', transformOrigin: '0', position: 'relative', marginTop: '100px', zIndex: 1 }}>
+        <section className="home-dark-section" style={{ background: '#0a2540', color: 'white', padding: '160px 0', transform: 'skewY(-6deg)', transformOrigin: '0', position: 'relative', marginTop: '100px', zIndex: 1 }}>
           <div className="container" style={{ transform: 'skewY(6deg)' }}>
             <div className="grid-2" style={{ alignItems: 'center' }}>
               <div>

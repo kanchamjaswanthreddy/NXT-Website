@@ -69,7 +69,7 @@ const Insurances = () => {
       <main style={{ backgroundColor: 'var(--bg-page)', minHeight: '100vh', paddingBottom: '0' }}>
         
         {/* HEADER */}
-        <div style={{ backgroundColor: '#0a2540', color: 'white', paddingTop: '140px', paddingBottom: '100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
+        <div className="insurances-hero" style={{ backgroundColor: '#0a2540', color: 'white', paddingTop: '140px', paddingBottom: '100px', textAlign: 'center', position: 'relative', overflow: 'hidden' }}>
           <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, background: 'radial-gradient(circle at 50% 150%, rgba(142,0,56,0.3) 0%, transparent 70%)', zIndex: 0 }}></div>
           <div className="container" style={{ position: 'relative', zIndex: 1 }}>
             <motion.span initial={{ opacity: 0 }} animate={{ opacity: 1 }} transition={{ duration: 1 }} style={{ color: 'var(--color-primary)', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', fontSize: '0.9rem', marginBottom: '16px', display: 'block' }}>
@@ -183,7 +183,7 @@ const Insurances = () => {
             </div>
             
             {/* CTA BREAK */}
-            <div style={{ marginTop: '100px', background: '#0a2540', borderRadius: '16px', padding: '60px 40px', textAlign: 'center', color: 'white' }}>
+            <div className="dark-cta-block" style={{ marginTop: '100px', background: '#0a2540', borderRadius: '16px', padding: '60px 40px', textAlign: 'center', color: 'white' }}>
               <h3 style={{ fontSize: '2.5rem', marginBottom: '20px', color: 'white' }}>Ready to secure your protections?</h3>
               <p style={{ fontSize: '1.2rem', marginBottom: '32px', color: '#adbdcc', maxWidth: '600px', margin: '0 auto 32px' }}>
                 We hold all 4 primary licenses and negotiate intensely across dozens of carriers to assemble your perfect safety net.

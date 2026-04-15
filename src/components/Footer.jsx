@@ -31,11 +31,11 @@ const TikTokIcon = () => (
 
 const Footer = () => {
   return (
-    <footer style={{ background: '#0a2540', color: '#ffffff', padding: '80px 40px 40px 40px', borderTop: '4px solid #00d4ff' }}>
+    <footer className="footer-root" style={{ background: '#0a2540', color: '#ffffff', padding: '80px 40px 40px 40px', borderTop: '4px solid #00d4ff' }}>
       <div className="container" style={{ padding: '0' }}>
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '60px' }}>
-          
-          <div style={{ maxWidth: '400px' }}>
+        <div className="footer-inner" style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '60px' }}>
+
+          <div className="footer-brand" style={{ maxWidth: '400px' }}>
             <img src="/Logof.png" alt="NXT Financial" style={{ height: '140px', width: 'auto', marginBottom: '24px', objectFit: 'contain' }} />
             <p style={{ fontSize: '1.05rem', color: '#adbdcc', lineHeight: 1.6 }}>
               Comprehensive insurance coverage for the modern era. We partner with the world's leading carriers to deliver tailored solutions for your unique lifestyle and business needs.
@@ -65,7 +65,7 @@ const Footer = () => {
             </div>
           </div>
 
-          <div style={{ flex: '1', minWidth: '400px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '40px' }}>
+          <div className="footer-cols" style={{ flex: '1', minWidth: '400px', display: 'flex', flexWrap: 'wrap', justifyContent: 'space-between', gap: '40px' }}>
             <div style={{ minWidth: '150px' }}>
               <h4 style={{ color: '#ffffff', marginBottom: '24px', fontSize: '1.1rem', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Insurance</h4>
               <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>

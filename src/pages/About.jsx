@@ -150,7 +150,7 @@ const About = () => {
           </section>
 
           {/* TEAM SECTION */}
-          <section className="section-mb white-bg radius-lg" style={{ padding: '80px 60px', boxShadow: 'var(--shadow-md)' }}>
+          <section className="section-mb white-bg radius-lg team-section" style={{ padding: '80px 60px', boxShadow: 'var(--shadow-md)' }}>
             <motion.div initial="hidden" whileInView="visible" viewport={{ once: true }} variants={fadeUp} style={{ marginBottom: '60px' }}>
                <h2 style={{ fontSize: "3.5rem" }}>Meet the executive team</h2>
                <p className="text-large" style={{ maxWidth: '800px', margin: '0' }}>

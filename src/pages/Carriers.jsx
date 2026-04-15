@@ -127,7 +127,7 @@ const Carriers = () => {
       <main style={{ background: 'transparent', minHeight: '100vh', paddingBottom: '120px' }}>
         
         {/* HEADER */}
-        <div style={{ backgroundColor: '#0a2540', color: 'white', paddingTop: '120px', paddingBottom: '80px', marginBottom: '80px', textAlign: 'center' }}>
+        <div className="carriers-hero" style={{ backgroundColor: '#0a2540', color: 'white', paddingTop: '120px', paddingBottom: '80px', marginBottom: '80px', textAlign: 'center' }}>
           <div className="container">
             <motion.h1 
               initial={{ opacity: 0, y: 20 }}
