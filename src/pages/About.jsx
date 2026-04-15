@@ -162,9 +162,12 @@ const About = () => {
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '50px 40px' }}>
               {[
                 { name: 'SHIV THAKUR', title: 'Senior Executive Partner', img: '/shiv-thakur.jpeg' },
-                { name: 'GITA THAKUR', title: 'Senior Executive Partner', img: '/gita-thakur.jpeg' }
+                { name: 'GITA THAKUR', title: 'Sales Account Manager', img: '/gita-thakur.jpeg' },
+                { name: 'CINDY PROUTY', title: 'Senior Executive Mentor', img: '/cindy-prouty.jpeg' },
+                { name: 'UDAY CHAUDHARY', title: 'Social Media Manager', img: '/uday-chaudhary.jpeg' },
+                { name: 'RIGOBERTO AYALA RODAS', title: 'Director of Business Development', img: '/rigoberto-ayala.jpeg', objPos: 'center 30%' }
               ].map((member, idx) => (
-                <motion.div 
+                <motion.div
                   key={idx}
                   initial={{ opacity: 0, y: 30 }}
                   whileInView={{ opacity: 1, y: 0 }}
@@ -172,7 +175,7 @@ const About = () => {
                   transition={{ delay: (idx % 3) * 0.1, duration: 0.5 }}
                   style={{ display: 'flex', alignItems: 'center', gap: '24px' }}
                 >
-                  <img src={member.img} alt={member.name} style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', boxShadow: 'var(--shadow-sm)' }} />
+                  <img src={member.img} alt={member.name} style={{ width: '80px', height: '80px', borderRadius: '50%', objectFit: 'cover', objectPosition: member.objPos || 'center', boxShadow: 'var(--shadow-sm)', flexShrink: 0 }} />
                   <div>
                     <h4 style={{ fontSize: '1.2rem', marginBottom: '4px', fontWeight: 700, color: '#0a2540' }}>{member.name}</h4>
                     <p style={{ margin: 0, color: '#6b7280', fontSize: '0.95rem', fontWeight: 500 }}>{member.title}</p>

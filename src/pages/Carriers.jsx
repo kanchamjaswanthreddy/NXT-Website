@@ -63,7 +63,7 @@ const getCategory = (filename) => {
 const topTwentyCategories = [
   {
     title: "Major National / Standard Carriers",
-    logos: ['allstate.png', 'nationwide.png', 'liberty-mutual.jpeg', 'travelers.png', 'progressive.png', 'the-hartford.png']
+    logos: ['allstate.png', 'nationwide.png', 'liberty-mutual.jpeg', 'travelers.png', 'progressive.png', 'the-hartford.png', 'geico.svg']
   },
   {
     title: "Strong Personal Lines Carriers",
@@ -76,10 +76,6 @@ const topTwentyCategories = [
   {
     title: "E&S / Brokerage / Wholesale Markets",
     logos: ['burns-and-wilcox.png', 'crc-group.jpg', 'rps.png', 'btis.png']
-  },
-  {
-    title: "Niche / Specialty Carriers",
-    logos: ['hagerty.png']
   }
 ];
 
