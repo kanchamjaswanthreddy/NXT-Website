@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 import LifeCalculator from '../components/LifeCalculator';
 
 const fadeUp = {
@@ -16,6 +17,12 @@ const fadeUp = {
 const About = () => {
   return (
     <PageTransition>
+      <SEO
+        title="About NXT Financial Group"
+        description="NXT Financial Group is a fiercely independent insurance advisory brokerage. We strip away the jargon and deliver custom, affordable coverage with zero carrier bias."
+        canonical="/about"
+        ogImage="https://www.nxtfinancialgroup.com/about_hero_new.png"
+      />
       <main style={{ position: 'relative', overflowX: 'hidden' }}>
         <div className="bg-slant-light"></div>
         <div className="container pt-nav" style={{ minHeight: '100vh', paddingBottom: '100px' }}>

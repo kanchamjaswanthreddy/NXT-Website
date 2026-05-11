@@ -2,13 +2,34 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 import { Shield, UserCheck, Store, FileEdit, LayoutGrid, CheckCircle2, ArrowRight } from 'lucide-react';
 
 import { allLogos } from '../logosData';
 
+const homeSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'InsuranceAgency',
+  name: 'NXT Financial Group',
+  url: 'https://www.nxtfinancialgroup.com',
+  logo: 'https://www.nxtfinancialgroup.com/Logo.jpeg',
+  description:
+    'NXT Financial Group is a fiercely independent insurance brokerage partnering with the nation\'s top carriers to deliver tailored life, health, casualty, and property insurance.',
+  email: 'info@nxtfinancialgroup.com',
+  sameAs: [],
+  areaServed: { '@type': 'Country', name: 'United States' },
+  serviceType: ['Life Insurance', 'Health Insurance', 'Property Insurance', 'Casualty Insurance'],
+};
+
 const Home = () => {
   return (
     <PageTransition>
+      <SEO
+        title="Independent Insurance Brokerage"
+        description="NXT Financial Group partners with the nation's top carriers to deliver tailored life, health, casualty, and property insurance to individuals and enterprises. Get a free audit today."
+        canonical="/"
+        schema={homeSchema}
+      />
       <main style={{ overflowX: 'hidden', position: 'relative' }}>
         <div className="stripe-bg"></div>
 

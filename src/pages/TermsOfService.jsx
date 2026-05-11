@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 
 const sectionStyle = {
   marginBottom: '40px'
@@ -23,9 +24,15 @@ const paragraphStyle = {
 const TermsOfService = () => {
   return (
     <PageTransition>
+      <SEO
+        title="Terms of Service"
+        description="Review the terms of service governing your use of the NXT Financial Group website and insurance advisory services."
+        canonical="/terms"
+        noIndex={true}
+      />
       <main style={{ position: 'relative', overflowX: 'hidden', minHeight: '100vh', paddingBottom: '100px', paddingTop: '140px' }}>
         <div className="container">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}

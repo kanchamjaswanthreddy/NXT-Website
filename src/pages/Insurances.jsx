@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 import { ChevronRight, HeartPulse, Shield, Building2, Briefcase } from 'lucide-react';
 
 const fadeUp = {
@@ -66,6 +67,11 @@ const ProductCard = ({ icon, title, desc, delay, slug }) => (
 const Insurances = () => {
   return (
     <PageTransition>
+      <SEO
+        title="Insurance Products | Life, Health, Property & Casualty"
+        description="Explore NXT Financial's full range of insurance products: life & retirement, health & disability, property & asset protection, and casualty & liability defense across all 4 primary license domains."
+        canonical="/insurances"
+      />
       <main style={{ backgroundColor: 'var(--bg-page)', minHeight: '100vh', paddingBottom: '0' }}>
         
         {/* HEADER */}

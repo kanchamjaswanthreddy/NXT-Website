@@ -2,6 +2,7 @@ import React from 'react';
 import { motion } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 import { Network, Handshake, TrendingUp } from 'lucide-react';
 
 const fadeUp = {
@@ -16,6 +17,12 @@ const fadeUp = {
 const Partner = () => {
   return (
     <PageTransition>
+      <SEO
+        title="Partner with NXT Financial Group"
+        description="Join NXT Financial's independent agent network. Access top-tier carrier contracts, vested renewals from day one, and complete backend support — no captive constraints."
+        canonical="/partner"
+        ogImage="https://www.nxtfinancialgroup.com/partner_hero.png"
+      />
       <main style={{ position: 'relative', overflowX: 'hidden' }}>
         <div className="bg-slant-light"></div>
         <div className="container pt-nav" style={{ paddingBottom: '100px' }}>

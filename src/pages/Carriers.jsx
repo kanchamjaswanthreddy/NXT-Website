@@ -1,6 +1,7 @@
 import React, { useState, useMemo } from 'react';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 import { ComposableMap, Geographies, Geography, Marker, Annotation } from "react-simple-maps";
 import { geoCentroid } from "d3-geo";
 import { allLogos } from '../logosData';
@@ -124,6 +125,11 @@ const Carriers = () => {
 
   return (
     <PageTransition>
+      <SEO
+        title="Our Carrier Network | 80+ A-Rated Insurance Carriers"
+        description="Browse NXT Financial Group's elite network of 80+ A-rated insurance carriers nationwide. Filter by state, commercial lines, or personal lines to find the right insurance partner."
+        canonical="/carriers"
+      />
       <main style={{ background: 'transparent', minHeight: '100vh', paddingBottom: '120px' }}>
         
         {/* HEADER */}

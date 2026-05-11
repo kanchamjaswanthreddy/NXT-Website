@@ -5,3 +5,7 @@ dist/
 .env
 .env.local
 *.log
+
+# Outreach secrets — never commit
+outreach/.env
+outreach/send_log.json

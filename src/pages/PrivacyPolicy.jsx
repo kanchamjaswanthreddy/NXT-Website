@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 
 const sectionStyle = {
   marginBottom: '40px'
@@ -23,9 +24,15 @@ const paragraphStyle = {
 const PrivacyPolicy = () => {
   return (
     <PageTransition>
+      <SEO
+        title="Privacy Policy"
+        description="Read NXT Financial Group's privacy policy to understand how we collect, use, and protect your personal information when you use our website and services."
+        canonical="/privacy-policy"
+        noIndex={true}
+      />
       <main style={{ position: 'relative', overflowX: 'hidden', minHeight: '100vh', paddingBottom: '100px', paddingTop: '140px' }}>
         <div className="container">
-          <motion.div 
+          <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.8 }}

@@ -2,6 +2,7 @@ import React, { useEffect } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 import { ArrowLeft, CheckCircle2, ShieldCheck, Banknote, ShieldAlert } from 'lucide-react';
 
 const productsDatabase = {
@@ -153,6 +154,13 @@ const ProductDetail = () => {
 
   return (
     <PageTransition>
+      <SEO
+        title={product.title}
+        description={`${product.overview} Get a free quote from NXT Financial's independent agents — no brokering fees, A-rated carriers only.`}
+        canonical={`/insurance/${slug}`}
+        ogImage={product.heroImage}
+        ogType="article"
+      />
       <main style={{ background: 'transparent', minHeight: '100vh', paddingBottom: '120px' }}>
         
         <div style={{ 

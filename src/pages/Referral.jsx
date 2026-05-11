@@ -1,6 +1,7 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 
 const inputStyle = {
   padding: '16px 20px', 
@@ -26,6 +27,11 @@ const labelStyle = {
 const Referral = () => {
   return (
     <PageTransition>
+      <SEO
+        title="Referral Program | Share the Protection"
+        description="Refer your friends and family to NXT Financial Group. Help them find better insurance coverage — and receive a thank you gift from us when they connect with an advisor."
+        canonical="/referral"
+      />
       <main style={{ position: 'relative', overflowX: 'hidden', minHeight: '100vh', paddingBottom: '100px', paddingTop: '140px' }}>
         <div className="container">
           <motion.div 

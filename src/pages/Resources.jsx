@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
 import { Link } from 'react-router-dom';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 import LifeCalculator from '../components/LifeCalculator';
 import CommercialLiabilityCalculator from '../components/CommercialLiabilityCalculator';
 import HomeReplacementCalculator from '../components/HomeReplacementCalculator';
@@ -20,6 +21,11 @@ const Resources = () => {
 
   return (
     <PageTransition>
+      <SEO
+        title="Free Insurance Calculators | Life, Home & Business Coverage"
+        description="Use NXT Financial's free strategic coverage calculators to estimate how much life insurance, home replacement cost, or commercial general liability coverage you actually need."
+        canonical="/resources"
+      />
       <main style={{ position: 'relative', minHeight: '100vh', backgroundColor: '#f9fbfd', paddingTop: '120px', paddingBottom: '100px' }}>
         <div className="container">
           

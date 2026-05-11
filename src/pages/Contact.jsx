@@ -1,10 +1,16 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 import PageTransition from '../components/PageTransition';
+import SEO from '../components/SEO';
 
 const Contact = () => {
   return (
     <PageTransition>
+      <SEO
+        title="Contact Us | Book a Free Insurance Review"
+        description="Schedule a free strategic insurance review with NXT Financial Group advisors. Reach us at info@nxtfinancialgroup.com or submit the form — we respond within 24 hours."
+        canonical="/contact"
+      />
       <main style={{ position: 'relative', overflowX: 'hidden', minHeight: '100vh', paddingBottom: '100px' }}>
         <div className="bg-slant-light"></div>
         <div className="container pt-nav">
