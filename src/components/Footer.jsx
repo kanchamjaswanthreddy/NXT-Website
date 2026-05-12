@@ -72,7 +72,6 @@ const Footer = () => {
                 <li><Link to="/insurances" style={{ color: '#adbdcc', fontSize: '1rem', textDecoration: 'none' }}>Life & Health</Link></li>
                 <li><Link to="/insurances" style={{ color: '#adbdcc', fontSize: '1rem', textDecoration: 'none' }}>Property Insurance</Link></li>
                 <li><Link to="/insurances" style={{ color: '#adbdcc', fontSize: '1rem', textDecoration: 'none' }}>Casualty & Liability</Link></li>
-                <li><Link to="/carriers" style={{ color: '#adbdcc', fontSize: '1rem', textDecoration: 'none' }}>Our Elite Network</Link></li>
               </ul>
             </div>
             <div style={{ minWidth: '150px' }}>
@@ -87,6 +86,7 @@ const Footer = () => {
             <div style={{ minWidth: '150px' }}>
               <h4 style={{ color: '#ffffff', marginBottom: '24px', fontSize: '1.1rem', fontWeight: 700, letterSpacing: '0.05em', textTransform: 'uppercase' }}>Resources</h4>
               <ul style={{ listStyle: 'none', padding: 0, display: 'flex', flexDirection: 'column', gap: '16px' }}>
+                <li><Link to="/blog" style={{ color: '#adbdcc', fontSize: '1rem', textDecoration: 'none' }}>Insights &amp; Guides</Link></li>
                 <li><Link to="/resources" style={{ color: '#adbdcc', fontSize: '1rem', textDecoration: 'none' }}>Help Center</Link></li>
                 <li><Link to="/contact" style={{ color: '#adbdcc', fontSize: '1rem', textDecoration: 'none' }}>Get a Quote</Link></li>
                 <li><a href="https://shivthakur.exprealty.com/" target="_blank" rel="noopener noreferrer" style={{ color: '#adbdcc', fontSize: '1rem', textDecoration: 'none' }}>Real Estate Guidance</a></li>

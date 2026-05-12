@@ -11,8 +11,8 @@ const COVERAGE_LINKS = [
 ];
 
 const RESOURCE_LINKS = [
+  { label: 'Insights & Guides',     sub: 'Insurance articles and expert tips',      to: '/blog' },
   { label: 'Insurance Calculators', sub: 'Life, home & business estimators',        to: '/resources' },
-  { label: 'Carrier Network',       sub: '80+ A-rated carriers nationwide',         to: '/carriers' },
   { label: 'Partner With Us',       sub: 'Join our independent agent network',      to: '/partner' },
   { label: 'Referral Program',      sub: 'Refer a friend, earn rewards',            to: '/referral' },
 ];
@@ -118,7 +118,6 @@ const NavBar = () => {
 
           <div className="nav-links mobile-hide" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
             <DropdownNavItem label="Coverage" links={COVERAGE_LINKS} />
-            <Link to="/carriers">Carriers</Link>
             <DropdownNavItem label="Resources" links={RESOURCE_LINKS} />
             <Link to="/about">About Us</Link>
             <Link to="/contact">Support</Link>
@@ -162,11 +161,6 @@ const NavBar = () => {
               </div>
             )}
           </div>
-
-          <Link to="/carriers" onClick={() => setMobileMenuOpen(false)}
-            style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeeee', textDecoration: 'none', color: '#0a2540' }}>
-            Carriers
-          </Link>
 
           {/* Resources accordion */}
           <div style={{ borderBottom: '1px solid #eeeeee' }}>

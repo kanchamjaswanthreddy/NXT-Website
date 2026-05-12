@@ -14,6 +14,8 @@ import Contact from './pages/Contact';
 import Carriers from './pages/Carriers';
 import ProductDetail from './pages/ProductDetail';
 import Referral from './pages/Referral';
+import Blog from './pages/Blog';
+import BlogPost from './pages/BlogPost';
 import PrivacyPolicy from './pages/PrivacyPolicy';
 import TermsOfService from './pages/TermsOfService';
 function App() {
@@ -37,6 +39,8 @@ function App() {
           <Route path="/contact" element={<Contact />} />
           <Route path="/carriers" element={<Carriers />} />
           <Route path="/referral" element={<Referral />} />
+          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog/:slug" element={<BlogPost />} />
           <Route path="/privacy-policy" element={<PrivacyPolicy />} />
           <Route path="/terms" element={<TermsOfService />} />
         </Routes>

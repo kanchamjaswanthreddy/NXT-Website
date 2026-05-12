@@ -129,6 +129,7 @@ const Carriers = () => {
         title="Our Carrier Network | 80+ A-Rated Insurance Carriers"
         description="Browse NXT Financial Group's elite network of 80+ A-rated insurance carriers nationwide. Filter by state, commercial lines, or personal lines to find the right insurance partner."
         canonical="/carriers"
+        noIndex={true}
       />
       <main style={{ background: 'transparent', minHeight: '100vh', paddingBottom: '120px' }}>
         

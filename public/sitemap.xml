@@ -151,4 +151,58 @@
     <priority>0.8</priority>
   </url>
 
+  <url>
+    <loc>https://www.nxtfinancialgroup.com/blog</loc>
+    <changefreq>weekly</changefreq>
+    <priority>0.8</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nxtfinancialgroup.com/blog/how-much-life-insurance-do-you-need</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nxtfinancialgroup.com/blog/term-vs-whole-life-insurance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nxtfinancialgroup.com/blog/5-home-insurance-mistakes</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nxtfinancialgroup.com/blog/medicare-vs-medicare-advantage</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nxtfinancialgroup.com/blog/small-business-general-liability-insurance</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nxtfinancialgroup.com/blog/how-to-lower-auto-insurance-premium</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nxtfinancialgroup.com/blog/umbrella-insurance-explained</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
+  <url>
+    <loc>https://www.nxtfinancialgroup.com/blog/real-cost-of-being-underinsured</loc>
+    <changefreq>monthly</changefreq>
+    <priority>0.7</priority>
+  </url>
+
 </urlset>
