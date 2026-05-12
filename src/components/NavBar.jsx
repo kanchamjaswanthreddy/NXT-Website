@@ -20,15 +20,18 @@ const RESOURCE_LINKS = [
 const DropdownPanel = ({ links, onClose }) => (
   <div style={{
     position: 'absolute',
-    top: 'calc(100% + 12px)',
+    top: '100%',
     left: '50%',
     transform: 'translateX(-50%)',
+    paddingTop: '12px',
+    zIndex: 2000,
+  }}>
+  <div style={{
     background: '#fff',
     borderRadius: '16px',
     boxShadow: '0 8px 40px rgba(10,37,64,0.14), 0 0 0 1px rgba(0,0,0,0.06)',
     padding: '8px',
     minWidth: '268px',
-    zIndex: 2000,
   }}>
     {links.map((link, i) => (
       <Link
@@ -57,6 +60,7 @@ const DropdownPanel = ({ links, onClose }) => (
       </Link>
     ))}
   </div>
+  </div>
 );
 
 const DropdownNavItem = ({ label, links }) => {
@@ -80,8 +84,8 @@ const DropdownNavItem = ({ label, links }) => {
           gap: '4px',
           fontFamily: 'inherit',
           fontSize: 'inherit',
-          fontWeight: 500,
-          color: '#425466',
+          fontWeight: 600,
+          color: '#0a2540',
           padding: '4px 0',
         }}
       >
