@@ -11,7 +11,6 @@ const COVERAGE_LINKS = [
 ];
 
 const RESOURCE_LINKS = [
-  { label: 'Insights & Guides',     sub: 'Insurance articles and expert tips',      to: '/blog' },
   { label: 'Insurance Calculators', sub: 'Life, home & business estimators',        to: '/resources' },
   { label: 'Partner With Us',       sub: 'Join our independent agent network',      to: '/partner' },
   { label: 'Referral Program',      sub: 'Refer a friend, earn rewards',            to: '/referral' },
@@ -119,6 +118,7 @@ const NavBar = () => {
           <div className="nav-links mobile-hide" style={{ display: 'flex', alignItems: 'center', gap: '32px' }}>
             <DropdownNavItem label="Coverage" links={COVERAGE_LINKS} />
             <DropdownNavItem label="Resources" links={RESOURCE_LINKS} />
+            <Link to="/blog">Blog</Link>
             <Link to="/about">About Us</Link>
             <Link to="/contact">Support</Link>
           </div>
@@ -183,6 +183,10 @@ const NavBar = () => {
             )}
           </div>
 
+          <Link to="/blog" onClick={() => setMobileMenuOpen(false)}
+            style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeeee', textDecoration: 'none', color: '#0a2540' }}>
+            Blog
+          </Link>
           <Link to="/about" onClick={() => setMobileMenuOpen(false)}
             style={{ fontSize: '1.2rem', fontWeight: 600, padding: '15px 0', borderBottom: '1px solid #eeeeee', textDecoration: 'none', color: '#0a2540' }}>
             About Us
