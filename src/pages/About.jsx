@@ -170,7 +170,6 @@ const About = () => {
               {[
                 { name: 'SHIV THAKUR', title: 'Senior Executive Partner', img: '/shiv-thakur.jpeg' },
                 { name: 'GITA THAKUR', title: 'Sales Account Manager', img: '/gita-thakur.jpeg' },
-                { name: 'CINDY PROUTY', title: 'Senior Executive Mentor', img: '/cindy-prouty.jpeg' },
                 { name: 'UDAY CHAUDHARY', title: 'Social Media Manager', img: '/uday-chaudhary.jpeg' },
                 { name: 'RIGOBERTO AYALA RODAS', title: 'Director of Business Development', img: '/rigoberto-ayala.jpeg', objPos: 'center 30%' }
               ].map((member, idx) => (
