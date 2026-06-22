@@ -18,7 +18,7 @@ const PHILOSOPHY = [
   {
     icon: <Award size={24} color="#2c5b54" />,
     heading: 'Proven Results',
-    body: 'With over 10,000 clients served and $0 in uncovered losses due to improper placement, our track record speaks for itself.',
+    body: 'With over 50 clients served and $0 in uncovered losses due to improper placement, our track record speaks for itself.',
   },
 ]
 
@@ -95,7 +95,7 @@ export default function About() {
 
               <div className="grid grid-cols-2 gap-4">
                 {[
-                  { label: 'Founded', value: '2018' },
+                  { label: 'Founded', value: '2026' },
                   { label: 'Headquarters', value: 'Everett, MA' },
                   { label: 'Carriers', value: '104+' },
                   { label: 'States Served', value: 'All 50' },

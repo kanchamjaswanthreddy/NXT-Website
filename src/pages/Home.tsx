@@ -4,7 +4,7 @@ import { allCarriers, getLogoPath } from '../data/carriers'
 import SEO from '../components/SEO'
 
 const STATS = [
-  { value: '10K+', label: 'Clients Served' },
+  { value: '50+', label: 'Clients Served' },
   { value: '104+', label: 'Carrier Partners' },
   { value: '4', label: 'Licensed States HQ' },
   { value: '50', label: 'States Served' },

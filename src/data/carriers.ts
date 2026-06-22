@@ -41,14 +41,13 @@ export const stateNames: Record<string, string> = {
 function getExtension(name: string): string {
   // Confirmed .jpeg files
   const jpeg = new Set(['cna','hanover','liberty-mutual','mapfre','sagesure'])
-  // Confirmed .jpg files
   const jpg = new Set([
     'allied-trust','branch','clearcover','chubb','cover-tree','crc-group','crc-tapco',
-    'embark','encompass','epremium','foremost-signature','gbli','guide-one','hagerty',
+    'embark','encompass','epremium','foremost-signature','gbli','guide-one',
     'hugo','icat','isc','k2-specialty','kemper-auto','kleeco','liberty-surety',
     'main-street-america','mexico-insurance-online','nat-gen','national-general',
     'orchid','palomar-specialty','pathpoint','philadelphia','quick-life',
-    'ses','sport-underwriters','state-auto','tokio-marine-hcc','tower-hill','victor-insurance',
+    'ses','state-auto','tokio-marine-hcc','tower-hill',
   ])
   // Confirmed .svg
   const svg = new Set(['geico'])
