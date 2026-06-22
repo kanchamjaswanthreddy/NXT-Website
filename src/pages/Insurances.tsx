@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { ArrowRight } from 'lucide-react'
 import { products, categoryNames } from '../data/products'
+import SEO from '../components/SEO'
 
 const CATEGORY_HEROES: Record<number, string> = {
   1: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=800&q=70',
@@ -12,6 +13,11 @@ const CATEGORY_HEROES: Record<number, string> = {
 export default function Insurances() {
   return (
     <>
+      <SEO
+        title="Insurance Products"
+        description="Explore NXT Financial Group's full range of insurance products — life, health, home, auto, commercial liability, cyber, and specialty coverage from 104+ carriers."
+        canonical="/insurances"
+      />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="ins-hero-heading"

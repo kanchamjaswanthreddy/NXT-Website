@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Phone, Mail, MapPin, Clock } from 'lucide-react'
+import SEO from '../components/SEO'
 
 interface FormData {
   firstName: string
@@ -58,6 +59,22 @@ export default function Contact() {
 
   return (
     <>
+      <SEO
+        title="Contact Us"
+        description="Get a free insurance quote from NXT Financial Group. Reach our licensed advisors by phone, email, or contact form for personalized coverage recommendations."
+        canonical="/contact"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "ContactPage",
+          "name": "Contact NXT Financial Group",
+          "url": "https://www.nxtfinancialgroup.com/contact",
+          "mainEntity": {
+            "@type": "InsuranceAgency",
+            "name": "NXT Financial Group",
+            "url": "https://www.nxtfinancialgroup.com"
+          }
+        }}
+      />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="contact-hero-heading"

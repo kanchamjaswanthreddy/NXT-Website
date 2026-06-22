@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Link } from 'react-router-dom'
 import { ArrowRight, Clock } from 'lucide-react'
 import { blogPosts, CATEGORY_META } from '../data/blogPosts'
+import SEO from '../components/SEO'
 
 const ALL_CATEGORIES = ['All', ...Array.from(new Set(blogPosts.map((p) => p.category)))]
 
@@ -16,6 +17,11 @@ export default function Blog() {
 
   return (
     <>
+      <SEO
+        title="Insurance Blog & Insights"
+        description="Expert insurance insights, tips, and industry news from NXT Financial Group. Learn how to protect your family, home, business, and assets."
+        canonical="/blog"
+      />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="blog-hero-heading"

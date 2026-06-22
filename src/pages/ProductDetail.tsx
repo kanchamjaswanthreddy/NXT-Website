@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { Check, ArrowLeft, Phone } from 'lucide-react'
 import { getProductBySlug } from '../data/products'
+import SEO from '../components/SEO'
 
 export default function ProductDetail() {
   const { slug } = useParams<{ slug: string }>()
@@ -18,6 +19,23 @@ export default function ProductDetail() {
 
   return (
     <>
+      <SEO
+        title={product.title}
+        description={product.shortDescription}
+        canonical={`/insurance/${product.slug}`}
+        ogImage={product.heroImage}
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Product',
+          name: product.title,
+          description: product.shortDescription,
+          image: product.heroImage,
+          brand: {
+            '@type': 'Organization',
+            name: 'NXT Financial Group',
+          },
+        }}
+      />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="product-heading"

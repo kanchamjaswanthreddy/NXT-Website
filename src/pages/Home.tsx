@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { Heart, Car, Home as HomeIcon, Stethoscope, Plane, Check, ArrowRight } from 'lucide-react'
 import { allCarriers, getLogoPath } from '../data/carriers'
+import SEO from '../components/SEO'
 
 const STATS = [
   { value: '10K+', label: 'Clients Served' },
@@ -61,6 +62,23 @@ const marqueeItems = [...allCarriers, ...allCarriers]
 export default function Home() {
   return (
     <>
+      <SEO
+        title="Independent Insurance Brokerage"
+        description="NXT Financial Group partners with 104+ top-rated carriers to deliver comprehensive auto, home, life, health, and commercial insurance coverage across all 50 states."
+        canonical="/"
+        jsonLd={{
+          "@context": "https://schema.org",
+          "@type": "InsuranceAgency",
+          "name": "NXT Financial Group",
+          "url": "https://www.nxtfinancialgroup.com",
+          "logo": "https://www.nxtfinancialgroup.com/logo.png",
+          "description": "Independent insurance brokerage partnering with 104+ carriers to provide comprehensive coverage across all 50 states.",
+          "areaServed": "US",
+          "serviceType": ["Auto Insurance", "Home Insurance", "Life Insurance", "Health Insurance", "Commercial Insurance"],
+          "numberOfEmployees": {"@type": "QuantitativeValue", "value": "10+"},
+          "sameAs": []
+        }}
+      />
       {/* ── HERO ───────────────────────────────────────────────── */}
       <section
         aria-labelledby="hero-heading"

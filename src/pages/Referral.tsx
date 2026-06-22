@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { Gift, Users, DollarSign, Check } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const HOW_IT_WORKS = [
   { icon: <Users size={22} color="#2c5b54" />, step: '1', heading: 'Refer a Friend or Client', body: 'Send us a referral with their name, contact info, and what coverage they need.' },
@@ -31,6 +32,11 @@ export default function Referral() {
 
   return (
     <>
+      <SEO
+        title="Referral Program"
+        description="Earn rewards by referring friends and family to NXT Financial Group. Our referral program makes it easy to help your network get better insurance coverage."
+        canonical="/referral"
+      />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="referral-heading"

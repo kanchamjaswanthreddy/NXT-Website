@@ -1,8 +1,8 @@
 import { useState, useMemo } from 'react'
 import { Link } from 'react-router-dom'
-import { Helmet } from 'react-helmet-async'
 import { allCarriers, top20, getLogoPath, stateNames } from '../data/carriers'
 import UsaMap from '../components/ui/UsaMap'
+import SEO from '../components/SEO'
 
 const FILTER_TABS = [
   { label: 'All Carriers', key: 'all' },
@@ -27,9 +27,11 @@ export default function Carriers() {
 
   return (
     <>
-      <Helmet>
-        <title>Carrier Network — NXT Financial Group</title>
-      </Helmet>
+      <SEO
+        title="Carrier Network"
+        description="Access 104+ top-rated insurance carriers through NXT Financial Group. We shop the market to find you the best coverage and rates from national and regional providers."
+        canonical="/carriers"
+      />
 
       {/* HERO */}
       <section style={{ background: '#1c3f39', minHeight: '380px', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>

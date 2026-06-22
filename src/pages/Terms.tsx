@@ -1,6 +1,14 @@
+import SEO from '../components/SEO'
+
 export default function Terms() {
   return (
-    <section style={{ background: '#ffffff' }}>
+    <>
+      <SEO
+        title="Terms of Service"
+        description="Terms and conditions for using NXT Financial Group's website and insurance services. Read our service agreement and usage policies."
+        canonical="/terms"
+      />
+      <section style={{ background: '#ffffff' }}>
       {/* Header */}
       <div style={{ background: '#1c3f39', padding: '90px 0 60px' }}>
         <div className="container">
@@ -52,5 +60,6 @@ export default function Terms() {
         ))}
       </div>
     </section>
+    </>
   )
 }

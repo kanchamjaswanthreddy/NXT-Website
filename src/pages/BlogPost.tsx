@@ -1,6 +1,7 @@
 import { Link, useParams } from 'react-router-dom'
 import { ArrowLeft, Clock, Calendar } from 'lucide-react'
 import { blogPosts, CATEGORY_META } from '../data/blogPosts'
+import SEO from '../components/SEO'
 
 export default function BlogPost() {
   const { slug } = useParams<{ slug: string }>()
@@ -20,6 +21,33 @@ export default function BlogPost() {
 
   return (
     <>
+      <SEO
+        title={post.title}
+        description={post.excerpt}
+        canonical={`/blog/${post.slug}`}
+        ogImage={post.heroImage}
+        ogType="article"
+        jsonLd={{
+          '@context': 'https://schema.org',
+          '@type': 'Article',
+          headline: post.title,
+          description: post.excerpt,
+          image: post.heroImage,
+          datePublished: post.date,
+          author: {
+            '@type': 'Organization',
+            name: 'NXT Financial Group',
+          },
+          publisher: {
+            '@type': 'Organization',
+            name: 'NXT Financial Group',
+            logo: {
+              '@type': 'ImageObject',
+              url: 'https://www.nxtfinancialgroup.com/logo.png',
+            },
+          },
+        }}
+      />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="post-heading"

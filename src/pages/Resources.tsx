@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom'
 import LifeCalculator from '../components/calculators/LifeCalculator'
 import HomeCalculator from '../components/calculators/HomeCalculator'
 import CommercialCalculator from '../components/calculators/CommercialCalculator'
+import SEO from '../components/SEO'
 
 const TABS = [
   { id: 'life', label: 'Life Insurance Calculator' },
@@ -42,6 +43,11 @@ export default function Resources() {
 
   return (
     <>
+      <SEO
+        title="Insurance Resources & Calculators"
+        description="Use our free insurance calculators and educational resources to estimate your life, home, and commercial insurance needs. Make informed coverage decisions."
+        canonical="/resources"
+      />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="resources-hero-heading"

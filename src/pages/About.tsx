@@ -2,6 +2,7 @@ import { Link } from 'react-router-dom'
 import { Target, Users, Award, ArrowRight } from 'lucide-react'
 import { team } from '../data/team'
 import LifeCalculator from '../components/calculators/LifeCalculator'
+import SEO from '../components/SEO'
 
 const PHILOSOPHY = [
   {
@@ -24,6 +25,11 @@ const PHILOSOPHY = [
 export default function About() {
   return (
     <>
+      <SEO
+        title="About Us"
+        description="Learn about NXT Financial Group's mission to simplify insurance. Meet our experienced team of independent brokers dedicated to finding you the best coverage."
+        canonical="/about"
+      />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="about-hero-heading"

@@ -1,6 +1,7 @@
 import { Link } from 'react-router-dom'
 import { useState } from 'react'
 import { Check } from 'lucide-react'
+import SEO from '../components/SEO'
 
 const BENEFITS = [
   'Access to our full carrier panel of 104+ carriers',
@@ -33,6 +34,11 @@ export default function Partner() {
 
   return (
     <>
+      <SEO
+        title="Partner With Us"
+        description="Join NXT Financial Group's partner network. Access 104+ carriers, competitive commissions, and dedicated support for insurance agents and agencies."
+        canonical="/partner"
+      />
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="partner-hero-heading"

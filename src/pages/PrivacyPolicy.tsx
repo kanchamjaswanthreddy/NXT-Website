@@ -1,6 +1,14 @@
+import SEO from '../components/SEO'
+
 export default function PrivacyPolicy() {
   return (
-    <section style={{ background: '#ffffff' }}>
+    <>
+      <SEO
+        title="Privacy Policy"
+        description="NXT Financial Group's privacy policy. Learn how we collect, use, and protect your personal information when you use our insurance services."
+        canonical="/privacy-policy"
+      />
+      <section style={{ background: '#ffffff' }}>
       {/* Header */}
       <div style={{ background: '#1c3f39', padding: '90px 0 60px' }}>
         <div className="container">
@@ -48,5 +56,6 @@ export default function PrivacyPolicy() {
         ))}
       </div>
     </section>
+    </>
   )
 }
