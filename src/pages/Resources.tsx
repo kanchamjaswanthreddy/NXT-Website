@@ -70,7 +70,7 @@ export default function Resources() {
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
         />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.55)' }} />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '90px 48px' }}>
+        <div className="container relative z-10 px-6 py-16 md:px-12 md:py-24">
           <span
             className="text-body-sm"
             style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '1.5px', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}
@@ -89,7 +89,7 @@ export default function Resources() {
       {/* ── CALCULATORS ───────────────────────────────────────── */}
       <section aria-labelledby="calc-section-heading" className="section-pad" style={{ background: '#f7f6f2' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'start', marginBottom: '64px' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start mb-16">
             <div>
               <h2 id="calc-section-heading" className="text-h2-md" style={{ marginBottom: '20px' }}>
                 Insurance Calculators
@@ -122,7 +122,7 @@ export default function Resources() {
           </div>
 
           {/* Tab navigation */}
-          <div style={{ borderBottom: '1px solid #d0d5dd', marginBottom: '36px', display: 'flex', gap: '0' }}>
+          <div className="flex overflow-x-auto border-b border-[#d0d5dd] mb-8 gap-2 no-scrollbar">
             {TABS.map(({ id, label }) => (
               <button
                 key={id}

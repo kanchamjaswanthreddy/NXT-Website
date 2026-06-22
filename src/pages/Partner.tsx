@@ -61,7 +61,7 @@ export default function Partner() {
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
         />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.58)' }} />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '90px 48px' }}>
+        <div className="container relative z-10 px-6 py-16 md:px-12 md:py-24">
           <span
             className="text-body-sm"
             style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '1.5px', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}
@@ -80,7 +80,7 @@ export default function Partner() {
       {/* ── BENEFITS + FORM ───────────────────────────────────── */}
       <section className="section-pad" style={{ background: '#f7f6f2' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-start">
             {/* Benefits */}
             <div>
               <h2 className="text-h2-md" style={{ marginBottom: '20px', fontSize: '32px', lineHeight: '40px' }}>

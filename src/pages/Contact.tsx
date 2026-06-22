@@ -78,13 +78,9 @@ export default function Contact() {
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="contact-hero-heading"
+        className="flex items-center relative overflow-hidden min-h-[340px]"
         style={{
           background: '#1c3f39',
-          minHeight: '340px',
-          display: 'flex',
-          alignItems: 'center',
-          position: 'relative',
-          overflow: 'hidden',
         }}
       >
         <div
@@ -95,7 +91,7 @@ export default function Contact() {
             backgroundImage: 'radial-gradient(circle at 30% 50%, rgba(44,91,84,0.5) 0%, transparent 65%)',
           }}
         />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '90px 48px' }}>
+        <div className="container relative z-10 px-6 py-16 md:px-12 md:py-24">
           <h1 id="contact-hero-heading" className="text-hero" style={{ maxWidth: '560px', marginBottom: '20px' }}>
             Let's talk protection.
           </h1>
@@ -108,21 +104,21 @@ export default function Contact() {
       {/* ── MAIN CONTENT ──────────────────────────────────────── */}
       <section className="section-pad" style={{ background: '#f7f6f2' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '360px 1fr', gap: '64px', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 lg:grid-cols-[360px_1fr] gap-12 lg:gap-16 items-start">
             {/* Contact info */}
             <div>
               <h2 className="text-h2-md" style={{ fontSize: '28px', lineHeight: '36px', marginBottom: '24px' }}>
                 Contact Information
               </h2>
 
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '16px', marginBottom: '36px' }}>
+              <div className="flex flex-col gap-4 mb-9">
                 {[
                   { icon: <Phone size={18} color="#2c5b54" />, label: 'Phone', value: '857-205-3333', href: 'tel:8572053333' },
                   { icon: <Mail size={18} color="#2c5b54" />, label: 'Email', value: 'info@nxtfinancialgroup.com', href: 'mailto:info@nxtfinancialgroup.com' },
                   { icon: <MapPin size={18} color="#2c5b54" />, label: 'Location', value: 'Everett, Massachusetts', href: undefined },
                   { icon: <Clock size={18} color="#2c5b54" />, label: 'Hours', value: 'Mon–Fri 9am–6pm ET', href: undefined },
                 ].map(({ icon, label, value, href }) => (
-                  <div key={label} className="card" style={{ padding: '20px 24px', display: 'flex', gap: '16px', alignItems: 'flex-start' }}>
+                  <div key={label} className="card flex items-start gap-4 p-5 md:p-6">
                     <div
                       style={{
                         width: '40px',
@@ -167,7 +163,7 @@ export default function Contact() {
             {/* Form */}
             <div>
               {submitted ? (
-                <div className="card" style={{ padding: '60px 40px', textAlign: 'center' }}>
+                <div className="card text-center px-6 py-12 md:px-10 md:py-16">
                   <div
                     style={{
                       width: '64px',
@@ -195,7 +191,7 @@ export default function Contact() {
                   </button>
                 </div>
               ) : (
-                <div className="card" style={{ padding: '40px' }}>
+                <div className="card p-6 md:p-10">
                   <h2 className="text-card-heading" style={{ fontSize: '22px', marginBottom: '8px', color: '#000' }}>
                     Request a Free Quote
                   </h2>
@@ -204,7 +200,7 @@ export default function Contact() {
                   </p>
 
                   <form onSubmit={handleSubmit} noValidate>
-                    <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+                    <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-4">
                       <div>
                         <label htmlFor="firstName" className="text-body-sm" style={{ display: 'block', marginBottom: '6px', fontWeight: 500 }}>
                           First Name *

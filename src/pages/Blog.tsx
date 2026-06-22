@@ -25,13 +25,10 @@ export default function Blog() {
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="blog-hero-heading"
+        className="flex items-center relative overflow-hidden"
         style={{
           background: '#1c3f39',
           minHeight: '340px',
-          display: 'flex',
-          alignItems: 'center',
-          position: 'relative',
-          overflow: 'hidden',
         }}
       >
         <img
@@ -44,11 +41,11 @@ export default function Blog() {
           loading="eager"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.2 }}
         />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '80px 48px' }}>
-          <h1 id="blog-hero-heading" className="text-hero" style={{ maxWidth: '560px', marginBottom: '16px' }}>
+        <div className="container relative z-10 px-6 py-12 md:py-20 md:px-12">
+          <h1 id="blog-hero-heading" className="text-hero max-w-[560px] mb-4">
             Insights & Guidance
           </h1>
-          <p className="text-body" style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '480px', fontSize: '17px', lineHeight: '27px' }}>
+          <p className="text-body max-w-[480px]" style={{ color: 'rgba(255,255,255,0.8)', fontSize: '17px', lineHeight: '27px' }}>
             Expert articles on insurance, risk management, and financial protection — written for real people, not actuaries.
           </p>
         </div>
@@ -57,7 +54,7 @@ export default function Blog() {
       {/* ── CATEGORY FILTER ───────────────────────────────────── */}
       <section style={{ background: '#ffffff', borderBottom: '1px solid #d0d5dd', padding: '16px 0' }}>
         <div className="container">
-          <div style={{ display: 'flex', gap: '8px', flexWrap: 'wrap' }}>
+          <div className="flex flex-wrap gap-2">
             {ALL_CATEGORIES.map((cat) => (
               <button
                 key={cat}
@@ -89,11 +86,9 @@ export default function Blog() {
           {featured && (
             <Link to={`/blog/${featured.slug}`} style={{ textDecoration: 'none', display: 'block', marginBottom: '48px' }}>
               <div
-                className="card"
+                className="card grid grid-cols-1 md:grid-cols-2"
                 style={{
                   overflow: 'hidden',
-                  display: 'grid',
-                  gridTemplateColumns: '1fr 1fr',
                   transition: 'border-color 0.2s ease',
                 }}
                 onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#2c5b54')}
@@ -109,8 +104,8 @@ export default function Blog() {
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                   />
                 </div>
-                <div style={{ padding: '40px 36px', display: 'flex', flexDirection: 'column', justifyContent: 'center' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '12px', marginBottom: '16px' }}>
+                <div className="flex flex-col justify-center p-6 md:p-10">
+                  <div className="flex items-center gap-3 mb-4">
                     <span
                       style={{
                         display: 'inline-block',
@@ -124,19 +119,17 @@ export default function Blog() {
                     >
                       {featured.category}
                     </span>
-                    <span className="text-body-sm" style={{ color: '#888', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                    <span className="text-body-sm flex items-center gap-1" style={{ color: '#888' }}>
                       <Clock size={12} /> {featured.readTime}
                     </span>
                   </div>
-                  <h2 className="text-card-heading" style={{ fontSize: '22px', lineHeight: '30px', color: '#000', marginBottom: '12px' }}>
+                  <h2 className="text-card-heading mb-3" style={{ fontSize: '22px', lineHeight: '30px', color: '#000' }}>
                     {featured.title}
                   </h2>
-                  <p className="text-body" style={{ color: '#555', marginBottom: '20px' }}>{featured.excerpt}</p>
+                  <p className="text-body mb-5" style={{ color: '#555' }}>{featured.excerpt}</p>
                   <span
+                    className="inline-flex items-center gap-1.5"
                     style={{
-                      display: 'inline-flex',
-                      alignItems: 'center',
-                      gap: '6px',
                       color: '#2c5b54',
                       fontFamily: 'Poppins, sans-serif',
                       fontWeight: 500,
@@ -151,22 +144,12 @@ export default function Blog() {
           )}
 
           {/* Article grid */}
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))',
-              gap: '24px',
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {rest.map((post) => (
               <Link key={post.slug} to={`/blog/${post.slug}`} style={{ textDecoration: 'none' }}>
                 <div
-                  className="card"
+                  className="card flex flex-col h-full overflow-hidden"
                   style={{
-                    overflow: 'hidden',
-                    display: 'flex',
-                    flexDirection: 'column',
-                    height: '100%',
                     transition: 'border-color 0.2s ease',
                   }}
                   onMouseEnter={(e) => (e.currentTarget.style.borderColor = '#2c5b54')}
@@ -182,8 +165,8 @@ export default function Blog() {
                       style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                     />
                   </div>
-                  <div style={{ padding: '24px', flex: 1, display: 'flex', flexDirection: 'column' }}>
-                    <div style={{ display: 'flex', alignItems: 'center', gap: '10px', marginBottom: '12px' }}>
+                  <div className="flex-1 flex flex-col p-6">
+                    <div className="flex items-center gap-2.5 mb-3">
                       <span
                         style={{
                           display: 'inline-block',
@@ -197,19 +180,17 @@ export default function Blog() {
                       >
                         {post.category}
                       </span>
-                      <span className="text-body-sm" style={{ color: '#888', display: 'flex', alignItems: 'center', gap: '4px' }}>
+                      <span className="text-body-sm flex items-center gap-1" style={{ color: '#888' }}>
                         <Clock size={11} /> {post.readTime}
                       </span>
                     </div>
-                    <h3 className="text-card-heading" style={{ fontSize: '17px', lineHeight: '24px', color: '#000', marginBottom: '10px' }}>
+                    <h3 className="text-card-heading mb-2.5" style={{ fontSize: '17px', lineHeight: '24px', color: '#000' }}>
                       {post.title}
                     </h3>
-                    <p className="text-body-sm" style={{ color: '#666', flex: 1, marginBottom: '16px' }}>{post.excerpt}</p>
+                    <p className="text-body-sm flex-1 mb-4" style={{ color: '#666' }}>{post.excerpt}</p>
                     <span
+                      className="inline-flex items-center gap-1"
                       style={{
-                        display: 'inline-flex',
-                        alignItems: 'center',
-                        gap: '4px',
                         color: '#2c5b54',
                         fontFamily: 'Poppins, sans-serif',
                         fontWeight: 500,

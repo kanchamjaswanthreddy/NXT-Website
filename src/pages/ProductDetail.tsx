@@ -39,13 +39,7 @@ export default function ProductDetail() {
       {/* ── HERO ──────────────────────────────────────────────── */}
       <section
         aria-labelledby="product-heading"
-        style={{
-          position: 'relative',
-          overflow: 'hidden',
-          minHeight: '480px',
-          display: 'flex',
-          alignItems: 'center',
-        }}
+        className="flex items-center relative overflow-hidden min-h-[400px] md:min-h-[480px]"
       >
         <img
           src={product.heroImage}
@@ -58,7 +52,7 @@ export default function ProductDetail() {
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover' }}
         />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.6)' }} />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '90px 48px' }}>
+        <div className="container relative z-10 px-6 py-12 md:py-24 md:px-12">
           <Link
             to="/insurances"
             style={{
@@ -99,7 +93,7 @@ export default function ProductDetail() {
       {/* ── CONTENT ───────────────────────────────────────────── */}
       <section className="section-pad" style={{ background: '#ffffff' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 360px', gap: '64px', alignItems: 'start' }}>
+          <div className="flex flex-col lg:grid lg:grid-cols-[1fr_360px] gap-10 lg:gap-16 items-start">
             {/* Main content */}
             <div>
               <h2 className="text-h2-md" style={{ fontSize: '32px', lineHeight: '40px', marginBottom: '20px' }}>
@@ -112,7 +106,7 @@ export default function ProductDetail() {
               <h3 className="text-card-heading" style={{ marginBottom: '20px', color: '#000' }}>
                 Key Benefits
               </h3>
-              <ul style={{ listStyle: 'none', margin: 0, padding: 0, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '12px', marginBottom: '48px' }}>
+              <ul className="grid grid-cols-1 md:grid-cols-2 gap-3 mb-12 m-0 p-0 list-none">
                 {product.benefits.map((b) => (
                   <li key={b} style={{ display: 'flex', gap: '10px', alignItems: 'flex-start' }}>
                     <span
@@ -142,7 +136,7 @@ export default function ProductDetail() {
                 <p className="text-body" style={{ color: '#555', marginBottom: '20px' }}>
                   Our advisors will shop {product.title.toLowerCase()} quotes from multiple carriers to find the best value for your specific situation.
                 </p>
-                <div style={{ display: 'flex', gap: '12px', flexWrap: 'wrap' }}>
+                <div className="flex flex-wrap gap-3">
                   <Link to="/contact" className="btn btn-teal" style={{ padding: '12px 28px', fontSize: '16px' }}>
                     Get a Quote
                   </Link>

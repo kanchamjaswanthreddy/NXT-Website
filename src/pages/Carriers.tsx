@@ -36,7 +36,7 @@ export default function Carriers() {
       {/* HERO */}
       <section style={{ background: '#1c3f39', minHeight: '380px', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}>
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 70% 50%, rgba(44,91,84,0.6) 0%, transparent 60%)' }} />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '90px 48px' }}>
+        <div className="container relative z-10 px-6 py-16 md:px-12 md:py-24">
           <span className="text-body-sm" style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '1.5px', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}>
             Our Carrier Network
           </span>

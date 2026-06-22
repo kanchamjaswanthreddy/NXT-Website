@@ -52,14 +52,14 @@ export default function About() {
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', objectPosition: 'center top' }}
         />
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, background: 'rgba(0,0,0,0.55)' }} />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '90px 48px' }}>
+        <div className="container relative z-10 px-6 py-12 md:py-[90px] md:px-12">
           <span
             className="text-body-sm"
             style={{ color: 'rgba(255,255,255,0.75)', letterSpacing: '1.5px', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}
           >
             About NXT Financial
           </span>
-          <h1 id="about-hero-heading" className="text-hero" style={{ maxWidth: '700px', marginBottom: '24px' }}>
+          <h1 id="about-hero-heading" className="text-hero w-full max-w-[700px] mb-6">
             The insurance agency you can genuinely count on.
           </h1>
           <p
@@ -73,9 +73,9 @@ export default function About() {
       </section>
 
       {/* ── MISSION ───────────────────────────────────────────── */}
-      <section aria-labelledby="mission-heading" className="section-pad" style={{ background: '#ffffff' }}>
+      <section aria-labelledby="mission-heading" className="section-pad bg-white">
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'start' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-start">
             <div>
               <span
                 className="text-body-sm"
@@ -93,7 +93,7 @@ export default function About() {
                 We are licensed in Massachusetts and operate nationally, serving individuals, families, and businesses with a comprehensive suite of personal lines and commercial insurance products.
               </p>
 
-              <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px' }}>
+              <div className="grid grid-cols-2 gap-4">
                 {[
                   { label: 'Founded', value: '2018' },
                   { label: 'Headquarters', value: 'Everett, MA' },
@@ -133,7 +133,7 @@ export default function About() {
               Three principles guide every client interaction, every policy recommendation, and every claims conversation.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(280px, 1fr))', gap: '24px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {PHILOSOPHY.map(({ icon, heading, body }) => (
               <div key={heading} className="card-beige" style={{ padding: '36px 32px' }}>
                 <div
@@ -161,7 +161,7 @@ export default function About() {
       {/* ── CALCULATOR ────────────────────────────────────────── */}
       <section aria-labelledby="calc-heading" className="section-pad" style={{ background: '#ffffff' }}>
         <div className="container">
-          <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '64px', alignItems: 'center' }}>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <h2 id="calc-heading" className="text-h2-md" style={{ marginBottom: '20px' }}>
                 How much life insurance do you need?
@@ -199,7 +199,7 @@ export default function About() {
               Our advisors bring decades of combined experience across personal lines, commercial, and specialty insurance markets.
             </p>
           </div>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '24px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-4 gap-6">
             {team.map(({ name, role, image }) => (
               <div key={name} className="card" style={{ overflow: 'hidden' }}>
                 <div style={{ aspectRatio: '4/5', overflow: 'hidden' }}>
@@ -231,14 +231,7 @@ export default function About() {
       {/* ── FUTUREFLOW PARTNERSHIP ─────────────────────────────── */}
       <section className="section-pad" style={{ background: '#ffffff' }}>
         <div className="container">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '64px',
-              alignItems: 'center',
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             {/* Left — content */}
             <div>
               <p
@@ -302,14 +295,7 @@ export default function About() {
                 <p style={{ color: 'rgba(255,255,255,0.7)', fontSize: '15px', lineHeight: '24px', marginBottom: '32px' }}>
                   The AI personal finance app that unifies your spending, savings, and insurance — powered by NXT Financial advisors.
                 </p>
-                <div
-                  style={{
-                    display: 'flex',
-                    justifyContent: 'center',
-                    gap: '32px',
-                    flexWrap: 'wrap',
-                  }}
-                >
+                <div className="flex justify-center gap-8 flex-wrap">
                   {[
                     { num: '$1,819', label: 'Avg Savings/yr' },
                     { num: '4.8★', label: 'App Rating' },

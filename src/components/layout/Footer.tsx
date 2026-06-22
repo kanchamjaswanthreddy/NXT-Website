@@ -31,16 +31,9 @@ export default function Footer() {
     <footer style={{ background: '#1c3f39', color: '#ffffff' }}>
       <div className="container">
         {/* Main footer grid */}
-        <div
-          style={{
-            display: 'grid',
-            gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))',
-            gap: '48px',
-            padding: '64px 0 48px',
-          }}
-        >
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-12 py-16">
           {/* Brand column */}
-          <div style={{ gridColumn: 'span 1' }}>
+          <div className="col-span-1">
             <Link
               to="/"
               aria-label="NXT Financial — Home"

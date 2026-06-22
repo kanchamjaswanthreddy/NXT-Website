@@ -43,7 +43,7 @@ export default function Referral() {
         style={{ background: '#1c3f39', minHeight: '360px', display: 'flex', alignItems: 'center', position: 'relative', overflow: 'hidden' }}
       >
         <div aria-hidden="true" style={{ position: 'absolute', inset: 0, backgroundImage: 'radial-gradient(circle at 70% 40%, rgba(44,91,84,0.5) 0%, transparent 65%)' }} />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '90px 48px' }}>
+        <div className="container relative z-10 px-6 py-16 md:px-12 md:py-24">
           <h1 id="referral-heading" className="text-hero" style={{ maxWidth: '560px', marginBottom: '20px' }}>
             Refer a friend. Earn a reward.
           </h1>
@@ -57,7 +57,7 @@ export default function Referral() {
       <section className="section-pad" style={{ background: '#ffffff' }}>
         <div className="container">
           <h2 className="text-h2-lg" style={{ textAlign: 'center', marginBottom: '48px' }}>How referrals work</h2>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: '32px', marginBottom: '64px' }}>
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-8 mb-16">
             {HOW_IT_WORKS.map(({ icon, step, heading, body }) => (
               <div key={step} className="card-beige" style={{ padding: '32px', textAlign: 'center' }}>
                 <div style={{ width: '52px', height: '52px', background: '#fff', borderRadius: '50%', display: 'flex', alignItems: 'center', justifyContent: 'center', margin: '0 auto 16px' }}>
@@ -88,7 +88,7 @@ export default function Referral() {
                 <h2 className="text-card-heading" style={{ fontSize: '22px', marginBottom: '8px', color: '#000' }}>Submit a Referral</h2>
                 <p className="text-body" style={{ color: '#666', marginBottom: '24px' }}>Fill in your info and your referral's details below.</p>
                 <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true) }}>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label htmlFor="yourName" className="text-body-sm" style={{ display: 'block', marginBottom: '6px', fontWeight: 500 }}>Your Name *</label>
                       <input id="yourName" name="yourName" type="text" required value={form.yourName} onChange={handleChange} placeholder="Your Name" style={inputStyle} onFocus={(e) => (e.currentTarget.style.borderColor = '#2c5b54')} onBlur={(e) => (e.currentTarget.style.borderColor = '#d0d5dd')} />
@@ -99,7 +99,7 @@ export default function Referral() {
                     </div>
                   </div>
                   <p className="text-body-sm" style={{ color: '#2c5b54', fontWeight: 600, marginBottom: '12px', textTransform: 'uppercase', letterSpacing: '0.5px' }}>Referral's Information</p>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label htmlFor="refName" className="text-body-sm" style={{ display: 'block', marginBottom: '6px', fontWeight: 500 }}>Their Name *</label>
                       <input id="refName" name="refName" type="text" required value={form.refName} onChange={handleChange} placeholder="Referral's Name" style={inputStyle} onFocus={(e) => (e.currentTarget.style.borderColor = '#2c5b54')} onBlur={(e) => (e.currentTarget.style.borderColor = '#d0d5dd')} />
@@ -109,7 +109,7 @@ export default function Referral() {
                       <input id="refEmail" name="refEmail" type="email" value={form.refEmail} onChange={handleChange} placeholder="referral@example.com" style={inputStyle} onFocus={(e) => (e.currentTarget.style.borderColor = '#2c5b54')} onBlur={(e) => (e.currentTarget.style.borderColor = '#d0d5dd')} />
                     </div>
                   </div>
-                  <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '16px', marginBottom: '16px' }}>
+                  <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
                     <div>
                       <label htmlFor="refPhone" className="text-body-sm" style={{ display: 'block', marginBottom: '6px', fontWeight: 500 }}>Their Phone</label>
                       <input id="refPhone" name="refPhone" type="tel" value={form.refPhone} onChange={handleChange} placeholder="(555) 000-0000" style={inputStyle} onFocus={(e) => (e.currentTarget.style.borderColor = '#2c5b54')} onBlur={(e) => (e.currentTarget.style.borderColor = '#d0d5dd')} />

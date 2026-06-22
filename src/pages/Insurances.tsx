@@ -40,14 +40,14 @@ export default function Insurances() {
           loading="eager"
           style={{ position: 'absolute', inset: 0, width: '100%', height: '100%', objectFit: 'cover', opacity: 0.25 }}
         />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '90px 48px' }}>
+        <div className="container relative z-10 px-6 py-12 md:py-[90px] md:px-12">
           <span
             className="text-body-sm"
             style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '1.5px', textTransform: 'uppercase', display: 'block', marginBottom: '16px' }}
           >
             Coverage Solutions
           </span>
-          <h1 id="ins-hero-heading" className="text-hero" style={{ maxWidth: '620px', marginBottom: '20px' }}>
+          <h1 id="ins-hero-heading" className="text-hero w-full max-w-[620px] mb-5">
             Comprehensive Coverage Categories
           </h1>
           <p className="text-body" style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '500px', fontSize: '18px', lineHeight: '28px' }}>
@@ -68,9 +68,9 @@ export default function Insurances() {
             style={{ background: isLight ? '#ffffff' : '#f7f6f2' }}
           >
             <div className="container">
-              <div style={{ display: 'grid', gridTemplateColumns: '280px 1fr', gap: '48px', alignItems: 'start' }}>
+              <div className="flex flex-col md:flex-row gap-12 items-start">
                 {/* Category info */}
-                <div style={{ position: 'sticky', top: '88px' }}>
+                <div className="md:w-[280px] shrink-0 md:sticky md:top-[88px] w-full">
                   <div style={{ borderRadius: '12px', overflow: 'hidden', marginBottom: '20px', aspectRatio: '4/3' }}>
                     <img
                       src={CATEGORY_HEROES[catIdx]}
@@ -103,7 +103,7 @@ export default function Insurances() {
                 </div>
 
                 {/* Product grid */}
-                <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(240px, 1fr))', gap: '20px' }}>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 w-full">
                   {catProducts.map(({ slug, title, shortDescription }) => (
                     <Link
                       key={slug}
@@ -165,7 +165,7 @@ export default function Insurances() {
           <p className="text-body" style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '480px', margin: '0 auto 36px', fontSize: '17px' }}>
             Our advisors will assess your risk profile and recommend the right combination of coverage — at no obligation.
           </p>
-          <div style={{ display: 'flex', gap: '16px', justifyContent: 'center', flexWrap: 'wrap' }}>
+          <div className="flex gap-4 justify-center flex-wrap">
             <Link to="/contact" className="btn btn-light">Speak with an Advisor</Link>
             <Link to="/carriers" className="btn btn-outline">Our Carrier Network</Link>
           </div>

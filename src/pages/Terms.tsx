@@ -10,11 +10,11 @@ export default function Terms() {
       />
       <section style={{ background: '#ffffff' }}>
       {/* Header */}
-      <div style={{ background: '#1c3f39', padding: '90px 0 60px' }}>
+      <div className="bg-[#1c3f39] py-16 md:py-24">
         <div className="container">
-          <span className="text-body-sm" style={{ color: 'rgba(255,255,255,0.7)', letterSpacing: '1.5px', textTransform: 'uppercase', display: 'block', marginBottom: '12px' }}>Legal</span>
-          <h1 className="text-hero" style={{ maxWidth: '560px' }}>Terms of Service</h1>
-          <p className="text-body" style={{ color: 'rgba(255,255,255,0.75)', marginTop: '12px' }}>Effective Date: January 1, 2025</p>
+          <span className="text-body-sm text-white/70 tracking-[1.5px] uppercase block mb-3">Legal</span>
+          <h1 className="text-hero max-w-[560px]">Terms of Service</h1>
+          <p className="text-body text-white/75 mt-3">Effective Date: January 1, 2025</p>
         </div>
       </div>
 

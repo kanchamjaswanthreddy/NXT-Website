@@ -115,7 +115,7 @@ export default function Home() {
             background: 'rgba(0,0,0,0.55)',
           }}
         />
-        <div className="container" style={{ position: 'relative', zIndex: 1, padding: '90px 48px' }}>
+        <div className="container px-6 py-16 md:px-12 md:py-24" style={{ position: 'relative', zIndex: 1 }}>
           <span
             className="text-body"
             style={{
@@ -129,12 +129,12 @@ export default function Home() {
           >
             Independent Insurance Brokerage
           </span>
-          <h1 id="hero-heading" className="text-hero" style={{ maxWidth: '680px', marginBottom: '24px' }}>
+          <h1 id="hero-heading" className="text-hero w-full max-w-[680px]" style={{ marginBottom: '24px' }}>
             Comprehensive insurance coverage for the modern era.
           </h1>
           <p
-            className="text-body"
-            style={{ color: 'rgba(255,255,255,0.85)', maxWidth: '520px', marginBottom: '40px', fontSize: '18px', lineHeight: '28px' }}
+            className="text-body w-full max-w-[520px]"
+            style={{ color: 'rgba(255,255,255,0.85)', marginBottom: '40px', fontSize: '18px', lineHeight: '28px' }}
           >
             NXT Financial partners with the world's leading carriers to protect what matters most — your family, your business, and your future.
           </p>
@@ -148,20 +148,14 @@ export default function Home() {
       {/* ── STAT BAR ───────────────────────────────────────────── */}
       <section aria-label="Key statistics" style={{ background: '#ffffff', borderBottom: '1px solid #d0d5dd' }}>
         <div className="container">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(4, 1fr)',
-              gap: '0',
-            }}
-          >
+          <div className="grid grid-cols-2 md:grid-cols-4 gap-0">
             {STATS.map(({ value, label }, i) => (
               <div
                 key={label}
+                className={`border-[#d0d5dd] ${i > 0 ? 'border-l' : ''} ${i === 2 ? 'max-md:border-l-0' : ''}`}
                 style={{
                   padding: '40px 24px',
                   textAlign: 'center',
-                  borderLeft: i > 0 ? '1px solid #d0d5dd' : 'none',
                 }}
               >
                 <p className="text-stat">{value}</p>
@@ -231,7 +225,7 @@ export default function Home() {
       {/* ── FEATURES ───────────────────────────────────────────── */}
       <section aria-labelledby="features-heading" className="section-pad" style={{ background: '#ffffff' }}>
         <div className="container">
-          <div style={{ maxWidth: '600px', marginBottom: '56px' }}>
+          <div className="w-full max-w-[600px]" style={{ marginBottom: '56px' }}>
             <h2 id="features-heading" className="text-h2-lg" style={{ marginBottom: '20px' }}>
               A complete portfolio of robust insurance products.
             </h2>
@@ -239,13 +233,7 @@ export default function Home() {
               From life insurance and health coverage to commercial liability and cyber protection, NXT Financial delivers comprehensive solutions across every category of risk.
             </p>
           </div>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(3, 1fr)',
-              gap: '24px',
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {FEATURES.map(({ icon, heading, body, href }) => (
               <div
                 key={heading}
@@ -292,14 +280,7 @@ export default function Home() {
       {/* ── WHY CHOOSE US ──────────────────────────────────────── */}
       <section aria-labelledby="why-heading" className="section-pad" style={{ background: '#f7f6f2' }}>
         <div className="container">
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: '1fr 1fr',
-              gap: '64px',
-              alignItems: 'center',
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
             <div>
               <span
                 className="text-body-sm"
@@ -358,17 +339,11 @@ export default function Home() {
             <h2 id="how-heading" className="text-h2-lg" style={{ marginBottom: '16px' }}>
               Getting covered is simple.
             </h2>
-            <p className="text-body" style={{ color: '#555', maxWidth: '500px', margin: '0 auto', fontSize: '18px' }}>
+            <p className="text-body w-full max-w-[500px]" style={{ color: '#555', margin: '0 auto', fontSize: '18px' }}>
               Our streamlined process gets you from first conversation to fully covered in as little as one day.
             </p>
           </div>
-          <div
-            style={{
-              display: 'grid',
-              gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))',
-              gap: '32px',
-            }}
-          >
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {STEPS.map(({ num, heading, body }) => (
               <div key={num} style={{ textAlign: 'center' }}>
                 <div
@@ -420,8 +395,8 @@ export default function Home() {
             Ready to protect what matters?
           </h2>
           <p
-            className="text-body"
-            style={{ color: 'rgba(255,255,255,0.8)', maxWidth: '480px', margin: '0 auto 40px', fontSize: '18px', lineHeight: '28px' }}
+            className="text-body w-full max-w-[480px]"
+            style={{ color: 'rgba(255,255,255,0.8)', margin: '0 auto 40px', fontSize: '18px', lineHeight: '28px' }}
           >
             Speak with an NXT Financial advisor today — no obligation, no pressure, just straightforward insurance guidance.
           </p>
