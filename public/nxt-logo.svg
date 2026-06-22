@@ -1,0 +1,43 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 230 54" width="230" height="54">
+  <!-- Sweeping arc / wing mark — 3 diagonal stripes -->
+
+  <!-- Outer navy-blue arc -->
+  <path d="M6,50 Q5,26 20,6 L27,8 Q13,27 13,50 Z" fill="#1b3c8f"/>
+  <!-- Middle gold arc -->
+  <path d="M15,50 Q14,27 27,8 L32,10 Q21,29 22,50 Z" fill="#c8a020"/>
+  <!-- Inner silver arc -->
+  <path d="M23,50 Q22,29 32,10 L35,12 Q28,31 30,50 Z" fill="#8a9db4"/>
+
+  <!-- NXT — bold navy -->
+  <text
+    x="44"
+    y="36"
+    font-family="'Arial Black', 'Franklin Gothic Heavy', Arial, sans-serif"
+    font-weight="900"
+    font-size="28"
+    fill="#1b3c8f"
+    letter-spacing="-0.5"
+  >NXT</text>
+
+  <!-- FINANCIAL GROUP — gold, tracked -->
+  <text
+    x="45"
+    y="49"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="700"
+    font-size="9.5"
+    fill="#c8a020"
+    letter-spacing="1.8"
+  >FINANCIAL GROUP</text>
+
+  <!-- Tagline — very small grey -->
+  <text
+    x="45"
+    y="56"
+    font-family="Arial, Helvetica, sans-serif"
+    font-weight="400"
+    font-size="7"
+    fill="#6b7b8d"
+    letter-spacing="0.4"
+  >Life · Health · Property · Casualty</text>
+</svg>
