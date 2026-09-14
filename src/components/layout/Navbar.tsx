@@ -88,7 +88,21 @@ export default function Navbar() {
           </ul>
 
           {/* CTA Button */}
-          <div className="nav-desktop-cta" style={{ display: 'flex', alignItems: 'center', gap: '12px' }}>
+          <div className="nav-desktop-cta" style={{ display: 'flex', alignItems: 'center', gap: '16px' }}>
+            
+            {/* Added CRM Login Button */}
+            <a 
+              href="https://portal.nxtfinancialgroup.com/auth/login"
+              style={{
+                color: textColor,
+                textDecoration: 'none',
+                fontWeight: '600',
+                fontSize: '15px'
+              }}
+            >
+              Agent Login
+            </a>
+
             <button
               type="button"
               onClick={() => navigate('/contact')}
@@ -150,11 +164,18 @@ export default function Navbar() {
                   </NavLink>
                 </li>
               ))}
-              <li style={{ marginTop: '16px' }}>
+              <li style={{ marginTop: '16px', display: 'flex', gap: '8px' }}>
+                <a
+                  href="https://portal.nxtfinancialgroup.com/auth/login"
+                  className="btn"
+                  style={{ width: '50%', justifyContent: 'center', background: '#f0f0f0', color: '#000', textDecoration: 'none' }}
+                >
+                  Agent Login
+                </a>
                 <button
                   type="button"
                   className="btn btn-teal"
-                  style={{ width: '100%', justifyContent: 'center' }}
+                  style={{ width: '50%', justifyContent: 'center' }}
                   onClick={() => { navigate('/contact'); setMenuOpen(false) }}
                 >
                   Get a Quote
