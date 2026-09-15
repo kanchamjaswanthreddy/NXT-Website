@@ -92,7 +92,7 @@ export default function Navbar() {
             
             {/* Added CRM Login Button */}
             <a 
-              href="https://portal.nxtfinancialgroup.com/auth/login"
+              href="/auth/login"
               style={{
                 color: textColor,
                 textDecoration: 'none',
@@ -166,7 +166,7 @@ export default function Navbar() {
               ))}
               <li style={{ marginTop: '16px', display: 'flex', gap: '8px' }}>
                 <a
-                  href="https://portal.nxtfinancialgroup.com/auth/login"
+                  href="/auth/login"
                   className="btn"
                   style={{ width: '50%', justifyContent: 'center', background: '#f0f0f0', color: '#000', textDecoration: 'none' }}
                 >
