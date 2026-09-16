@@ -37,6 +37,7 @@ export default function Nav() {
           </ul>
           <div className="hidden items-center gap-5 lg:flex">
             <a href="tel:8572053333" className="mono flex items-center gap-2 text-sm text-ink hover:text-navy"><Phone size={15} className="text-gold" /> 857-205-3333</a>
+            <a href="https://nxt-crm-beta.vercel.app/auth/login" target="_blank" rel="noopener noreferrer" className="btn btn-outline btn-sm">Agent Login</a>
             <Link href="/contact" className="btn btn-primary btn-sm">Book a consultation</Link>
           </div>
           <button type="button" onClick={() => setOpen((v) => !v)} aria-expanded={open} aria-controls="mobile-nav" aria-label={open ? 'Close menu' : 'Open menu'} className="flex h-11 w-11 items-center justify-center rounded-full text-navy lg:hidden">{open ? <X size={24} /> : <Menu size={24} />}</button>
@@ -49,7 +50,7 @@ export default function Nav() {
               {[{ href: '/', label: 'Home' }, ...LINKS, { href: '/partner', label: 'For advisors' }, { href: '/referral', label: 'Refer a friend' }].map(({ href, label }) => (
                 <Link key={href} href={href} onClick={() => setOpen(false)} className="hairline py-4 font-display text-3xl font-semibold text-navy">{label}</Link>
               ))}
-              <div className="mt-6 flex flex-col gap-3"><Link href="/contact" onClick={() => setOpen(false)} className="btn btn-primary">Book a consultation</Link><a href="tel:8572053333" className="btn btn-outline"><Phone size={16} /> 857-205-3333</a></div>
+              <div className="mt-6 flex flex-col gap-3"><Link href="/contact" onClick={() => setOpen(false)} className="btn btn-primary">Book a consultation</Link><a href="https://nxt-crm-beta.vercel.app/auth/login" target="_blank" rel="noopener noreferrer" onClick={() => setOpen(false)} className="btn btn-outline">Agent Login</a><a href="tel:8572053333" className="btn btn-outline"><Phone size={16} /> 857-205-3333</a></div>
             </div>
           </motion.div>
         )}
