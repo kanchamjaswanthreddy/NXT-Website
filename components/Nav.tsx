@@ -27,7 +27,7 @@ export default function Nav() {
       <div className="container">
         <nav aria-label="Main" className="flex h-[84px] items-center justify-between gap-6">
           <Link href="/" onClick={() => setOpen(false)} aria-label="NXT Financial Group home" className="shrink-0">
-            <Image src="/logo.png" alt="NXT Financial Group" width={170} height={75} priority className="h-10 w-auto md:h-11" />
+            <Image src="/logo.png" alt="NXT Financial Group" width={200} height={88} priority className="h-12 w-auto md:h-14" />
           </Link>
           <ul className="hidden items-center gap-8 lg:flex">
             {LINKS.map(({ href, label }) => {
