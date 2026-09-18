@@ -44,7 +44,7 @@ export default function AboutPage() {
       <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight/90 to-navy/60" />
       <div className="container relative py-28 md:py-36">
         <Reveal className="mx-auto max-w-3xl text-center">
-          <Image src="/images/futureflow.png" alt="FutureFlow" width={220} height={147} className="mx-auto mb-8 h-16 w-auto rounded-xl bg-white/10 p-3 backdrop-blur-sm" />
+          <Image src="/images/futureflow.png" alt="FutureFlow" width={220} height={147} className="mx-auto mb-8 h-24 w-auto rounded-2xl bg-white/10 p-4 backdrop-blur-sm" />
           <p className="label-sm mb-5">From the NXT family</p>
           <h2 className="display">AI personal finance with an advisor behind it.</h2>
           <p className="lead mx-auto mt-6 max-w-2xl text-platinum">FutureFlow tracks your spending, plans your retirement and flags coverage gaps in real time — with an NXT advisor one tap away whenever you need a human.</p>
@@ -64,7 +64,7 @@ export default function AboutPage() {
           </div>
         </Reveal>
         <Reveal delay={0.25} className="mt-10 text-center">
-          <a href="https://futureflow.app" target="_blank" rel="noopener noreferrer" className="btn btn-cta">Explore FutureFlow</a>
+          <a href="https://joinfutureflow.com" target="_blank" rel="noopener noreferrer" className="btn btn-cta">Explore FutureFlow</a>
         </Reveal>
       </div>
     </section>
