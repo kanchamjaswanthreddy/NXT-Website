@@ -11,7 +11,7 @@ export default function Footer() {
       <div className="container py-16 md:py-20">
         <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr] md:gap-16">
           <div>
-            <Link href="/" aria-label="NXT Financial Group" className="inline-block rounded-lg bg-white px-4 py-2"><Image src="/logo.png" alt="NXT Financial Group" width={190} height={84} className="h-12 w-auto" /></Link>
+            <Link href="/" aria-label="NXT Financial Group" className="inline-block rounded-xl bg-white px-5 py-3"><Image src="/logo.png" alt="NXT Financial Group" width={240} height={106} className="h-16 w-auto" /></Link>
             <p className="mt-6 max-w-[360px] text-[15px] leading-relaxed">Independent retirement and protection planning. Annuities, life insurance, care planning, Medicare and disability income from A-rated carriers, in all 50 states.</p>
             <ul className="mt-7 space-y-3 text-[15px]">
               <li><a href="tel:8572053333" className="flex items-center gap-3 text-platinum hover:text-white"><Phone size={16} className="text-sunrise" />857-205-3333</a></li>
