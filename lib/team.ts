@@ -14,19 +14,19 @@ export const team: TeamMember[] = [
   { name: 'Alecia Barnette', role: 'Senior Care Planning Expert Partner', image: '/images/team/alecia-barnette.png', group: 'leadership' },
 
   // Team
-  { name: 'Jaswanth Reddy', role: 'Chief Digital & AI Officer', image: '/images/team/jaswanth-reddy.jpg', group: 'team' },
-  { name: 'Prabhakar Elavala', role: 'Senior Technology Partner', image: '/images/team/prabhakar-elavala.png', group: 'team' },
-  { name: 'Andrew Barnett', role: 'Head of Marketing', image: '/images/team/andrew-barnett.png', group: 'team' },
-  { name: 'Uday Chaudhary', role: 'Chief Strategy Officer', image: '/images/team/uday-chaudhary.png', group: 'team' },
-  { name: 'Minakshi Rajbanshi', role: 'Chief Technology Officer', image: '/images/team/minakshi-rajbanshi.png', group: 'team' },
+  { name: 'Jaswanth Reddy', role: 'Chief Technology Officer', image: '/images/team/jaswanth-reddy.png', group: 'team' },
+  { name: 'Prabhakar Elavala', role: 'Chief Digital & AI Officer', image: '/images/team/prabhakar-elavala.jpg', group: 'team' },
+  { name: 'Andrew Barnett', role: 'Senior Technology Partner', image: '/images/team/andrew-barnett.png', group: 'team' },
+  { name: 'Minakshi Rajbanshi', role: 'Chief Strategy Officer', image: '/images/team/minakshi-rajbanshi.png', group: 'team' },
   { name: 'Rigoberto Ayala Rodas', role: 'Director of Business Development', image: '/images/team/rigoberto-ayala.png', group: 'team' },
+  { name: 'Uday Chaudhary', role: 'Head of Marketing', image: '/images/team/uday-chaudhary.png', group: 'team' },
   { name: 'Gita Thakur', role: 'Sales Account Manager', image: '/images/gita-thakur.jpg', group: 'team' },
 
   // Advisors
   { name: 'Matt Earhart', role: 'Strategic Industry Advisor', image: '/images/team/matt-earhart.png', group: 'advisors' },
   { name: 'Ashish Sood', role: 'Technology & AI Advisor', image: '/images/team/ashish-sood.png', group: 'advisors' },
-  { name: 'Sony Pradhan', role: 'Client Experience Advisor', image: '/images/team/sony-pradhan.png', group: 'advisors' },
   { name: 'Nikhil Bhatt', role: 'Strategic Compliance Advisor', image: '/images/team/nikhil-bhatt.png', group: 'advisors' },
+  { name: 'Sony Pradhan', role: 'Client Experience Advisor', image: '/images/team/sony-pradhan.png', group: 'advisors' },
 ]
 
 export const leadership = team.filter((m) => m.group === 'leadership')
