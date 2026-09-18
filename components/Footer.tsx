@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Phone, Mail, MapPin } from 'lucide-react'
 import { solutions } from '@/lib/solutions'
 
-const COMPANY = [['/about', 'About NXT'], ['/carriers', 'Carrier partners'], ['/resources', 'Planning tools'], ['/insights', 'Insights'], ['/partner', 'For advisors'], ['/referral', 'Refer a friend'], ['/contact', 'Contact']]
+const COMPANY = [['/about', 'About NXT'], ['/carriers', 'Carrier partners'], ['/calculators', 'Calculators'], ['/resources', 'Planning tools'], ['/insights', 'Insights'], ['/careers', 'Careers'], ['/partner', 'For advisors'], ['/referral', 'Refer a friend'], ['/contact', 'Contact']]
 
 export default function Footer() {
   return (
@@ -16,7 +16,7 @@ export default function Footer() {
             <ul className="mt-7 space-y-3 text-[15px]">
               <li><a href="tel:8572053333" className="flex items-center gap-3 text-platinum hover:text-white"><Phone size={16} className="text-sunrise" />857-205-3333</a></li>
               <li><a href="mailto:info@nxtfinancialgroup.com" className="flex items-center gap-3 text-platinum hover:text-white"><Mail size={16} className="text-sunrise" />info@nxtfinancialgroup.com</a></li>
-              <li className="flex items-center gap-3 text-platinum"><MapPin size={16} className="text-sunrise" />Everett, Massachusetts</li>
+              <li className="flex items-center gap-3 text-platinum"><MapPin size={16} className="text-sunrise" />75 Pleasant Street, Unit 207, Malden, MA 02148</li>
             </ul>
           </div>
           <nav aria-label="Solutions"><h3 className="mb-5 text-sm font-semibold text-sunrise">Solutions</h3><ul className="space-y-3 text-[15px]">{solutions.map((s) => <li key={s.slug}><Link href={`/solutions/${s.slug}`} className="text-platinum hover:text-white">{s.title}</Link></li>)}</ul></nav>

@@ -6,6 +6,7 @@ import SolutionCards from '@/components/SolutionCards'
 import CarrierWall from '@/components/CarrierWall'
 import CarrierTicker from '@/components/CarrierTicker'
 import Faq from '@/components/Faq'
+import Testimonials from '@/components/Testimonials'
 import Newsletter from '@/components/Newsletter'
 import { Reveal, Stagger, Item, Counter } from '@/components/motion'
 import { posts } from '@/lib/insights'
@@ -70,6 +71,9 @@ export default function Home() {
           <Reveal delay={0.1} className="self-end space-y-6"><p className="lead">When the recommendation can come from any of forty carriers, the conversation stops being about the product and starts being about you: your income gap, your health, your family, your timeline.</p><Link href="/about" className="btn btn-ghost">About NXT <ArrowUpRight size={16} /></Link></Reveal>
         </div>
       </section>
+
+      {/* TESTIMONIALS */}
+      <Testimonials />
 
       {/* FAQ */}
       <section className="section">
