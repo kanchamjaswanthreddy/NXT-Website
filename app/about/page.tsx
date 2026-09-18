@@ -13,8 +13,8 @@ function TeamGrid({ members, cols = 'md:grid-cols-4' }: { members: typeof leader
     <Stagger as="ul" className={`grid grid-cols-2 gap-6 ${cols}`}>
       {members.map(({ name, role, image }) => (
         <Item as="li" key={name}>
-          <div className="relative mb-4 aspect-[4/5] overflow-hidden rounded-[20px] bg-stone">
-            <Image src={image} alt={name} fill sizes="(min-width:768px) 25vw, 50vw" className="object-cover object-top" style={{ filter: 'saturate(0.85)' }} />
+          <div className="relative mb-4 aspect-[3/4] overflow-hidden rounded-[20px] bg-stone">
+            <Image src={image} alt={name} fill sizes="(min-width:768px) 25vw, 50vw" className="object-cover object-[center_20%]" />
           </div>
           <h3 className="h3">{name}</h3>
           <p className="text-sm text-ink-soft">{role}</p>
