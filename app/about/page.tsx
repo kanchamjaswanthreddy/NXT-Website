@@ -39,6 +39,34 @@ export default function AboutPage() {
     {/* Advisors */}
     <section className="section"><div className="container"><Reveal className="mb-12 max-w-[600px]"><p className="label-sm mb-5">Advisors</p><h2 className="display">Seasoned advisors across insurance &amp; technology.</h2></Reveal><TeamGrid members={advisors} cols="md:grid-cols-4" /></div></section>
 
-    <section className="relative isolate overflow-hidden bg-midnight on-dark"><Image src="/images/team-meeting.png" alt="" fill sizes="100vw" className="object-cover opacity-25" style={{ filter: 'saturate(0.5)' }} /><div className="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/85 to-midnight/40" /><div className="container relative grid grid-cols-1 gap-10 py-24 md:grid-cols-2 md:items-center"><Reveal><p className="label-sm mb-5">From the NXT family</p><h2 className="display">FutureFlow: AI personal finance with an advisor behind it.</h2><p className="lead mt-5">NXT is the planning partner inside FutureFlow, an app that tracks spending, plans retirement and flags coverage gaps, with an NXT advisor one tap away.</p></Reveal><Reveal delay={0.1} className="glass p-8"><Image src="/images/futureflow.png" alt="FutureFlow" width={220} height={147} className="mb-6 h-14 w-auto rounded-lg bg-white p-2" /><dl className="grid grid-cols-3 gap-4 border-t border-white/15 pt-6">{[['Spending', 'Tracked live'], ['Retirement', 'Gap analysis'], ['Advisors', 'One tap away']].map(([t, d]) => <div key={t}><dt className="text-sm font-semibold text-white">{t}</dt><dd className="text-sm text-silver">{d}</dd></div>)}</dl></Reveal></div></section>
+    <section className="relative isolate overflow-hidden bg-midnight on-dark">
+      <Image src="/images/team-meeting.png" alt="" fill sizes="100vw" className="object-cover opacity-20" style={{ filter: 'saturate(0.4)' }} />
+      <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight/90 to-navy/60" />
+      <div className="container relative py-28 md:py-36">
+        <Reveal className="mx-auto max-w-3xl text-center">
+          <Image src="/images/futureflow.png" alt="FutureFlow" width={220} height={147} className="mx-auto mb-8 h-16 w-auto rounded-xl bg-white/10 p-3 backdrop-blur-sm" />
+          <p className="label-sm mb-5">From the NXT family</p>
+          <h2 className="display">AI personal finance with an advisor behind it.</h2>
+          <p className="lead mx-auto mt-6 max-w-2xl text-platinum">FutureFlow tracks your spending, plans your retirement and flags coverage gaps in real time — with an NXT advisor one tap away whenever you need a human.</p>
+        </Reveal>
+        <Reveal delay={0.15}>
+          <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-3">
+            {[
+              ['Spending intelligence', 'Every transaction categorized. Patterns surfaced. Blind spots flagged before they become problems.'],
+              ['Retirement gap analysis', 'See exactly how much guaranteed income you have, how much you need, and what closes the gap.'],
+              ['Advisor on demand', 'AI handles the day-to-day. A licensed NXT advisor steps in when the stakes are high.'],
+            ].map(([t, d]) => (
+              <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                <h3 className="font-display text-lg font-semibold text-white">{t}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-silver">{d}</p>
+              </div>
+            ))}
+          </div>
+        </Reveal>
+        <Reveal delay={0.25} className="mt-10 text-center">
+          <a href="https://futureflow.app" target="_blank" rel="noopener noreferrer" className="btn btn-cta">Explore FutureFlow</a>
+        </Reveal>
+      </div>
+    </section>
   </>)
 }
