@@ -43,7 +43,6 @@ const logoMap: Record<string, string> = {
   'john-hancock': '/logos/john-hancock.svg',
   'kaiser': '/logos/kaiser.png',
   'kansas-city-life': '/logos/kansas-city-life.png',
-  'lafayette': '/logos/lafayette.svg',
   'lincoln': '/logos/lincoln.png',
   'massmutual': '/logos/massmutual.png',
   'medicare-supplement': '/logos/medicare-supplement.png',
@@ -76,7 +75,7 @@ const logoMap: Record<string, string> = {
 }
 
 /** Slugs whose logo SVGs are white-on-transparent — need CSS invert on light backgrounds */
-export const whiteLogos = new Set(['athene', 'brighthouse', 'lafayette', 'oneamerica', 'protective'])
+export const whiteLogos = new Set(['athene', 'brighthouse', 'oneamerica', 'protective'])
 
 const c = (slug: string, name: string, rating?: string): Carrier => ({ slug, name, rating, logo: logoMap[slug] })
 
@@ -109,7 +108,6 @@ export const carrierGroups: CarrierGroup[] = [
     c('nassau', 'Nassau Life', 'B++'),
     c('aspida', 'Aspida', 'A-'),
     c('western-southern', 'Western-Southern', 'A+'),
-    c('lafayette', 'Lafayette Life', 'A+'),
     c('integrity', 'Integrity Life', 'A+'),
     c('augustar', 'AuguStar Financial', 'A'),
     c('prudential', 'Prudential', 'A+'),
