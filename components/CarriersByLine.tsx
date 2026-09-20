@@ -4,7 +4,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowUpRight } from 'lucide-react'
 import { AnimatePresence, motion } from 'framer-motion'
-import { carrierGroups, stateNames } from '@/lib/carriers'
+import { carrierGroups, stateNames, whiteLogos } from '@/lib/carriers'
 import UsaMap from './UsaMap'
 
 export default function CarriersByLine() {
@@ -35,7 +35,7 @@ export default function CarriersByLine() {
                   <motion.ul layout className="grid grid-cols-3 gap-x-8 gap-y-10 sm:grid-cols-4 lg:grid-cols-5">
                     {list.map((c) => (
                       <motion.li layout key={c.slug} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex items-center justify-center px-2 py-4">
-                        {c.logo ? <Image src={c.logo} alt={c.name} width={240} height={80} className="h-auto w-full max-w-[180px] object-contain" unoptimized /> : <span className="wordmark text-lg leading-tight text-navy">{c.name}</span>}
+                        {c.logo ? <Image src={c.logo} alt={c.name} width={240} height={80} className={`h-auto w-full max-w-[180px] object-contain${whiteLogos.has(c.slug) ? ' invert' : ''}`} unoptimized /> : <span className="wordmark text-lg leading-tight text-navy">{c.name}</span>}
                       </motion.li>
                     ))}
                   </motion.ul>

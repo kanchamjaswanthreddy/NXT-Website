@@ -75,6 +75,9 @@ const logoMap: Record<string, string> = {
   'western-southern': '/logos/western-southern.svg',
 }
 
+/** Slugs whose logo SVGs are white-on-transparent — need CSS invert on light backgrounds */
+export const whiteLogos = new Set(['athene', 'brighthouse', 'lafayette', 'oneamerica', 'protective'])
+
 const c = (slug: string, name: string, rating?: string): Carrier => ({ slug, name, rating, logo: logoMap[slug] })
 
 export const carrierGroups: CarrierGroup[] = [
