@@ -313,7 +313,7 @@ export default function Nav() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? 'Close menu' : 'Open menu'}
-            className="flex h-11 w-11 items-center justify-center rounded-full text-navy lg:hidden"
+            className="relative z-[60] flex h-12 w-12 items-center justify-center rounded-full text-navy active:bg-platinum/60 lg:hidden"
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>
