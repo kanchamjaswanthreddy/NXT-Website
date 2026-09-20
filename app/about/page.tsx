@@ -84,7 +84,7 @@ export default function AboutPage() {
     <section id="why-nxt" className="section bg-stone"><div className="container"><Reveal className="mb-12 max-w-[640px]"><p className="label-sm mb-5">How we sound</p><h2 className="display">Four words we hold ourselves to.</h2></Reveal><Stagger as="ul" className="grid grid-cols-1 gap-5 md:grid-cols-2">{PRINCIPLES.map(([t, b]) => <Item as="li" key={t} className="card rounded-[24px] p-8"><h3 className="display-sm">{t}</h3><p className="mt-3 text-[15px] text-ink-soft">{b}</p></Item>)}</Stagger></div></section>
 
     {/* Leadership */}
-    <section id="team" className="section"><div className="container"><Reveal className="mb-12 max-w-[600px]"><p className="label-sm mb-5">Leadership</p><h2 className="display">The people leading NXT Financial.</h2></Reveal><TeamGrid members={leadership} cols="md:grid-cols-5" /></div></section>
+    <section id="team" className="section"><div className="container"><Reveal className="mb-12 max-w-[600px]"><p className="label-sm mb-5">Leadership</p><h2 className="display">The people leading NXT Financial.</h2></Reveal><TeamGrid members={leadership} cols="md:grid-cols-4" /></div></section>
 
     {/* Core Team */}
     <section className="section bg-stone"><div className="container"><Reveal className="mb-12 max-w-[600px]"><p className="label-sm mb-5">Core team</p><h2 className="display">The people who make it happen.</h2></Reveal><TeamGrid members={coreTeam} cols="md:grid-cols-4" /></div></section>
