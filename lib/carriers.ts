@@ -48,7 +48,6 @@ const logoMap: Record<string, string> = {
   'medicare-supplement': '/logos/medicare-supplement.png',
   'midland-national': '/logos/midland-national.png',
   'molina': '/logos/molina.png',
-  'mutual-of-omaha': '/logos/mutual-of-omaha.jpg',
   'nassau': '/logos/nassau.png',
   'national-guardian': '/logos/national-guardian.png',
   'nationwide': '/logos/nationwide.png',
