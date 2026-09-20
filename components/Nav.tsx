@@ -167,6 +167,7 @@ export default function Nav() {
   }
 
   return (
+    <>
     <header
       className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
         scrolled || open
@@ -320,56 +321,58 @@ export default function Nav() {
         </nav>
       </div>
 
-      {open && (
-        <div
-          id="mobile-nav"
-          className="fixed inset-x-0 bottom-0 top-[84px] z-[999] overflow-y-auto bg-white lg:hidden"
-        >
-          <div className="container flex flex-col py-6">
-            {MOBILE_SECTIONS.map((section, sectionIdx) => (
-              <div key={sectionIdx} className="flex flex-col">
-                {section.heading && (
-                  <p className="mb-1 mt-6 text-xs font-semibold uppercase tracking-widest text-ink/40">
-                    {section.heading}
-                  </p>
-                )}
-                {section.links.map(({ href, label }) => (
-                  <Link
-                    key={href}
-                    href={href}
-                    onClick={() => setOpen(false)}
-                    className="block border-t border-platinum py-4 font-display text-2xl font-semibold text-navy"
-                  >
-                    {label}
-                  </Link>
-                ))}
-              </div>
-            ))}
+    </header>
 
-            <div className="mt-8 flex flex-col gap-3">
-              <Link
-                href="/contact"
-                onClick={() => setOpen(false)}
-                className="btn btn-primary"
-              >
-                Book a consultation
-              </Link>
-              <a
-                href="https://nxt-crm-beta.vercel.app/auth/login"
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={() => setOpen(false)}
-                className="btn btn-outline"
-              >
-                Agent Login
-              </a>
-              <a href="tel:8572053333" className="btn btn-outline">
-                <Phone size={16} /> 857-205-3333
-              </a>
+    {open && (
+      <div
+        id="mobile-nav"
+        className="fixed inset-x-0 bottom-0 top-[84px] z-[999] overflow-y-auto bg-white lg:hidden"
+      >
+        <div className="container flex flex-col py-6">
+          {MOBILE_SECTIONS.map((section, sectionIdx) => (
+            <div key={sectionIdx} className="flex flex-col">
+              {section.heading && (
+                <p className="mb-1 mt-6 text-xs font-semibold uppercase tracking-widest text-ink/40">
+                  {section.heading}
+                </p>
+              )}
+              {section.links.map(({ href, label }) => (
+                <Link
+                  key={href}
+                  href={href}
+                  onClick={() => setOpen(false)}
+                  className="block border-t border-platinum py-4 font-display text-2xl font-semibold text-navy"
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
+          ))}
+
+          <div className="mt-8 flex flex-col gap-3">
+            <Link
+              href="/contact"
+              onClick={() => setOpen(false)}
+              className="btn btn-primary"
+            >
+              Book a consultation
+            </Link>
+            <a
+              href="https://nxt-crm-beta.vercel.app/auth/login"
+              target="_blank"
+              rel="noopener noreferrer"
+              onClick={() => setOpen(false)}
+              className="btn btn-outline"
+            >
+              Agent Login
+            </a>
+            <a href="tel:8572053333" className="btn btn-outline">
+              <Phone size={16} /> 857-205-3333
+            </a>
           </div>
         </div>
-      )}
-    </header>
+      </div>
+    )}
+    </>
   )
 }
