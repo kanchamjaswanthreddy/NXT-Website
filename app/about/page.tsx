@@ -1,10 +1,11 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import { Reveal, Stagger, Item } from '@/components/motion'
 import { leadership, coreTeam, advisors } from '@/lib/team'
+import { getAgentsByState } from '@/lib/agents'
 export const metadata: Metadata = { title: 'About', description: 'NXT Financial Group is an independent retirement and protection planning agency founded in Malden, Massachusetts, serving clients in all 50 states.' }
 const PRINCIPLES = [['Earned', 'Track records, not promises. Specifics over generalities. We speak from what we have placed, not what we hope to.'], ['Forward', 'Clear paths and measurable next steps. Every plan we build has a date on it.'], ['Precise', 'Exact rates, exact riders, exact carriers. Approximations and "up to" are not part of our vocabulary.'], ['Elevated', 'Professional, aspirational and grounded in financial literacy. Never salesy, never casual with your money.']]
 
@@ -24,6 +25,58 @@ function TeamGrid({ members, cols = 'md:grid-cols-4' }: { members: typeof leader
   )
 }
 
+function AgentsByState() {
+  const byState = getAgentsByState()
+  return (
+    <section id="advisors-by-state" className="section bg-stone">
+      <div className="container">
+        <Reveal className="mb-14 max-w-[700px]">
+          <p className="label-sm mb-5">Meet our trusted advisors</p>
+          <h2 className="display">Local advisors, nationwide coverage.</h2>
+          <p className="lead mt-5 text-ink-soft">Our advisors are spread across the country, ready to help you plan for retirement in your community.</p>
+        </Reveal>
+        {Object.entries(byState).map(([state, stateAgents]) => (
+          <Reveal key={state} className="mb-12 last:mb-0">
+            <div className="mb-6 flex items-center gap-3">
+              <MapPin size={20} className="text-gold" />
+              <h3 className="font-display text-2xl font-semibold text-navy">{state}</h3>
+              <span className="rounded-full bg-navy/10 px-3 py-0.5 text-xs font-medium text-navy">{stateAgents.length} {stateAgents.length === 1 ? 'advisor' : 'advisors'}</span>
+            </div>
+            <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-3">
+              {stateAgents.map((agent) => (
+                <div key={agent.name} className="card flex gap-4 rounded-[20px] p-5">
+                  {agent.image ? (
+                    <div className="relative h-16 w-16 shrink-0 overflow-hidden rounded-full bg-platinum">
+                      <Image src={agent.image} alt={agent.name} fill sizes="64px" className="object-cover" />
+                    </div>
+                  ) : (
+                    <div className="flex h-16 w-16 shrink-0 items-center justify-center rounded-full bg-navy font-display text-lg font-semibold text-white">
+                      {agent.name.split(' ').map(n => n[0]).join('').slice(0, 2)}
+                    </div>
+                  )}
+                  <div className="min-w-0 flex-1">
+                    <h4 className="font-display text-[15px] font-semibold text-navy">{agent.name}</h4>
+                    <p className="text-xs text-gold">{agent.rank}</p>
+                    <p className="mt-0.5 text-xs text-ink-soft">{agent.city}, {agent.state}</p>
+                    <div className="mt-2 flex flex-col gap-1">
+                      <a href={`tel:${agent.phone.replace(/\D/g, '')}`} className="flex items-center gap-1.5 text-xs text-ink hover:text-navy">
+                        <Phone size={11} className="text-gold" />{agent.phone}
+                      </a>
+                      <a href={`mailto:${agent.email}`} className="flex items-center gap-1.5 text-xs text-ink hover:text-navy truncate">
+                        <Mail size={11} className="text-gold" />{agent.email}
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+        ))}
+      </div>
+    </section>
+  )
+}
+
 export default function AboutPage() {
   return (<>
     <PageHero eyebrow="About NXT" title="Specialists in the five decisions that shape retirement." intro="Founded in Malden, Massachusetts. Independent, licensed in all 50 states, and deliberately narrow in what we do so we can be excellent at it." image="/images/advisors.png" imageAlt="NXT advisors in a planning meeting"><Link href="/contact" className="btn btn-primary">Work with us <ArrowRight size={16} /></Link></PageHero>
@@ -38,6 +91,9 @@ export default function AboutPage() {
 
     {/* Advisors */}
     <section className="section"><div className="container"><Reveal className="mb-12 max-w-[600px]"><p className="label-sm mb-5">Advisors</p><h2 className="display">Seasoned advisors across insurance &amp; technology.</h2></Reveal><TeamGrid members={advisors} cols="md:grid-cols-4" /></div></section>
+
+    {/* Advisors by State */}
+    <AgentsByState />
 
     <section className="relative isolate overflow-hidden bg-midnight on-dark">
       <Image src="/images/team-meeting.png" alt="" fill sizes="100vw" className="object-cover opacity-20" style={{ filter: 'saturate(0.4)' }} />
