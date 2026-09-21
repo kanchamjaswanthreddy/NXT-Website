@@ -64,22 +64,16 @@ const TOP_REASONS = [
 ] as const
 
 const POSITIONS = [
-  { title: 'Financial Associate', location: 'Malden, MA', type: 'Full-time' },
-  {
-    title: 'Financial Associate',
-    location: 'Remote — All States',
-    type: 'Full-time',
-  },
-  {
-    title: 'Senior Financial Associate',
-    location: 'Malden, MA',
-    type: 'Full-time',
-  },
-  {
-    title: 'Financial Director',
-    location: 'Remote — All States',
-    type: 'Full-time',
-  },
+  { title: 'Financial Associate', location: 'Remote — All States', type: 'Full-time', dept: 'Field Sales' },
+  { title: 'Senior Financial Associate', location: 'Malden, MA / Remote', type: 'Full-time', dept: 'Field Sales' },
+  { title: 'Financial Director', location: 'Remote — All States', type: 'Full-time', dept: 'Field Leadership' },
+  { title: 'Senior Financial Director', location: 'Remote — All States', type: 'Full-time', dept: 'Field Leadership' },
+  { title: 'Commission Planning Analyst', location: 'Malden, MA / Remote', type: 'Full-time', dept: 'Finance & Operations' },
+  { title: 'Director of Compliance & Licensing', location: 'Malden, MA', type: 'Full-time', dept: 'Compliance' },
+  { title: 'Carrier Relations Manager', location: 'Malden, MA / Remote', type: 'Full-time', dept: 'Business Development' },
+  { title: 'Head of Recruiting & Agent Development', location: 'Remote — All States', type: 'Full-time', dept: 'Talent & Growth' },
+  { title: 'Marketing & Brand Strategist', location: 'Remote — All States', type: 'Full-time', dept: 'Marketing' },
+  { title: 'Operations & New Business Coordinator', location: 'Malden, MA', type: 'Full-time', dept: 'Finance & Operations' },
 ] as const
 
 export default function CareersPage() {
@@ -152,7 +146,8 @@ export default function CareersPage() {
                 className="card flex flex-col justify-between rounded-[24px] p-8"
               >
                 <div>
-                  <h3 className="display-sm">{pos.title}</h3>
+                  <span className="inline-block rounded-full bg-navy/8 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-navy">{pos.dept}</span>
+                  <h3 className="display-sm mt-3">{pos.title}</h3>
                   <p className="mt-2 text-[15px] text-ink-soft">
                     {pos.location} &middot; {pos.type}
                   </p>
