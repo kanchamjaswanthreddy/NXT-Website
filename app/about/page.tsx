@@ -140,21 +140,33 @@ export default function AboutPage() {
 
       {/* Vision & Mission */}
       <section className="section bg-stone">
-        <div className="container grid grid-cols-1 gap-8 md:grid-cols-2">
+        <div className="container grid grid-cols-1 gap-6 md:grid-cols-2 md:gap-8">
           <Reveal>
-            <div className="card rounded-[24px] p-8 md:p-10">
-              <p className="label-sm mb-5">Vision</p>
-              <blockquote className="font-display text-xl font-semibold leading-relaxed text-navy md:text-2xl">
-                &ldquo;To be a financial services company built on integrity and purpose — where advisors own their future and every family is protected.&rdquo;
-              </blockquote>
+            <div className="flex h-full flex-col justify-between rounded-[24px] bg-navy p-10 md:p-12">
+              <div>
+                <span className="inline-block rounded-full bg-gold/20 px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-gold">Vision</span>
+                <blockquote className="mt-8 font-display text-xl font-semibold leading-relaxed text-white md:text-2xl lg:text-[26px]">
+                  &ldquo;To be a financial services company built on integrity and purpose — where advisors own their future and every family is protected.&rdquo;
+                </blockquote>
+              </div>
+              <div className="mt-10 flex items-center gap-3">
+                <Eye size={20} className="text-gold" />
+                <span className="text-sm font-medium text-platinum/60">What we strive toward</span>
+              </div>
             </div>
           </Reveal>
           <Reveal delay={0.1}>
-            <div className="card rounded-[24px] p-8 md:p-10">
-              <p className="label-sm mb-5">Mission</p>
-              <blockquote className="font-display text-xl font-semibold leading-relaxed text-navy md:text-2xl">
-                &ldquo;To build careers worth having, agencies worth owning, and legacies worth leaving — while giving every family access to financial protection they can trust.&rdquo;
-              </blockquote>
+            <div className="flex h-full flex-col justify-between rounded-[24px] border-2 border-gold/30 bg-white p-10 md:p-12">
+              <div>
+                <span className="inline-block rounded-full bg-navy px-4 py-1.5 text-xs font-bold uppercase tracking-widest text-gold">Mission</span>
+                <blockquote className="mt-8 font-display text-xl font-semibold leading-relaxed text-navy md:text-2xl lg:text-[26px]">
+                  &ldquo;To build careers worth having, agencies worth owning, and legacies worth leaving — while giving every family access to financial protection they can trust.&rdquo;
+                </blockquote>
+              </div>
+              <div className="mt-10 flex items-center gap-3">
+                <Target size={20} className="text-gold" />
+                <span className="text-sm font-medium text-ink-soft">What we do every day</span>
+              </div>
             </div>
           </Reveal>
         </div>
@@ -207,21 +219,33 @@ export default function AboutPage() {
       </section>
 
       {/* P.R.O.T.E.C.T Values */}
-      <section className="section bg-stone">
+      <section className="section bg-navy on-dark">
         <div className="container">
-          <Reveal className="mb-14 max-w-[700px]">
+          <Reveal className="mb-6 text-center">
             <p className="label-sm mb-5">Our values</p>
-            <h2 className="display">P.R.O.T.E.C.T</h2>
-            <p className="lead mt-5 text-ink-soft">Seven principles that guide every decision we make — for our advisors and for the families we serve.</p>
+            <p className="lead mx-auto max-w-2xl text-platinum">Seven principles that guide every decision we make — for our advisors and for the families we serve.</p>
           </Reveal>
-          <Stagger as="ul" className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+
+          {/* Large letter banner */}
+          <Reveal delay={0.1}>
+            <div className="mb-14 flex items-center justify-center gap-2 md:gap-4">
+              {PROTECT_VALUES.map(({ letter }, i) => (
+                <span key={i} className="flex h-12 w-12 items-center justify-center rounded-xl bg-gold font-display text-2xl font-black text-navy md:h-16 md:w-16 md:text-3xl">
+                  {letter}
+                </span>
+              ))}
+            </div>
+          </Reveal>
+
+          {/* Values in two-column list */}
+          <Stagger as="ul" className="mx-auto grid max-w-5xl grid-cols-1 gap-x-12 gap-y-8 md:grid-cols-2">
             {PROTECT_VALUES.map(({ letter, word, desc }) => (
-              <Item as="li" key={word} className="card rounded-[24px] p-7">
-                <div className="mb-3 flex items-center gap-3">
-                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy font-display text-lg font-extrabold text-gold">{letter}</span>
-                  <h3 className="font-display text-[15px] font-bold text-navy">{word}</h3>
+              <Item as="li" key={word} className="flex gap-5">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-white/10 font-display text-xl font-extrabold text-gold">{letter}</span>
+                <div>
+                  <h3 className="font-display text-lg font-bold text-white">{word}</h3>
+                  <p className="mt-1.5 text-[15px] leading-relaxed text-platinum/70">{desc}</p>
                 </div>
-                <p className="text-[14px] leading-relaxed text-ink-soft">{desc}</p>
               </Item>
             ))}
           </Stagger>
