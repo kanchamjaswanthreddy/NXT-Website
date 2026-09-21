@@ -281,10 +281,10 @@ export default function AboutPage() {
         <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 rounded-full opacity-20 blur-[120px]" style={{ background: 'radial-gradient(circle, #4353ff 0%, transparent 70%)' }} />
         <div className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[600px] rounded-full opacity-15 blur-[100px]" style={{ background: 'radial-gradient(circle, #d5c9f8 0%, transparent 70%)' }} />
 
-        <div className="container relative py-28 md:py-40">
+        <div className="container relative pt-6 pb-28 md:pt-10 md:pb-40">
           {/* Top: Logo + Badge */}
-          <Reveal className="mb-16 text-center">
-            <Image src="/images/futureflow.png" alt="FutureFlow" width={320} height={213} className="mx-auto mb-6 h-28 w-auto md:h-36" />
+          <Reveal className="mb-8 text-center">
+            <Image src="/images/futureflow.png" alt="FutureFlow" width={480} height={320} className="mx-auto -mb-6 h-44 w-auto md:-mb-8 md:h-56" />
             <span className="inline-block rounded-full border border-[#4353ff]/30 bg-[#4353ff]/10 px-5 py-1.5 text-xs font-bold uppercase tracking-widest text-[#6b78ff]">From the NXT Family</span>
           </Reveal>
 
