@@ -17,15 +17,15 @@ export const team: TeamMember[] = [
   { name: 'Jaswanth Reddy', role: 'Chief Technology Officer', image: '/images/team/jaswanth-reddy.png', group: 'team' },
   { name: 'Andrew Barnett', role: 'Senior Technology Partner', image: '/images/team/andrew-barnett.png', group: 'team' },
   { name: 'Minakshi Rajbanshi', role: 'Chief Strategy Officer', image: '/images/team/minakshi-rajbanshi.png', group: 'team' },
-  { name: 'Carmelo Aguilar', role: 'Client Success Manager', image: '/images/agents/carmelo-aguilar.png', group: 'team' },
-  { name: 'Rigoberto Ayala Rodas', role: 'Director of Business Development', image: '/images/team/rigoberto-ayala.png', group: 'team' },
+  { name: 'Carmelo Aguilar', role: 'Financial Director & Share Holder', image: '/images/agents/carmelo-aguilar.png', group: 'team' },
+  { name: 'Rigoberto Antonio Ayala Rodas', role: 'Financial Director & Share Holder', image: '/images/team/rigoberto-ayala.png', group: 'team' },
   { name: 'Uday Chaudhary', role: 'Head of Marketing', image: '/images/team/uday-chaudhary.png', group: 'team' },
-  { name: 'Gita Thakur', role: 'Sales Account Manager', image: '/images/gita-thakur.jpg', group: 'team' },
+  { name: 'Gita Thakur', role: 'Senior Financial Director & Share Holder', image: '/images/gita-thakur.jpg', group: 'team' },
 
   // Advisors
   { name: 'Matt Earhart', role: 'Strategic Industry Advisor', image: '/images/team/matt-earhart.png', group: 'advisors' },
   { name: 'Ashish Sood', role: 'Technology & AI Advisor', image: '/images/team/ashish-sood.png', group: 'advisors' },
-  { name: 'Nikhil Bhatt', role: 'Strategic Compliance Advisor', image: '/images/team/nikhil-bhatt.png', group: 'advisors' },
+  { name: 'Nikhil Bhatt', role: 'Senior Financial Director & Share Holder', image: '/images/team/nikhil-bhatt.png', group: 'advisors' },
   { name: 'Sony Pradhan', role: 'Client Experience Advisor', image: '/images/team/sony-pradhan.png', group: 'advisors' },
 ]
 
