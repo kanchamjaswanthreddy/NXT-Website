@@ -48,6 +48,7 @@ const NAV_ITEMS: NavItem[] = [
       { href: '/calculators#care', label: 'Care Cost Calculator' },
       { href: '/calculators#rule72', label: 'Rule of 72' },
       { href: '/calculators#smoking', label: 'Smoking Cost' },
+      { href: '/calculators#breakfast', label: 'Breakfast Savings' },
     ],
   },
   {
@@ -95,6 +96,7 @@ const MOBILE_SECTIONS = [
       { href: '/calculators#care', label: 'Care Cost Calculator' },
       { href: '/calculators#rule72', label: 'Rule of 72' },
       { href: '/calculators#smoking', label: 'Smoking Cost' },
+      { href: '/calculators#breakfast', label: 'Breakfast Savings' },
     ],
   },
   {
