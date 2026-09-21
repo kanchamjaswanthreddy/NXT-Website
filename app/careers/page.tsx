@@ -103,9 +103,7 @@ export default function CareersPage() {
                   key={reason.title}
                   className="card flex gap-5 rounded-[24px] p-7"
                 >
-                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-navy">
-                    <span className="font-display text-2xl font-black text-gold">{i + 1}</span>
-                  </div>
+                  <span className="shrink-0 font-display text-3xl font-black text-navy">{i + 1}.</span>
                   <div className="flex-1">
                     <h3 className="mb-2 text-[15px] font-bold text-navy">{reason.title}</h3>
                     <p className="text-[14px] leading-relaxed text-ink-soft">{reason.desc}</p>
