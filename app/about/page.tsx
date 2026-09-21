@@ -284,7 +284,7 @@ export default function AboutPage() {
         <div className="container relative py-28 md:py-40">
           {/* Top: Logo + Badge */}
           <Reveal className="mb-16 text-center">
-            <Image src="/images/futureflow.png" alt="FutureFlow" width={180} height={120} className="mx-auto mb-6 h-16 w-auto" />
+            <Image src="/images/futureflow.png" alt="FutureFlow" width={320} height={213} className="mx-auto mb-6 h-28 w-auto md:h-36" />
             <span className="inline-block rounded-full border border-[#4353ff]/30 bg-[#4353ff]/10 px-5 py-1.5 text-xs font-bold uppercase tracking-widest text-[#6b78ff]">From the NXT Family</span>
           </Reveal>
 
@@ -321,52 +321,86 @@ export default function AboutPage() {
               </a>
             </Reveal>
 
-            {/* Right — CSS Phone Mockup */}
+            {/* Right — Feature Bento Cards */}
             <Reveal delay={0.2}>
-              <div className="mx-auto w-[280px] md:w-[300px]">
-                {/* Phone shell */}
-                <div className="rounded-[40px] border border-white/10 bg-[#1a1a2e] p-3 shadow-2xl" style={{ boxShadow: '0 0 80px rgba(67,83,255,0.15), 0 25px 60px rgba(0,0,0,0.5)' }}>
-                  {/* Notch */}
-                  <div className="mx-auto mb-2 h-6 w-28 rounded-full bg-black" />
-                  {/* Screen */}
-                  <div className="overflow-hidden rounded-[28px] bg-[#0e0e0e] p-5">
-                    {/* App header */}
-                    <div className="mb-5 flex items-center justify-between">
-                      <span className="text-[13px] font-bold text-white">FutureFlow</span>
-                      <span className="rounded-full bg-[#10b981]/15 px-2 py-0.5 text-[10px] font-bold text-[#10b981]">Pro</span>
-                    </div>
-                    {/* Balance card */}
-                    <div className="mb-4 rounded-2xl p-4" style={{ background: 'linear-gradient(135deg, #4353ff, #2e3fe0)' }}>
-                      <p className="text-[10px] font-medium text-white/60">Net Worth</p>
-                      <p className="mt-1 text-2xl font-extrabold text-white">$124,850</p>
-                      <p className="mt-1 text-[10px] font-bold text-[#ccf6ea]">+12.4% this year</p>
-                    </div>
-                    {/* Mini chart bars */}
-                    <div className="mb-4">
-                      <p className="mb-2 text-[10px] font-semibold text-[#9a9a9a]">Monthly Spending</p>
-                      <div className="flex items-end gap-1.5">
-                        {[60, 45, 72, 55, 80, 42, 65, 50, 70, 38, 58, 48].map((h, i) => (
-                          <div key={i} className="flex-1 rounded-sm" style={{ height: `${h}px`, background: i === 4 ? '#fb7185' : i === 9 ? '#10b981' : 'rgba(67,83,255,0.5)' }} />
-                        ))}
+              <div className="grid w-full max-w-[420px] grid-cols-2 gap-4 mx-auto lg:mx-0">
+                {/* Net Worth card — spans full width */}
+                <div className="col-span-2 rounded-2xl border border-white/10 bg-white/[0.04] p-6 backdrop-blur-sm">
+                  <div className="mb-3 flex items-center justify-between">
+                    <p className="text-xs font-semibold text-[#9a9a9a]">Net Worth Growth</p>
+                    <span className="rounded-full bg-[#10b981]/15 px-2.5 py-0.5 text-[11px] font-bold text-[#10b981]">+12.4%</span>
+                  </div>
+                  <p className="mb-4 text-2xl font-extrabold text-white">$124,850</p>
+                  {/* Area chart SVG */}
+                  <svg viewBox="0 0 360 80" className="w-full" preserveAspectRatio="none">
+                    <defs>
+                      <linearGradient id="ff-area" x1="0" y1="0" x2="0" y2="1">
+                        <stop offset="0%" stopColor="#4353ff" stopOpacity="0.4" />
+                        <stop offset="100%" stopColor="#4353ff" stopOpacity="0" />
+                      </linearGradient>
+                    </defs>
+                    <path d="M0,65 Q30,60 60,50 T120,42 T180,30 T240,25 T300,18 T360,8 L360,80 L0,80 Z" fill="url(#ff-area)" />
+                    <path d="M0,65 Q30,60 60,50 T120,42 T180,30 T240,25 T300,18 T360,8" fill="none" stroke="#4353ff" strokeWidth="2.5" />
+                  </svg>
+                </div>
+
+                {/* Spending breakdown — donut */}
+                <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+                  <p className="mb-3 text-xs font-semibold text-[#9a9a9a]">Spending</p>
+                  <svg viewBox="0 0 100 100" className="mx-auto h-24 w-24">
+                    <circle cx="50" cy="50" r="38" fill="none" stroke="#1a1a2e" strokeWidth="10" />
+                    <circle cx="50" cy="50" r="38" fill="none" stroke="#4353ff" strokeWidth="10" strokeDasharray="120 999" strokeDashoffset="0" strokeLinecap="round" transform="rotate(-90 50 50)" />
+                    <circle cx="50" cy="50" r="38" fill="none" stroke="#10b981" strokeWidth="10" strokeDasharray="60 999" strokeDashoffset="-120" strokeLinecap="round" transform="rotate(-90 50 50)" />
+                    <circle cx="50" cy="50" r="38" fill="none" stroke="#d5c9f8" strokeWidth="10" strokeDasharray="40 999" strokeDashoffset="-180" strokeLinecap="round" transform="rotate(-90 50 50)" />
+                    <text x="50" y="48" textAnchor="middle" className="fill-white text-[11px] font-bold">$3,240</text>
+                    <text x="50" y="60" textAnchor="middle" className="fill-[#9a9a9a] text-[7px]">this month</text>
+                  </svg>
+                  <div className="mt-3 flex flex-wrap gap-x-3 gap-y-1">
+                    <span className="flex items-center gap-1 text-[10px] text-[#9a9a9a]"><span className="inline-block h-2 w-2 rounded-full bg-[#4353ff]" />Housing</span>
+                    <span className="flex items-center gap-1 text-[10px] text-[#9a9a9a]"><span className="inline-block h-2 w-2 rounded-full bg-[#10b981]" />Food</span>
+                    <span className="flex items-center gap-1 text-[10px] text-[#9a9a9a]"><span className="inline-block h-2 w-2 rounded-full bg-[#d5c9f8]" />Other</span>
+                  </div>
+                </div>
+
+                {/* Savings tracker — bar chart */}
+                <div className="rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+                  <p className="mb-3 text-xs font-semibold text-[#9a9a9a]">Savings Found</p>
+                  <p className="mb-3 text-xl font-extrabold text-[#10b981]">$312<span className="text-sm font-semibold text-[#9a9a9a]">/mo</span></p>
+                  <div className="space-y-2">
+                    {[
+                      ['Subscriptions', 47, '#fb7185'],
+                      ['Bill negotiation', 156, '#4353ff'],
+                      ['Tax deductions', 109, '#10b981'],
+                    ].map(([label, val, color]) => (
+                      <div key={label as string}>
+                        <div className="mb-1 flex items-center justify-between">
+                          <span className="text-[10px] text-[#9a9a9a]">{label}</span>
+                          <span className="text-[10px] font-bold text-white">${val as number}</span>
+                        </div>
+                        <div className="h-1.5 rounded-full bg-white/10">
+                          <div className="h-full rounded-full" style={{ width: `${((val as number) / 156) * 100}%`, background: color as string }} />
+                        </div>
                       </div>
+                    ))}
+                  </div>
+                </div>
+
+                {/* Retirement gap — spans full width */}
+                <div className="col-span-2 rounded-2xl border border-white/10 bg-white/[0.04] p-5 backdrop-blur-sm">
+                  <div className="flex items-center justify-between">
+                    <div>
+                      <p className="text-xs font-semibold text-[#9a9a9a]">Retirement Income Gap</p>
+                      <p className="mt-1 text-lg font-extrabold text-white">$1,420<span className="text-sm font-semibold text-[#9a9a9a]">/mo gap</span></p>
                     </div>
-                    {/* Subscription alert */}
-                    <div className="mb-3 flex items-center gap-2.5 rounded-xl border border-[#fb7185]/20 bg-[#fb7185]/8 p-3">
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#fb7185]/20 text-[10px] font-bold text-[#fb7185]">!</div>
-                      <div>
-                        <p className="text-[10px] font-bold text-white">3 unused subscriptions</p>
-                        <p className="text-[9px] text-[#9a9a9a]">Save $47/mo</p>
-                      </div>
-                    </div>
-                    {/* Advisor CTA */}
-                    <div className="flex items-center gap-2.5 rounded-xl bg-white/5 p-3">
-                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#4353ff] text-[10px] font-bold text-white">A</div>
-                      <div>
-                        <p className="text-[10px] font-bold text-white">Talk to your advisor</p>
-                        <p className="text-[9px] text-[#9a9a9a]">NXT advisor ready</p>
-                      </div>
+                    <div className="text-right">
+                      <p className="text-[11px] text-[#9a9a9a]">Goal: $5,200/mo</p>
+                      <p className="text-[11px] font-bold text-[#4353ff]">Current: $3,780/mo</p>
                     </div>
                   </div>
+                  <div className="mt-3 h-3 rounded-full bg-white/10">
+                    <div className="h-full rounded-full" style={{ width: '72.7%', background: 'linear-gradient(90deg, #4353ff, #6b78ff)' }} />
+                  </div>
+                  <p className="mt-2 text-right text-[11px] font-semibold text-[#d5c9f8]">72.7% funded</p>
                 </div>
               </div>
             </Reveal>
