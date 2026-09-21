@@ -11,7 +11,7 @@ import Newsletter from '@/components/Newsletter'
 import { Reveal, Stagger, Item, Counter } from '@/components/motion'
 import { posts } from '@/lib/insights'
 
-const STATS = [[Landmark, 40, '+', 'Carrier partners'], [Users, 50, '', 'States licensed'], [Scale, 5, '', 'Disciplines, practiced daily'], [PhoneCall, 1, ' day', 'To hear back from us']] as const
+const STATS = [[Landmark, 70, '+', 'Carrier partners'], [Users, 50, '', 'States licensed'], [Scale, 5, '', 'Disciplines, practiced daily'], [PhoneCall, 1, ' day', 'To hear back from us']] as const
 
 export default function Home() {
   return (
