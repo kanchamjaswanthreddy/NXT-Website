@@ -276,32 +276,117 @@ export default function AboutPage() {
       <AgentsByState />
 
       {/* FutureFlow */}
-      <section className="relative isolate overflow-hidden bg-midnight on-dark">
-        <Image src="/images/team-meeting.png" alt="" fill sizes="100vw" className="object-cover opacity-20" style={{ filter: 'saturate(0.4)' }} />
-        <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight/90 to-navy/60" />
-        <div className="container relative py-28 md:py-36">
-          <Reveal className="mx-auto max-w-3xl text-center">
-            <Image src="/images/futureflow.png" alt="FutureFlow" width={220} height={147} className="mx-auto mb-8 h-24 w-auto rounded-2xl bg-white/10 p-4 backdrop-blur-sm" />
-            <p className="label-sm mb-5">From the NXT family</p>
-            <h2 className="display">AI personal finance with an advisor behind it.</h2>
-            <p className="lead mx-auto mt-6 max-w-2xl text-platinum">FutureFlow tracks your spending, plans your retirement and flags coverage gaps in real time — with an NXT advisor one tap away whenever you need a human.</p>
+      <section className="relative isolate overflow-hidden on-dark" style={{ background: 'linear-gradient(145deg, #0c0c0f 0%, #0e1033 40%, #1a1050 65%, #0c0c0f 100%)' }}>
+        {/* Ambient glow */}
+        <div className="pointer-events-none absolute left-1/2 top-0 h-[600px] w-[900px] -translate-x-1/2 rounded-full opacity-20 blur-[120px]" style={{ background: 'radial-gradient(circle, #4353ff 0%, transparent 70%)' }} />
+        <div className="pointer-events-none absolute bottom-0 right-0 h-[400px] w-[600px] rounded-full opacity-15 blur-[100px]" style={{ background: 'radial-gradient(circle, #d5c9f8 0%, transparent 70%)' }} />
+
+        <div className="container relative py-28 md:py-40">
+          {/* Top: Logo + Badge */}
+          <Reveal className="mb-16 text-center">
+            <Image src="/images/futureflow.png" alt="FutureFlow" width={180} height={120} className="mx-auto mb-6 h-16 w-auto" />
+            <span className="inline-block rounded-full border border-[#4353ff]/30 bg-[#4353ff]/10 px-5 py-1.5 text-xs font-bold uppercase tracking-widest text-[#6b78ff]">From the NXT Family</span>
           </Reveal>
-          <Reveal delay={0.15}>
-            <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-3">
+
+          {/* Split: Left copy + Right phone mockup */}
+          <div className="grid grid-cols-1 items-center gap-16 lg:grid-cols-[1fr_auto] lg:gap-24">
+            {/* Left */}
+            <Reveal>
+              <h2 className="font-display text-[clamp(2rem,4.5vw,3.5rem)] font-bold leading-[1.1] tracking-tight text-white">
+                One app. Total financial clarity.
+              </h2>
+              <p className="mt-6 max-w-xl text-lg leading-relaxed text-[#9a9a9a]">
+                FutureFlow replaces 4-6 separate finance apps with one AI-powered platform — tracking spending, planning retirement, managing subscriptions, and flagging coverage gaps. With an NXT advisor one tap away.
+              </p>
+
+              {/* How it works — 3 steps */}
+              <div className="mt-12 space-y-8">
+                {[
+                  ['Connect your accounts', 'Link bank accounts and cards. FutureFlow auto-categorizes every transaction — zero manual tagging.'],
+                  ['AI finds the gaps', 'Spending patterns analyzed. Subscriptions surfaced. Retirement income gaps calculated. Tax savings identified.'],
+                  ['Advisor steps in', 'AI handles the day-to-day. A licensed NXT advisor steps in when the stakes are high — one tap away.'],
+                ].map(([title, desc], i) => (
+                  <div key={title} className="flex gap-5">
+                    <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-[#4353ff] font-display text-lg font-bold text-white">{i + 1}</div>
+                    <div>
+                      <h3 className="text-[17px] font-bold text-white">{title}</h3>
+                      <p className="mt-1 text-[15px] leading-relaxed text-[#9a9a9a]">{desc}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+
+              <a href="https://joinfutureflow.com" target="_blank" rel="noopener noreferrer" className="mt-10 inline-flex items-center gap-2 rounded-full px-8 py-3.5 text-sm font-bold text-white transition-all hover:scale-105" style={{ background: 'linear-gradient(135deg, #4353ff, #6b78ff)' }}>
+                Explore FutureFlow <ArrowRight size={16} />
+              </a>
+            </Reveal>
+
+            {/* Right — CSS Phone Mockup */}
+            <Reveal delay={0.2}>
+              <div className="mx-auto w-[280px] md:w-[300px]">
+                {/* Phone shell */}
+                <div className="rounded-[40px] border border-white/10 bg-[#1a1a2e] p-3 shadow-2xl" style={{ boxShadow: '0 0 80px rgba(67,83,255,0.15), 0 25px 60px rgba(0,0,0,0.5)' }}>
+                  {/* Notch */}
+                  <div className="mx-auto mb-2 h-6 w-28 rounded-full bg-black" />
+                  {/* Screen */}
+                  <div className="overflow-hidden rounded-[28px] bg-[#0e0e0e] p-5">
+                    {/* App header */}
+                    <div className="mb-5 flex items-center justify-between">
+                      <span className="text-[13px] font-bold text-white">FutureFlow</span>
+                      <span className="rounded-full bg-[#10b981]/15 px-2 py-0.5 text-[10px] font-bold text-[#10b981]">Pro</span>
+                    </div>
+                    {/* Balance card */}
+                    <div className="mb-4 rounded-2xl p-4" style={{ background: 'linear-gradient(135deg, #4353ff, #2e3fe0)' }}>
+                      <p className="text-[10px] font-medium text-white/60">Net Worth</p>
+                      <p className="mt-1 text-2xl font-extrabold text-white">$124,850</p>
+                      <p className="mt-1 text-[10px] font-bold text-[#ccf6ea]">+12.4% this year</p>
+                    </div>
+                    {/* Mini chart bars */}
+                    <div className="mb-4">
+                      <p className="mb-2 text-[10px] font-semibold text-[#9a9a9a]">Monthly Spending</p>
+                      <div className="flex items-end gap-1.5">
+                        {[60, 45, 72, 55, 80, 42, 65, 50, 70, 38, 58, 48].map((h, i) => (
+                          <div key={i} className="flex-1 rounded-sm" style={{ height: `${h}px`, background: i === 4 ? '#fb7185' : i === 9 ? '#10b981' : 'rgba(67,83,255,0.5)' }} />
+                        ))}
+                      </div>
+                    </div>
+                    {/* Subscription alert */}
+                    <div className="mb-3 flex items-center gap-2.5 rounded-xl border border-[#fb7185]/20 bg-[#fb7185]/8 p-3">
+                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-lg bg-[#fb7185]/20 text-[10px] font-bold text-[#fb7185]">!</div>
+                      <div>
+                        <p className="text-[10px] font-bold text-white">3 unused subscriptions</p>
+                        <p className="text-[9px] text-[#9a9a9a]">Save $47/mo</p>
+                      </div>
+                    </div>
+                    {/* Advisor CTA */}
+                    <div className="flex items-center gap-2.5 rounded-xl bg-white/5 p-3">
+                      <div className="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-[#4353ff] text-[10px] font-bold text-white">A</div>
+                      <div>
+                        <p className="text-[10px] font-bold text-white">Talk to your advisor</p>
+                        <p className="text-[9px] text-[#9a9a9a]">NXT advisor ready</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </Reveal>
+          </div>
+
+          {/* Stats row */}
+          <Reveal delay={0.3}>
+            <div className="mt-20 grid grid-cols-2 gap-6 border-t border-white/10 pt-12 md:grid-cols-4">
               {[
-                ['Spending intelligence', 'Every transaction categorized. Patterns surfaced. Blind spots flagged before they become problems.'],
-                ['Retirement gap analysis', 'See exactly how much guaranteed income you have, how much you need, and what closes the gap.'],
-                ['Advisor on demand', 'AI handles the day-to-day. A licensed NXT advisor steps in when the stakes are high.'],
-              ].map(([t, d]) => (
-                <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                  <h3 className="font-display text-lg font-semibold text-white">{t}</h3>
-                  <p className="mt-2 text-sm leading-relaxed text-silver">{d}</p>
+                ['12+', 'Financial tools in one app'],
+                ['50', 'States covered'],
+                ['24/7', 'AI monitoring'],
+                ['1-Tap', 'Licensed advisor access'],
+              ].map(([stat, label]) => (
+                <div key={label} className="text-center">
+                  <p className="font-display text-3xl font-black text-[#4353ff] md:text-4xl">{stat}</p>
+                  <p className="mt-1 text-sm text-[#9a9a9a]">{label}</p>
                 </div>
               ))}
             </div>
-          </Reveal>
-          <Reveal delay={0.25} className="mt-10 text-center">
-            <a href="https://joinfutureflow.com" target="_blank" rel="noopener noreferrer" className="btn btn-cta">Explore FutureFlow</a>
           </Reveal>
         </div>
       </section>
