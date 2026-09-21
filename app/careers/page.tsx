@@ -1,6 +1,6 @@
 import type { Metadata } from 'next'
 import Link from 'next/link'
-import { ArrowRight } from 'lucide-react'
+import { ArrowRight, Briefcase, Layers, TrendingUp, DollarSign, RefreshCw, CalendarCheck, Shield, Zap, GraduationCap, Cloud } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import { Reveal, Stagger, Item } from '@/components/motion'
 
@@ -10,23 +10,57 @@ export const metadata: Metadata = {
     'Join NXT Financial Group. Explore open positions in financial services and build a rewarding career helping clients plan for retirement.',
 }
 
-const BENEFITS = [
-  [
-    'Independent platform',
-    'Access to 100+ A-rated carriers, no quotas.',
-  ],
-  [
-    'Training & licensing',
-    'Comprehensive onboarding and continuing education.',
-  ],
-  [
-    'Technology',
-    'Modern CRM, e-apps, and client management tools.',
-  ],
-  [
-    'Growth path',
-    'Clear advancement from Financial Associate to Senior Director.',
-  ],
+const TOP_REASONS = [
+  {
+    icon: Briefcase,
+    title: 'You OWN your book of business',
+    desc: 'Your clients, your relationships, your asset. Everything you build belongs to you — not the company.',
+  },
+  {
+    icon: Layers,
+    title: 'Deeper override structure',
+    desc: '8 tiers / 30% total generational override. The more you build your team, the more your income multiplies — for life.',
+  },
+  {
+    icon: TrendingUp,
+    title: 'Higher income ceiling',
+    desc: 'Start at 75% and grow to a 130% personal contract, plus 30% total override. Your ceiling is 160% total field compensation.',
+  },
+  {
+    icon: DollarSign,
+    title: '4+ income streams',
+    desc: 'Life, Health, Wealth, Medicare, Legacy Planning. Multiple ways to earn from every single client relationship.',
+  },
+  {
+    icon: RefreshCw,
+    title: 'Recurring commissions',
+    desc: 'Policies renew every year. Your income rebuilds itself automatically while you focus on growing.',
+  },
+  {
+    icon: CalendarCheck,
+    title: 'Paid every Friday',
+    desc: 'Weekly pay cycle, every Friday. No waiting. No monthly delays.',
+  },
+  {
+    icon: Shield,
+    title: 'Legacy and right-to-transfer',
+    desc: 'Build something you can pass down. NXT advisors can transfer their book of business to a family member or successor. Your equity is real.',
+  },
+  {
+    icon: Zap,
+    title: 'No desk fees. No mandatory meetings. No production minimums.',
+    desc: 'Build your business at your pace, on your terms, without pressure.',
+  },
+  {
+    icon: GraduationCap,
+    title: 'NXT Academy — 24/7 on-demand training',
+    desc: 'Licensing prep, product training, sales skills, leadership development. Everything you need, whenever you need it.',
+  },
+  {
+    icon: Cloud,
+    title: 'No office required — 100% cloud-based',
+    desc: 'Work from anywhere. No brick-and-mortar overhead, no commute, no assigned desk. Your office is wherever you are.',
+  },
 ] as const
 
 const POSITIONS = [
@@ -58,28 +92,47 @@ export default function CareersPage() {
         image="/images/team.png"
       />
 
-      {/* Why NXT */}
+      {/* Top 10 Reasons */}
       <section className="section bg-stone">
         <div className="container">
-          <Reveal className="mb-12 max-w-[640px]">
+          <Reveal className="mb-14 max-w-[720px]">
             <p className="label-sm mb-5">Why NXT</p>
-            <h2 className="display">
-              Everything you need to serve clients, nothing that gets in the way.
-            </h2>
+            <h2 className="display">Top 10 reasons to work for NXT Financial Group.</h2>
           </Reveal>
 
-          <Stagger as="ul" className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {BENEFITS.map(([title, description]) => (
-              <Item
-                as="li"
-                key={title}
-                className="card rounded-[24px] p-8"
-              >
-                <h3 className="display-sm">{title}</h3>
-                <p className="mt-3 text-[15px] text-ink-soft">{description}</p>
-              </Item>
-            ))}
+          <Stagger as="ol" className="grid grid-cols-1 gap-5 md:grid-cols-2">
+            {TOP_REASONS.map((reason, i) => {
+              const Icon = reason.icon
+              return (
+                <Item
+                  as="li"
+                  key={reason.title}
+                  className="card flex gap-5 rounded-[24px] p-7"
+                >
+                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold/10">
+                    <span className="font-display text-lg font-extrabold text-gold">{i + 1}</span>
+                  </div>
+                  <div className="flex-1">
+                    <div className="mb-2 flex items-center gap-2">
+                      <Icon size={18} className="text-navy" />
+                      <h3 className="text-[15px] font-bold text-navy">{reason.title}</h3>
+                    </div>
+                    <p className="text-[14px] leading-relaxed text-ink-soft">{reason.desc}</p>
+                  </div>
+                </Item>
+              )
+            })}
           </Stagger>
+
+          {/* The NXT Promise */}
+          <Reveal className="mt-14">
+            <div className="rounded-[24px] bg-navy p-8 text-center md:p-12">
+              <p className="text-sm font-bold uppercase tracking-widest text-gold">The NXT Promise</p>
+              <p className="mx-auto mt-4 max-w-[640px] font-display text-2xl font-semibold leading-snug text-white md:text-3xl">
+                Build a career worth having. Own a business worth keeping. Leave a legacy worth passing down.
+              </p>
+            </div>
+          </Reveal>
         </div>
       </section>
 
@@ -92,7 +145,7 @@ export default function CareersPage() {
           </Reveal>
 
           <Stagger as="ul" className="grid grid-cols-1 gap-5 md:grid-cols-2">
-            {POSITIONS.map((pos, i) => (
+            {POSITIONS.map((pos) => (
               <Item
                 as="li"
                 key={`${pos.title}-${pos.location}`}
