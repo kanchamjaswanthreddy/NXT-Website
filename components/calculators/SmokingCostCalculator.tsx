@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react'
 import Slider, { usd } from './Slider'
 import Result from './Result'
-import CalcChart from './CalcChart'
+import CalcDashboard, { Kpi, MiniArea, MiniBar, ChartBlock, fmt } from './CalcChart'
 
 export default function SmokingCostCalculator() {
   const [packs, setPacks] = useState(1)
@@ -10,12 +10,14 @@ export default function SmokingCostCalculator() {
   const [years, setYears] = useState(20)
   const annual = packs * price * 365
   const totalSpent = Math.round(annual * years)
+  const dailyCost = packs * price
   const r = 0.07 / 12
   const n = years * 12
   const monthlyContrib = annual / 12
   const invested = Math.round(monthlyContrib * ((Math.pow(1 + r, n) - 1) / r))
+  const opportunityCost = invested - totalSpent
 
-  const chartData = useMemo(() => {
+  const areaData = useMemo(() => {
     const points = []
     for (let y = 0; y <= years; y++) {
       const months = y * 12
@@ -25,6 +27,24 @@ export default function SmokingCostCalculator() {
     }
     return points
   }, [annual, years, monthlyContrib, r])
+
+  const milestoneData = useMemo(() => [
+    { name: '5 yrs', spent: Math.round(annual * 5), invested: Math.round(monthlyContrib * ((Math.pow(1 + r, 60) - 1) / r)) },
+    { name: '10 yrs', spent: Math.round(annual * 10), invested: Math.round(monthlyContrib * ((Math.pow(1 + r, 120) - 1) / r)) },
+    { name: '20 yrs', spent: Math.round(annual * 20), invested: Math.round(monthlyContrib * ((Math.pow(1 + r, 240) - 1) / r)) },
+  ], [annual, monthlyContrib, r])
+
+  const kpis: Kpi[] = [
+    { label: 'Total spent', value: fmt(totalSpent), icon: 'flame', color: 'red', trend: 'down' },
+    { label: 'If invested at 7%', value: fmt(invested), icon: 'trending', color: 'gold', trend: 'up' },
+    { label: 'Daily cost', value: usd(dailyCost), icon: 'dollar', color: 'navy' },
+    { label: 'Opportunity cost', value: fmt(opportunityCost), icon: 'piggy', color: 'green', sub: 'growth you miss' },
+  ]
+
+  const progress = [
+    { label: 'Direct spending', value: totalSpent, max: invested, color: '#E85D3A', displayValue: fmt(totalSpent) },
+    { label: 'Potential investment value', value: invested, max: invested, color: '#C8A951', displayValue: fmt(invested) },
+  ]
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -36,22 +56,25 @@ export default function SmokingCostCalculator() {
           <Slider id="sc-pr" label="Price per pack" value={price} display={usd(price)} min={5} max={20} step={0.5} onChange={setPrice} minLabel="$5" maxLabel="$20" />
           <Slider id="sc-yr" label="Years of smoking" value={years} display={`${years} yrs`} min={1} max={40} step={1} onChange={setYears} minLabel="1" maxLabel="40" />
         </div>
-        <dl className="mono mt-6 grid grid-cols-2 gap-4 text-sm">
-          <div><dt className="text-ink-soft">Total spent</dt><dd className="text-navy">{usd(totalSpent)}</dd></div>
-          <div><dt className="text-ink-soft">Daily cost</dt><dd className="text-navy">{usd(packs * price)}</dd></div>
-        </dl>
         <Result label="If invested at 7% instead" value={usd(invested)} note={`That's ${usd(totalSpent)} in direct spending alone. Invested monthly at a 7% average return, the same money could have grown to ${usd(invested)}. Does not include health-related savings.`} />
       </div>
-      <CalcChart
-        type="dual-area"
-        data={chartData}
-        xKey="year"
-        xLabel="Years"
-        series={[
-          { key: 'spent', label: 'Cumulative spend', color: '#E85D3A' },
-          { key: 'invested', label: 'If invested at 7%', color: '#C8A951' },
-        ]}
-      />
+      <CalcDashboard kpis={kpis} progress={progress} comparisons={[
+        { label: 'Money burned', value: fmt(totalSpent), color: '#E85D3A' },
+        { label: 'Could have been', value: fmt(invested), color: '#C8A951' },
+      ]}>
+        <ChartBlock title="Spending vs investing over time">
+          <MiniArea data={areaData} xKey="year" series={[
+            { key: 'spent', label: 'Cumulative spend', color: '#E85D3A' },
+            { key: 'invested', label: 'If invested at 7%', color: '#C8A951' },
+          ]} />
+        </ChartBlock>
+        <ChartBlock title="Cost milestones">
+          <MiniBar data={milestoneData} xKey="name" series={[
+            { key: 'spent', label: 'Spent', color: '#E85D3A' },
+            { key: 'invested', label: 'Invested', color: '#C8A951' },
+          ]} />
+        </ChartBlock>
+      </CalcDashboard>
     </div>
   )
 }

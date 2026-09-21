@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react'
 import Slider, { usd } from './Slider'
 import Result from './Result'
-import CalcChart from './CalcChart'
+import CalcDashboard, { Kpi, MiniArea, MiniBar, ChartBlock, fmt } from './CalcChart'
 
 const SETTINGS: Record<string, number> = {
   'Home health aide (44 hrs/wk)': 6300,
@@ -18,19 +18,36 @@ export default function CareCostCalculator() {
   const monthlyToday = SETTINGS[setting]
   const inflated = monthlyToday * Math.pow(1.035, horizon)
   const total = Math.round(inflated * 12 * years)
+  const inflationMultiple = Math.round((inflated / monthlyToday) * 100) / 100
 
-  const chartData = useMemo(() => {
+  const areaData = useMemo(() => {
     const points = []
     for (let y = 0; y <= 30; y++) {
       const cost = Math.round(monthlyToday * Math.pow(1.035, y))
-      points.push({
-        year: y,
-        monthly: cost,
-        ...(y === horizon ? { marker: cost } : {}),
-      })
+      points.push({ year: y, monthly: cost })
     }
     return points
-  }, [monthlyToday, horizon])
+  }, [monthlyToday])
+
+  const compareData = useMemo(() =>
+    Object.entries(SETTINGS).map(([name, cost]) => ({
+      name: name.split('(')[0].trim(),
+      today: cost,
+      future: Math.round(cost * Math.pow(1.035, horizon)),
+    }))
+  , [horizon])
+
+  const kpis: Kpi[] = [
+    { label: 'Monthly cost today', value: usd(Math.round(monthlyToday)), icon: 'dollar', color: 'navy' },
+    { label: `Monthly in ${horizon} yrs`, value: usd(Math.round(inflated)), icon: 'trending', color: 'red', trend: 'up' },
+    { label: 'Total projected cost', value: fmt(total), icon: 'heart', color: 'sunrise' },
+    { label: 'Inflation multiplier', value: `${inflationMultiple}x`, icon: 'flame', color: 'gold', sub: 'at 3.5%/yr' },
+  ]
+
+  const progress = [
+    { label: 'Current monthly cost', value: monthlyToday, max: 15000, color: '#0B1D3A', displayValue: usd(monthlyToday) },
+    { label: `Projected in ${horizon} yrs`, value: Math.round(inflated), max: 15000, color: '#E85D3A', displayValue: usd(Math.round(inflated)) },
+  ]
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -47,19 +64,22 @@ export default function CareCostCalculator() {
           <Slider id="cc-h" label="Years until care might be needed" value={horizon} display={`${horizon} yrs`} min={0} max={30} step={1} onChange={setHorizon} minLabel="Now" maxLabel="30" />
           <Slider id="cc-y" label="Length of care" value={years} display={`${years} yrs`} min={1} max={6} step={1} onChange={setYears} minLabel="1" maxLabel="6" />
         </div>
-        <dl className="mono mt-6 grid grid-cols-2 gap-4 text-sm">
-          <div><dt className="text-ink-soft">Monthly cost today</dt><dd className="text-navy">{usd(monthlyToday)}</dd></div>
-          <div><dt className="text-ink-soft">Monthly cost in {horizon} yrs</dt><dd className="text-navy">{usd(Math.round(inflated))}</dd></div>
-        </dl>
         <Result label="Projected total cost of care" value={usd(total)} note="National median costs, inflated at 3.5% per year. Local costs vary widely; an advisor will use figures for your area." />
       </div>
-      <CalcChart
-        type="dual-area"
-        data={chartData}
-        xKey="year"
-        xLabel="Years from now"
-        series={[{ key: 'monthly', label: 'Monthly cost', color: '#E85D3A' }]}
-      />
+      <CalcDashboard kpis={kpis} progress={progress} comparisons={[
+        { label: 'Cost today', value: usd(Math.round(monthlyToday * 12 * years)), color: '#0B1D3A' },
+        { label: `Cost in ${horizon} yrs`, value: usd(total), color: '#E85D3A' },
+      ]}>
+        <ChartBlock title="Monthly cost over time (3.5% inflation)">
+          <MiniArea data={areaData} xKey="year" series={[{ key: 'monthly', label: 'Monthly cost', color: '#E85D3A' }]} />
+        </ChartBlock>
+        <ChartBlock title="Compare care settings">
+          <MiniBar data={compareData} xKey="name" series={[
+            { key: 'today', label: 'Today', color: '#0B1D3A' },
+            { key: 'future', label: `In ${horizon} yrs`, color: '#E85D3A' },
+          ]} />
+        </ChartBlock>
+      </CalcDashboard>
     </div>
   )
 }

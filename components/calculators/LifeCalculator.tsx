@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react'
 import Slider, { usd } from './Slider'
 import Result from './Result'
-import CalcChart from './CalcChart'
+import CalcDashboard, { Kpi, MiniBar, MiniDonut, ChartBlock, fmt } from './CalcChart'
 
 export default function LifeCalculator() {
   const [income, setIncome] = useState(90000)
@@ -10,14 +10,37 @@ export default function LifeCalculator() {
   const [debt, setDebt] = useState(40000)
   const [mortgage, setMortgage] = useState(300000)
   const [edu, setEdu] = useState(100000)
-  const total = income * years + debt + mortgage + edu
 
-  const chartData = useMemo(() => [
-    { name: 'Income replacement', value: income * years },
+  const incomeReplace = income * years
+  const total = incomeReplace + debt + mortgage + edu
+
+  const barData = useMemo(() => [
+    { name: 'Income', value: incomeReplace },
+    { name: 'Mortgage', value: mortgage },
+    { name: 'Education', value: edu },
+    { name: 'Debt', value: debt },
+  ], [incomeReplace, mortgage, edu, debt])
+
+  const donutData = useMemo(() => [
+    { name: 'Income replacement', value: incomeReplace },
     { name: 'Mortgage', value: mortgage },
     { name: 'Education', value: edu },
     { name: 'Other debt', value: debt },
-  ], [income, years, debt, mortgage, edu])
+  ], [incomeReplace, mortgage, edu, debt])
+
+  const kpis: Kpi[] = [
+    { label: 'Total coverage', value: fmt(total), icon: 'shield', color: 'navy' },
+    { label: 'Income portion', value: fmt(incomeReplace), icon: 'dollar', color: 'gold', sub: `${Math.round((incomeReplace / total) * 100)}% of total` },
+    { label: 'Debt + mortgage', value: fmt(debt + mortgage), icon: 'home', color: 'sunrise' },
+    { label: 'Education fund', value: fmt(edu), icon: 'grad', color: 'green' },
+  ]
+
+  const progress = [
+    { label: 'Income replacement', value: incomeReplace, max: total, color: '#0B1D3A', displayValue: fmt(incomeReplace) },
+    { label: 'Mortgage balance', value: mortgage, max: total, color: '#C8A951', displayValue: fmt(mortgage) },
+    { label: 'Education fund', value: edu, max: total, color: '#2FA84F', displayValue: fmt(edu) },
+    { label: 'Other debt', value: debt, max: total, color: '#E85D3A', displayValue: fmt(debt) },
+  ]
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -33,12 +56,19 @@ export default function LifeCalculator() {
         </div>
         <Result label="Suggested coverage" value={usd(total)} note="Subtract existing coverage and liquid assets from this figure. Illustrative only; underwriting determines what is available and at what price." />
       </div>
-      <CalcChart
-        type="horizontal-bar"
-        data={chartData}
-        xKey="name"
-        series={[{ key: 'value', label: 'Amount', color: '#0B1D3A' }]}
-      />
+      <CalcDashboard kpis={kpis} progress={progress}>
+        <ChartBlock title="Coverage by category">
+          <MiniBar data={barData} xKey="name" series={[{ key: 'value', label: 'Amount', color: '#0B1D3A' }]} layout="vertical" />
+        </ChartBlock>
+        <ChartBlock title="DIME breakdown">
+          <MiniDonut data={donutData} series={[
+            { key: 'income', label: 'Income', color: '#0B1D3A' },
+            { key: 'mortgage', label: 'Mortgage', color: '#C8A951' },
+            { key: 'education', label: 'Education', color: '#2FA84F' },
+            { key: 'debt', label: 'Debt', color: '#E85D3A' },
+          ]} />
+        </ChartBlock>
+      </CalcDashboard>
     </div>
   )
 }

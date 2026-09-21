@@ -2,7 +2,7 @@
 import { useState, useMemo } from 'react'
 import Slider, { usd } from './Slider'
 import Result from './Result'
-import CalcChart from './CalcChart'
+import CalcDashboard, { Kpi, MiniArea, MiniDonut, ChartBlock, fmt } from './CalcChart'
 
 export default function FourOhOneKCalculator() {
   const [age, setAge] = useState(30)
@@ -19,8 +19,9 @@ export default function FourOhOneKCalculator() {
   const future = Math.round(balance * Math.pow(1 + r, n) + monthlyContrib * ((Math.pow(1 + r, n) - 1) / r))
   const totalContrib = Math.round(balance + salary * (contrib / 100) * years)
   const totalMatch = Math.round(salary * (Math.min(match, contrib) / 100) * years)
+  const growthEarned = Math.max(0, future - totalContrib - totalMatch)
 
-  const chartData = useMemo(() => {
+  const areaData = useMemo(() => {
     const points = []
     for (let y = 0; y <= years; y++) {
       const months = y * 12
@@ -30,6 +31,25 @@ export default function FourOhOneKCalculator() {
     }
     return points
   }, [age, years, balance, monthlyContrib, salary, contrib, match, r])
+
+  const donutData = useMemo(() => [
+    { name: 'Your contributions', value: totalContrib },
+    { name: 'Employer match', value: totalMatch },
+    { name: 'Investment growth', value: growthEarned },
+  ], [totalContrib, totalMatch, growthEarned])
+
+  const kpis: Kpi[] = [
+    { label: 'Projected balance', value: fmt(future), icon: 'trending', color: 'gold', trend: 'up' },
+    { label: 'Your contributions', value: fmt(totalContrib), icon: 'dollar', color: 'navy' },
+    { label: 'Employer match', value: fmt(totalMatch), icon: 'piggy', color: 'green', sub: `${Math.min(match, contrib)}% effective` },
+    { label: 'Growth earned', value: fmt(growthEarned), icon: 'percent', color: 'sunrise', sub: `over ${years} yrs` },
+  ]
+
+  const progress = [
+    { label: 'Your contributions', value: totalContrib, max: future, color: '#0B1D3A', displayValue: fmt(totalContrib) },
+    { label: 'Employer match', value: totalMatch, max: future, color: '#2FA84F', displayValue: fmt(totalMatch) },
+    { label: 'Investment growth', value: growthEarned, max: future, color: '#C8A951', displayValue: fmt(growthEarned) },
+  ]
 
   return (
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
@@ -44,22 +64,26 @@ export default function FourOhOneKCalculator() {
           <Slider id="4k-mat" label="Employer match" value={match} display={`${match}%`} min={0} max={10} step={0.5} onChange={setMatch} minLabel="0%" maxLabel="10%" />
           <Slider id="4k-bal" label="Current balance" value={balance} display={usd(balance)} min={0} max={2000000} step={5000} onChange={setBalance} minLabel="$0" maxLabel="$2M" />
         </div>
-        <dl className="mono mt-6 grid grid-cols-2 gap-4 text-sm">
-          <div><dt className="text-ink-soft">Your contributions</dt><dd className="text-navy">{usd(totalContrib)}</dd></div>
-          <div><dt className="text-ink-soft">Employer match total</dt><dd className="text-navy">{usd(totalMatch)}</dd></div>
-        </dl>
         <Result label="Projected balance at retirement" value={usd(future)} note="Assumes 7% average annual return compounded monthly with constant salary. Actual returns vary; does not account for contribution limits, raises, or taxes." />
       </div>
-      <CalcChart
-        type="dual-area"
-        data={chartData}
-        xKey="year"
-        xLabel="Age"
-        series={[
-          { key: 'balance', label: 'Projected balance', color: '#C8A951' },
-          { key: 'contributions', label: 'Total contributed', color: '#0B1D3A' },
-        ]}
-      />
+      <CalcDashboard kpis={kpis} progress={progress} comparisons={[
+        { label: 'Total invested', value: fmt(totalContrib + totalMatch), color: '#0B1D3A' },
+        { label: 'Projected value', value: fmt(future), color: '#C8A951' },
+      ]}>
+        <ChartBlock title="Growth over time">
+          <MiniArea data={areaData} xKey="year" series={[
+            { key: 'balance', label: 'Projected balance', color: '#C8A951' },
+            { key: 'contributions', label: 'Total contributed', color: '#0B1D3A' },
+          ]} />
+        </ChartBlock>
+        <ChartBlock title="Where the money comes from">
+          <MiniDonut data={donutData} series={[
+            { key: 'yours', label: 'Your contributions', color: '#0B1D3A' },
+            { key: 'match', label: 'Employer match', color: '#2FA84F' },
+            { key: 'growth', label: 'Investment growth', color: '#C8A951' },
+          ]} />
+        </ChartBlock>
+      </CalcDashboard>
     </div>
   )
 }
