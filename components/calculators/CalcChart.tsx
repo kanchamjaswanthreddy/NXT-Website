@@ -60,9 +60,9 @@ function KpiCard({ kpi }: { kpi: Kpi }) {
           </span>
         )}
       </div>
-      <p className="mono text-xl font-bold text-navy">{kpi.value}</p>
-      <p className="mt-0.5 text-xs text-ink-soft">{kpi.label}</p>
-      {kpi.sub && <p className="mono mt-1 text-[10px] text-ink-soft/70">{kpi.sub}</p>}
+      <p className="mono text-2xl font-extrabold tracking-tight text-navy">{kpi.value}</p>
+      <p className="mt-1 text-[13px] font-semibold text-ink">{kpi.label}</p>
+      {kpi.sub && <p className="mono mt-1 text-xs font-medium text-ink-soft">{kpi.sub}</p>}
     </div>
   )
 }
@@ -75,8 +75,8 @@ function ProgressBar({ item }: { item: ProgressItem }) {
   return (
     <div>
       <div className="mb-1.5 flex items-baseline justify-between">
-        <span className="text-xs font-medium text-ink">{item.label}</span>
-        <span className="mono text-xs text-navy">{item.displayValue}</span>
+        <span className="text-[13px] font-semibold text-ink">{item.label}</span>
+        <span className="mono text-[13px] font-bold text-navy">{item.displayValue}</span>
       </div>
       <div className="h-2 overflow-hidden rounded-full bg-platinum/60">
         <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, backgroundColor: item.color }} />
@@ -95,8 +95,8 @@ function ComparisonRow({ items }: { items: ComparisonItem[] }) {
         <div key={item.label} className="flex items-center gap-2.5 rounded-xl bg-white/60 px-3 py-2.5 ring-1 ring-platinum/40">
           <span className="h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: item.color }} />
           <div>
-            <p className="mono text-sm font-bold text-navy">{item.value}</p>
-            <p className="text-[10px] text-ink-soft">{item.label}</p>
+            <p className="mono text-sm font-extrabold text-navy">{item.value}</p>
+            <p className="text-xs font-medium text-ink">{item.label}</p>
           </div>
         </div>
       ))}
@@ -116,12 +116,12 @@ const CustomTooltip = ({ active, payload, label, formatValue }: { active?: boole
   if (!active || !payload?.length) return null
   return (
     <div className="rounded-xl border border-platinum bg-white/95 px-4 py-3 shadow-lg backdrop-blur">
-      {label !== undefined && <p className="mb-1.5 text-xs font-medium text-ink-soft">{label}</p>}
+      {label !== undefined && <p className="mb-1.5 text-xs font-bold text-ink">{label}</p>}
       {payload.map((p) => (
         <div key={p.name} className="flex items-center gap-2 text-sm">
           <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: p.color }} />
-          <span className="text-ink-soft">{p.name}:</span>
-          <span className="mono font-semibold text-navy">{formatValue(p.value)}</span>
+          <span className="font-medium text-ink">{p.name}:</span>
+          <span className="mono font-extrabold text-navy">{formatValue(p.value)}</span>
         </div>
       ))}
     </div>
@@ -145,10 +145,10 @@ export function MiniArea({ data, xKey = 'name', series, formatValue = fmt, heigh
             ))}
           </defs>
           <CartesianGrid strokeDasharray="3 3" stroke="#E2E0DB" vertical={false} />
-          <XAxis dataKey={xKey} tick={{ fontSize: 10 }} stroke="#9A978F" />
-          <YAxis tickFormatter={formatValue} tick={{ fontSize: 10 }} stroke="#9A978F" width={48} />
+          <XAxis dataKey={xKey} tick={{ fontSize: 11, fontWeight: 600, fill: '#3D3A34' }} stroke="#9A978F" />
+          <YAxis tickFormatter={formatValue} tick={{ fontSize: 11, fontWeight: 600, fill: '#3D3A34' }} stroke="#9A978F" width={48} />
           <Tooltip content={<CustomTooltip formatValue={formatValue} />} />
-          {series.length > 1 && <Legend verticalAlign="top" height={28} iconType="circle" wrapperStyle={{ fontSize: 11 }} />}
+          {series.length > 1 && <Legend verticalAlign="top" height={28} iconType="circle" wrapperStyle={{ fontSize: 12, fontWeight: 600 }} />}
           {series.map((s) => (
             <Area key={s.key} type="monotone" dataKey={s.key} name={s.label} stroke={s.color} strokeWidth={2} fill={`url(#mg-${s.key})`} animationDuration={400} />
           ))}
@@ -166,13 +166,13 @@ export function MiniBar({ data, xKey = 'name', series, layout = 'horizontal', fo
           <CartesianGrid strokeDasharray="3 3" stroke="#E2E0DB" />
           {layout === 'vertical' ? (
             <>
-              <YAxis dataKey={xKey} type="category" tick={{ fontSize: 10 }} stroke="#9A978F" width={90} />
-              <XAxis type="number" tickFormatter={formatValue} tick={{ fontSize: 10 }} stroke="#9A978F" />
+              <YAxis dataKey={xKey} type="category" tick={{ fontSize: 11, fontWeight: 600, fill: '#3D3A34' }} stroke="#9A978F" width={90} />
+              <XAxis type="number" tickFormatter={formatValue} tick={{ fontSize: 11, fontWeight: 600, fill: '#3D3A34' }} stroke="#9A978F" />
             </>
           ) : (
             <>
-              <XAxis dataKey={xKey} tick={{ fontSize: 10 }} stroke="#9A978F" />
-              <YAxis tickFormatter={formatValue} tick={{ fontSize: 10 }} stroke="#9A978F" width={48} />
+              <XAxis dataKey={xKey} tick={{ fontSize: 11, fontWeight: 600, fill: '#3D3A34' }} stroke="#9A978F" />
+              <YAxis tickFormatter={formatValue} tick={{ fontSize: 11, fontWeight: 600, fill: '#3D3A34' }} stroke="#9A978F" width={48} />
             </>
           )}
           <Tooltip content={<CustomTooltip formatValue={formatValue} />} />
@@ -194,7 +194,7 @@ export function MiniDonut({ data, series, formatValue = fmt, height = 200 }: { d
             {data.map((_, i) => <Cell key={i} fill={series[i]?.color ?? '#C8A951'} />)}
           </Pie>
           <Tooltip content={<CustomTooltip formatValue={formatValue} />} />
-          <Legend verticalAlign="bottom" iconType="circle" wrapperStyle={{ fontSize: 11 }} />
+          <Legend verticalAlign="bottom" iconType="circle" wrapperStyle={{ fontSize: 12, fontWeight: 600 }} />
         </PieChart>
       </ResponsiveContainer>
     </div>
@@ -220,7 +220,7 @@ export default function CalcDashboard({ kpis, children, progress, comparisons }:
       {/* Progress bars */}
       {progress && progress.length > 0 && (
         <div className="space-y-3 rounded-2xl bg-white/60 p-4 ring-1 ring-platinum/40">
-          <p className="text-xs font-semibold text-ink-soft">Breakdown</p>
+          <p className="text-[13px] font-bold tracking-tight text-navy">Breakdown</p>
           {progress.map((p) => <ProgressBar key={p.label} item={p} />)}
         </div>
       )}
@@ -240,7 +240,7 @@ export default function CalcDashboard({ kpis, children, progress, comparisons }:
 export function ChartBlock({ title, children }: ChartSection) {
   return (
     <div className="rounded-2xl bg-white/60 p-4 ring-1 ring-platinum/40">
-      <p className="mb-2 text-xs font-semibold text-ink-soft">{title}</p>
+      <p className="mb-3 text-[13px] font-bold tracking-tight text-navy">{title}</p>
       {children}
     </div>
   )
