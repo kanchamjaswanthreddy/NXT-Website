@@ -1,13 +1,45 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Phone, Mail, MapPin } from 'lucide-react'
+import { ArrowRight, Phone, Mail, MapPin, ShieldCheck, Building2, BookOpen, Eye, Globe, HeartHandshake, Handshake, CheckCircle, Crown, Lock, GraduationCap, Target, Heart } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import { Reveal, Stagger, Item } from '@/components/motion'
 import { leadership, coreTeam, advisors } from '@/lib/team'
 import { getAgentsByState } from '@/lib/agents'
-export const metadata: Metadata = { title: 'About', description: 'NXT Financial Group is an independent retirement and protection planning agency founded in Malden, Massachusetts, serving clients in all 50 states.' }
-const PRINCIPLES = [['Earned', 'Track records, not promises. Specifics over generalities. We speak from what we have placed, not what we hope to.'], ['Forward', 'Clear paths and measurable next steps. Every plan we build has a date on it.'], ['Precise', 'Exact rates, exact riders, exact carriers. Approximations and "up to" are not part of our vocabulary.'], ['Elevated', 'Professional, aspirational and grounded in financial literacy. Never salesy, never casual with your money.']]
+
+export const metadata: Metadata = {
+  title: 'About',
+  description: 'NXT Financial Group is an independent marketing organization (IMO) headquartered in Malden, Massachusetts — built for advisors and families, serving all 50 states.',
+}
+
+const DIFFERENTIATORS = [
+  { icon: Crown, title: 'True ownership', desc: 'Advisors own their book of business, their downline, and their legacy. The people doing the work deserve to keep what they build.' },
+  { icon: Building2, title: '70+ carrier access', desc: 'Appointed with more than 70 of the most respected carriers in the United States across life, health, annuities, Medicare, and wealth products.' },
+  { icon: BookOpen, title: 'Education first', desc: 'Every NXT advisor is trained to teach before they sell. An informed client is the best client, and an educated advisor builds the most durable business.' },
+  { icon: Eye, title: 'Full transparency', desc: 'Every commission, every fee, every split — explained clearly from day one. No fine print. No surprises. No hidden agendas.' },
+  { icon: Globe, title: 'Nationwide platform', desc: 'Back-office platform, training infrastructure, and carrier relationships designed to support advisors at every level — from licensing to executive leadership.' },
+  { icon: HeartHandshake, title: 'Legacy planning for advisors', desc: 'NXT advisors build something they can pass down. The equity an advisor creates belongs to them — and to their family.' },
+]
+
+const PROTECT_VALUES = [
+  { letter: 'P', word: 'Partnership', desc: 'We only succeed when our advisors and clients succeed. Win together or not at all.' },
+  { letter: 'R', word: 'Responsibility', desc: 'Do the right thing — especially when no one is watching. Integrity is not a policy. It is a standard.' },
+  { letter: 'O', word: 'Ownership', desc: 'Advisors own their book, their team, and their future. The people doing the work keep what they earn.' },
+  { letter: 'T', word: 'Transparency', desc: 'Every fee, every split, every recommendation — explained clearly, never buried in fine print.' },
+  { letter: 'E', word: 'Education', desc: 'We teach before we sell. An informed client makes the best decision. An educated advisor builds the strongest business.' },
+  { letter: 'C', word: 'Commitment', desc: 'To our clients. To our advisors. To the communities we serve. We show up — fully — every single time.' },
+  { letter: 'T', word: 'Trust', desc: 'Trust is not assumed. It is earned through consistency, honesty, and results. Everything we do is designed to deserve it.' },
+]
+
+const ADVISOR_BENEFITS = [
+  'Competitive commission contracts from 75% to 130%',
+  'Generational override structure (up to 30% total)',
+  'True book of business ownership',
+  'Legacy and right-to-transfer program',
+  'Back-office platform and CRM',
+  'Training, licensing support, and mentorship',
+  'Access to 70+ top-rated U.S. carriers',
+]
 
 function TeamGrid({ members, cols = 'md:grid-cols-4' }: { members: typeof leadership; cols?: string }) {
   return (
@@ -78,51 +110,190 @@ function AgentsByState() {
 }
 
 export default function AboutPage() {
-  return (<>
-    <PageHero eyebrow="About NXT" title="Specialists in the five decisions that shape retirement." intro="Founded in Malden, Massachusetts. Independent, licensed in all 50 states, and deliberately narrow in what we do so we can be excellent at it." image="/images/advisors.png" imageAlt="NXT advisors in a planning meeting"><Link href="/contact" className="btn btn-primary">Work with us <ArrowRight size={16} /></Link></PageHero>
-    <section className="section"><div className="container grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20"><Reveal><p className="label-sm mb-5">Our mission</p><h2 className="display">Make retirement decisions clear enough to make with confidence.</h2></Reveal><Reveal delay={0.1} className="space-y-5 text-[17px] leading-8"><p>Annuities, life insurance, long-term care, Medicare and disability income are the products people buy once, keep for decades and rarely fully understand. NXT Financial was founded on a simple belief: clients deserve an advisor who explains every option in plain language, compares the whole market on their behalf, and stays reachable for the life of the plan.</p><p>We are an independent agency. We hold appointments with carriers rated A- or better by AM Best, we carry no quota with any of them, and we are paid by the carrier that earns your business, never by you.</p></Reveal></div></section>
-    <section id="why-nxt" className="section bg-stone"><div className="container"><Reveal className="mb-12 max-w-[640px]"><p className="label-sm mb-5">How we sound</p><h2 className="display">Four words we hold ourselves to.</h2></Reveal><Stagger as="ul" className="grid grid-cols-1 gap-5 md:grid-cols-2">{PRINCIPLES.map(([t, b]) => <Item as="li" key={t} className="card rounded-[24px] p-8"><h3 className="display-sm">{t}</h3><p className="mt-3 text-[15px] text-ink-soft">{b}</p></Item>)}</Stagger></div></section>
+  return (
+    <>
+      {/* Hero */}
+      <PageHero
+        eyebrow="About NXT"
+        title="Built for Advisors. Built for Families. Built to Last."
+        intro="NXT Financial Group is an independent marketing organization (IMO) headquartered in Malden, Massachusetts — built on the belief that financial advisors deserve real ownership and every family deserves real protection."
+        image="/images/advisors.png"
+        imageAlt="NXT Financial Group advisors"
+      >
+        <Link href="/contact" className="btn btn-primary">Work with us <ArrowRight size={16} /></Link>
+      </PageHero>
 
-    {/* Leadership */}
-    <section id="team" className="section"><div className="container"><Reveal className="mb-12 max-w-[600px]"><p className="label-sm mb-5">Leadership</p><h2 className="display">The people leading NXT Financial.</h2></Reveal><TeamGrid members={leadership} cols="md:grid-cols-4" /></div></section>
+      {/* Our Story */}
+      <section className="section">
+        <div className="container grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1.1fr] lg:gap-20">
+          <Reveal>
+            <p className="label-sm mb-5">Our story</p>
+            <h2 className="display">The old model was not built for the people working inside it.</h2>
+          </Reveal>
+          <Reveal delay={0.1} className="space-y-5 text-[17px] leading-8">
+            <p>NXT Financial Group was founded on a simple frustration: the financial services industry was not built for the people working inside it. Advisors were capped. Clients were confused. The old model rewarded institutions over individuals, and the people doing the hardest work — sitting across from families, asking the difficult questions, building trust one conversation at a time — had no real ownership of what they were building.</p>
+            <p>We decided to change that. NXT Financial Group is a licensed Independent Marketing Organization (IMO) and Managing General Agency (MGA) appointed with 70+ top-rated U.S. carriers across life, health, annuity, and wealth products. We operate as a nationwide platform where advisors are not just producers — they are owners.</p>
+            <p>On the client side, our advisors are trained to lead with education, not sales. They sit down with families, listen first, and build protection plans that make sense — clearly explained, honestly priced, and built to last.</p>
+          </Reveal>
+        </div>
+      </section>
 
-    {/* Core Team */}
-    <section className="section bg-stone"><div className="container"><Reveal className="mb-12 max-w-[600px]"><p className="label-sm mb-5">Core team</p><h2 className="display">The people who make it happen.</h2></Reveal><TeamGrid members={coreTeam} cols="md:grid-cols-4" /></div></section>
+      {/* Vision & Mission */}
+      <section className="section bg-stone">
+        <div className="container grid grid-cols-1 gap-8 md:grid-cols-2">
+          <Reveal>
+            <div className="card rounded-[24px] p-8 md:p-10">
+              <p className="label-sm mb-5">Vision</p>
+              <blockquote className="font-display text-xl font-semibold leading-relaxed text-navy md:text-2xl">
+                &ldquo;To be a financial services company built on integrity and purpose — where advisors own their future and every family is protected.&rdquo;
+              </blockquote>
+            </div>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <div className="card rounded-[24px] p-8 md:p-10">
+              <p className="label-sm mb-5">Mission</p>
+              <blockquote className="font-display text-xl font-semibold leading-relaxed text-navy md:text-2xl">
+                &ldquo;To build careers worth having, agencies worth owning, and legacies worth leaving — while giving every family access to financial protection they can trust.&rdquo;
+              </blockquote>
+            </div>
+          </Reveal>
+        </div>
+      </section>
 
-    {/* Advisors */}
-    <section className="section"><div className="container"><Reveal className="mb-12 max-w-[600px]"><p className="label-sm mb-5">Advisors</p><h2 className="display">Seasoned advisors across insurance &amp; technology.</h2></Reveal><TeamGrid members={advisors} cols="md:grid-cols-4" /></div></section>
-
-    {/* Advisors by State */}
-    <AgentsByState />
-
-    <section className="relative isolate overflow-hidden bg-midnight on-dark">
-      <Image src="/images/team-meeting.png" alt="" fill sizes="100vw" className="object-cover opacity-20" style={{ filter: 'saturate(0.4)' }} />
-      <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight/90 to-navy/60" />
-      <div className="container relative py-28 md:py-36">
-        <Reveal className="mx-auto max-w-3xl text-center">
-          <Image src="/images/futureflow.png" alt="FutureFlow" width={220} height={147} className="mx-auto mb-8 h-24 w-auto rounded-2xl bg-white/10 p-4 backdrop-blur-sm" />
-          <p className="label-sm mb-5">From the NXT family</p>
-          <h2 className="display">AI personal finance with an advisor behind it.</h2>
-          <p className="lead mx-auto mt-6 max-w-2xl text-platinum">FutureFlow tracks your spending, plans your retirement and flags coverage gaps in real time — with an NXT advisor one tap away whenever you need a human.</p>
-        </Reveal>
-        <Reveal delay={0.15}>
-          <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-3">
-            {[
-              ['Spending intelligence', 'Every transaction categorized. Patterns surfaced. Blind spots flagged before they become problems.'],
-              ['Retirement gap analysis', 'See exactly how much guaranteed income you have, how much you need, and what closes the gap.'],
-              ['Advisor on demand', 'AI handles the day-to-day. A licensed NXT advisor steps in when the stakes are high.'],
-            ].map(([t, d]) => (
-              <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
-                <h3 className="font-display text-lg font-semibold text-white">{t}</h3>
-                <p className="mt-2 text-sm leading-relaxed text-silver">{d}</p>
-              </div>
+      {/* What Makes NXT Different */}
+      <section className="section">
+        <div className="container">
+          <Reveal className="mb-14 max-w-[700px]">
+            <p className="label-sm mb-5">What makes NXT different</p>
+            <h2 className="display">This is not the old model. This is NXT.</h2>
+          </Reveal>
+          <Stagger as="ul" className="grid grid-cols-1 gap-5 md:grid-cols-2 lg:grid-cols-3">
+            {DIFFERENTIATORS.map(({ icon: Icon, title, desc }) => (
+              <Item as="li" key={title} className="card rounded-[24px] p-8">
+                <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-gold/10">
+                  <Icon size={22} className="text-gold" />
+                </div>
+                <h3 className="display-sm">{title}</h3>
+                <p className="mt-3 text-[15px] leading-relaxed text-ink-soft">{desc}</p>
+              </Item>
             ))}
-          </div>
-        </Reveal>
-        <Reveal delay={0.25} className="mt-10 text-center">
-          <a href="https://joinfutureflow.com" target="_blank" rel="noopener noreferrer" className="btn btn-cta">Explore FutureFlow</a>
-        </Reveal>
-      </div>
-    </section>
-  </>)
+          </Stagger>
+        </div>
+      </section>
+
+      {/* For Advisors */}
+      <section className="section bg-navy on-dark">
+        <div className="container grid grid-cols-1 gap-12 lg:grid-cols-[1fr_1fr] lg:gap-20">
+          <Reveal>
+            <p className="label-sm mb-5">For advisors</p>
+            <h2 className="display">Build your business on your terms.</h2>
+            <p className="lead mt-5 text-platinum">Competitive contracts, true ownership, and a platform that works for you — not the other way around.</p>
+            <Link href="/partner" className="btn btn-cta mt-8">Learn more <ArrowRight size={16} /></Link>
+          </Reveal>
+          <Reveal delay={0.1}>
+            <ul className="space-y-4">
+              {ADVISOR_BENEFITS.map((benefit) => (
+                <li key={benefit} className="flex gap-3 text-[16px] text-platinum">
+                  <span className="mt-1 flex h-5 w-5 shrink-0 items-center justify-center rounded-full bg-gold text-midnight">
+                    <CheckCircle size={12} strokeWidth={3} />
+                  </span>
+                  {benefit}
+                </li>
+              ))}
+            </ul>
+            <p className="mt-6 text-sm font-semibold text-gold">No production minimums. No desk fees. No mandatory meetings.</p>
+          </Reveal>
+        </div>
+      </section>
+
+      {/* P.R.O.T.E.C.T Values */}
+      <section className="section bg-stone">
+        <div className="container">
+          <Reveal className="mb-14 max-w-[700px]">
+            <p className="label-sm mb-5">Our values</p>
+            <h2 className="display">P.R.O.T.E.C.T</h2>
+            <p className="lead mt-5 text-ink-soft">Seven principles that guide every decision we make — for our advisors and for the families we serve.</p>
+          </Reveal>
+          <Stagger as="ul" className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+            {PROTECT_VALUES.map(({ letter, word, desc }) => (
+              <Item as="li" key={word} className="card rounded-[24px] p-7">
+                <div className="mb-3 flex items-center gap-3">
+                  <span className="flex h-10 w-10 items-center justify-center rounded-xl bg-navy font-display text-lg font-extrabold text-gold">{letter}</span>
+                  <h3 className="font-display text-[15px] font-bold text-navy">{word}</h3>
+                </div>
+                <p className="text-[14px] leading-relaxed text-ink-soft">{desc}</p>
+              </Item>
+            ))}
+          </Stagger>
+        </div>
+      </section>
+
+      {/* Leadership */}
+      <section id="team" className="section">
+        <div className="container">
+          <Reveal className="mb-12 max-w-[600px]">
+            <p className="label-sm mb-5">Leadership</p>
+            <h2 className="display">The people leading NXT Financial.</h2>
+          </Reveal>
+          <TeamGrid members={leadership} cols="md:grid-cols-4" />
+        </div>
+      </section>
+
+      {/* Core Team */}
+      <section className="section bg-stone">
+        <div className="container">
+          <Reveal className="mb-12 max-w-[600px]">
+            <p className="label-sm mb-5">Core team</p>
+            <h2 className="display">The people who make it happen.</h2>
+          </Reveal>
+          <TeamGrid members={coreTeam} cols="md:grid-cols-4" />
+        </div>
+      </section>
+
+      {/* Advisors */}
+      <section className="section">
+        <div className="container">
+          <Reveal className="mb-12 max-w-[600px]">
+            <p className="label-sm mb-5">Advisors</p>
+            <h2 className="display">Seasoned advisors across insurance &amp; technology.</h2>
+          </Reveal>
+          <TeamGrid members={advisors} cols="md:grid-cols-4" />
+        </div>
+      </section>
+
+      {/* Advisors by State */}
+      <AgentsByState />
+
+      {/* FutureFlow */}
+      <section className="relative isolate overflow-hidden bg-midnight on-dark">
+        <Image src="/images/team-meeting.png" alt="" fill sizes="100vw" className="object-cover opacity-20" style={{ filter: 'saturate(0.4)' }} />
+        <div className="absolute inset-0 bg-gradient-to-br from-midnight via-midnight/90 to-navy/60" />
+        <div className="container relative py-28 md:py-36">
+          <Reveal className="mx-auto max-w-3xl text-center">
+            <Image src="/images/futureflow.png" alt="FutureFlow" width={220} height={147} className="mx-auto mb-8 h-24 w-auto rounded-2xl bg-white/10 p-4 backdrop-blur-sm" />
+            <p className="label-sm mb-5">From the NXT family</p>
+            <h2 className="display">AI personal finance with an advisor behind it.</h2>
+            <p className="lead mx-auto mt-6 max-w-2xl text-platinum">FutureFlow tracks your spending, plans your retirement and flags coverage gaps in real time — with an NXT advisor one tap away whenever you need a human.</p>
+          </Reveal>
+          <Reveal delay={0.15}>
+            <div className="mx-auto mt-14 grid max-w-4xl grid-cols-1 gap-5 sm:grid-cols-3">
+              {[
+                ['Spending intelligence', 'Every transaction categorized. Patterns surfaced. Blind spots flagged before they become problems.'],
+                ['Retirement gap analysis', 'See exactly how much guaranteed income you have, how much you need, and what closes the gap.'],
+                ['Advisor on demand', 'AI handles the day-to-day. A licensed NXT advisor steps in when the stakes are high.'],
+              ].map(([t, d]) => (
+                <div key={t} className="rounded-2xl border border-white/10 bg-white/5 p-6 backdrop-blur-sm">
+                  <h3 className="font-display text-lg font-semibold text-white">{t}</h3>
+                  <p className="mt-2 text-sm leading-relaxed text-silver">{d}</p>
+                </div>
+              ))}
+            </div>
+          </Reveal>
+          <Reveal delay={0.25} className="mt-10 text-center">
+            <a href="https://joinfutureflow.com" target="_blank" rel="noopener noreferrer" className="btn btn-cta">Explore FutureFlow</a>
+          </Reveal>
+        </div>
+      </section>
+    </>
+  )
 }
