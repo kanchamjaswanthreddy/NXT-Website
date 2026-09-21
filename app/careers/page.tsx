@@ -103,14 +103,11 @@ export default function CareersPage() {
                   key={reason.title}
                   className="card flex gap-5 rounded-[24px] p-7"
                 >
-                  <div className="flex h-12 w-12 shrink-0 items-center justify-center rounded-xl bg-gold/10">
-                    <span className="font-display text-lg font-extrabold text-gold">{i + 1}</span>
+                  <div className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-navy">
+                    <span className="font-display text-2xl font-black text-gold">{i + 1}</span>
                   </div>
                   <div className="flex-1">
-                    <div className="mb-2 flex items-center gap-2">
-                      <Icon size={18} className="text-navy" />
-                      <h3 className="text-[15px] font-bold text-navy">{reason.title}</h3>
-                    </div>
+                    <h3 className="mb-2 text-[15px] font-bold text-navy">{reason.title}</h3>
                     <p className="text-[14px] leading-relaxed text-ink-soft">{reason.desc}</p>
                   </div>
                 </Item>
