@@ -80,6 +80,21 @@ export const solutions: Solution[] = [
     fit: ['You are a physician, attorney, owner or specialist whose income depends on your skills', 'Your employer plan covers less than 60 percent of pay, or is taxable', 'You are self-employed with no group coverage'],
     process: ['We assess your income, occupation class and existing group benefits', 'We compare definitions of disability, benefit periods and riders across carriers', 'We manage financial and medical underwriting to bind coverage'],
   },
+  {
+    slug: 'home-auto', index: 'VI', title: 'Home & Auto', short: 'Protect your home, your vehicles and everything in between.',
+    headline: 'Your home and your car are more than assets. They are how your life works.',
+    intro: 'A single storm, accident or liability claim can wipe out years of savings in minutes. We shop homeowners, auto, umbrella and specialty property coverage across top-rated carriers so you get the right limits, the right deductibles and a price that makes sense — bundled or standalone.',
+    image: '/images/atrium.png',
+    sub: [
+      { name: 'Homeowners insurance', summary: 'Dwelling, personal property, liability and loss-of-use coverage tailored to your home\'s replacement cost and your area\'s risks.' },
+      { name: 'Auto insurance', summary: 'Liability, collision, comprehensive and uninsured motorist coverage compared across carriers for the best rate at the limits you actually need.' },
+      { name: 'Umbrella liability', summary: 'An extra layer of liability protection, typically $1M–$5M, that sits above your home and auto policies for catastrophic claims.' },
+      { name: 'Renters insurance', summary: 'Personal property and liability coverage for tenants — often under $20 a month and frequently required by landlords.' },
+      { name: 'Specialty property', summary: 'Coverage for vacation homes, investment properties, landlord policies, flood, earthquake and high-value items like jewelry or art.' },
+    ],
+    fit: ['You are buying or refinancing a home and need proof of insurance', 'You want to bundle home and auto for multi-policy discounts', 'Your current premiums went up at renewal and you want a market check', 'You have assets worth protecting with an umbrella policy'],
+    process: ['We review your property details, driving history and current coverage', 'We compare quotes from multiple carriers side by side — coverage, deductibles and price', 'We bind your preferred option and set a reminder to re-shop at every renewal'],
+  },
 ]
 
 export const getSolution = (slug: string) => solutions.find((s) => s.slug === slug)

@@ -198,6 +198,20 @@ export const carrierGroups: CarrierGroup[] = [
     c('transamerica', 'Transamerica', 'A'),
     c('unum', 'Unum', 'A-'),
   ]},
+  { key: 'home-auto', title: 'Home & Auto', solution: 'home-auto', carriers: [
+    c('nationwide', 'Nationwide', 'A+'),
+    c('progressive', 'Progressive', 'A+'),
+    c('safeco', 'Safeco (Liberty Mutual)', 'A'),
+    c('travelers', 'Travelers', 'A+'),
+    c('hartford', 'The Hartford', 'A+'),
+    c('foremost', 'Foremost Insurance', 'A'),
+    c('bristol-west', 'Bristol West', 'A'),
+    c('national-general', 'National General', 'A-'),
+    c('kemper', 'Kemper', 'A-'),
+    c('stillwater', 'Stillwater Insurance', 'A-'),
+    c('openly', 'Openly', 'A'),
+    c('branch', 'Branch Insurance', 'A-'),
+  ]},
 ]
 
 export const allCarriers: Carrier[] = Array.from(new Map(carrierGroups.flatMap((g) => g.carriers).map((x) => [x.slug, x])).values())
