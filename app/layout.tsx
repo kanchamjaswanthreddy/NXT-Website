@@ -30,8 +30,10 @@ const jsonLd = {
   address: { '@type': 'PostalAddress', addressLocality: 'Malden', addressRegion: 'MA', addressCountry: 'US' },
   contactPoint: { '@type': 'ContactPoint', contactType: 'customer service', availableLanguage: ['English', 'Spanish'] },
   sameAs: [
-    'https://www.linkedin.com/company/nxt-financial-group',
     'https://www.instagram.com/nxtfinancialgroup',
+    'https://www.facebook.com/people/NXT-Financial-Group/61589938040020/',
+    'https://www.linkedin.com/company/https-nxtfinancialgroup.com-/',
+    'https://www.youtube.com/@NXTFinancialGroup',
   ],
   numberOfEmployees: { '@type': 'QuantitativeValue', minValue: 10, maxValue: 50 },
   knowsAbout: ['Annuities', 'Life Insurance', 'Medicare Planning', 'Disability Income Insurance', 'Long-Term Care Planning', 'Home & Auto Insurance', 'Independent Marketing Organization'],
