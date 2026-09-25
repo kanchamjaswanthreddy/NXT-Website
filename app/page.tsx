@@ -21,9 +21,22 @@ export const metadata: Metadata = {
   alternates: { canonical: 'https://www.nxtfinancialgroup.com' },
 }
 
+const homeFaqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: [
+    { '@type': 'Question', name: 'Does it cost anything to work with NXT?', acceptedAnswer: { '@type': 'Answer', text: 'No. We are compensated by the carrier that issues your policy or contract. You never pay us a fee, and our compensation does not change the rate you receive.' } },
+    { '@type': 'Question', name: 'Are you tied to one insurance company?', acceptedAnswer: { '@type': 'Answer', text: 'No. We are independent and hold appointments with many carriers rated A- or better by AM Best. We carry no quota with any of them, so the recommendation is the one that fits.' } },
+    { '@type': 'Question', name: 'I am turning 65. When should I call?', acceptedAnswer: { '@type': 'Answer', text: 'Ideally three to six months before your birthday. Your initial enrollment window opens three months before the month you turn 65 and closes three months after.' } },
+    { '@type': 'Question', name: 'Can you review policies I already own?', acceptedAnswer: { '@type': 'Answer', text: 'Yes. A policy review is often the most useful first meeting: we look at what you have, what it costs and whether it still does the job.' } },
+    { '@type': 'Question', name: 'Where are you licensed?', acceptedAnswer: { '@type': 'Answer', text: 'Our headquarters is in Everett, Massachusetts, and we are licensed to serve clients in all 50 states.' } },
+  ],
+}
+
 export default function Home() {
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(homeFaqJsonLd) }} />
       <HeroV4 />
 
       {/* STATS */}
@@ -72,7 +85,7 @@ export default function Home() {
 
       {/* STATEMENT */}
       <section className="relative isolate overflow-hidden bg-midnight on-dark">
-        <Image src="/images/atrium.png" alt="" fill sizes="100vw" className="object-cover opacity-25" style={{ filter: 'saturate(0.5)' }} />
+        <Image src="/images/atrium.png" alt="NXT Financial Group office atrium" fill sizes="100vw" className="object-cover opacity-25" style={{ filter: 'saturate(0.5)' }} />
         <div className="absolute inset-0 bg-gradient-to-r from-midnight via-midnight/85 to-midnight/40" />
         <div className="container relative grid grid-cols-1 gap-12 py-24 md:py-32 lg:grid-cols-[1fr_1fr]">
           <Reveal><p className="label-sm mb-6">Why independent matters</p><h2 className="display">A captive agent has one product line and a quota. We have neither.</h2></Reveal>
@@ -97,7 +110,7 @@ export default function Home() {
           <Reveal className="mb-12 flex flex-col gap-4 md:flex-row md:items-end md:justify-between"><div><p className="label-sm mb-5">Insights</p><h2 className="display">Read before you decide.</h2></div><Link href="/insights" className="link self-start">All articles <ArrowRight size={16} /></Link></Reveal>
           <Stagger as="ul" className="grid grid-cols-1 gap-6 md:grid-cols-3">
             {posts.slice(0, 3).map((p) => (
-              <Item as="li" key={p.slug}><Link href={`/insights/${p.slug}`} className="card card-hover group flex h-full flex-col overflow-hidden rounded-[24px]"><div className="relative aspect-[4/3] bg-stone"><Image src={p.image} alt="" fill sizes="33vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" style={{ filter: 'saturate(0.85)' }} /></div><div className="flex flex-1 flex-col p-6"><p className="mono text-xs text-gold">{p.date} · {p.readTime}</p><h3 className="display-sm mt-2 text-[1.35rem] group-hover:text-command">{p.title}</h3><p className="mt-2 flex-1 text-[14px] text-ink-soft">{p.excerpt}</p><span className="link mt-4 text-sm">Read the full story <ArrowRight size={15} /></span></div></Link></Item>
+              <Item as="li" key={p.slug}><Link href={`/insights/${p.slug}`} className="card card-hover group flex h-full flex-col overflow-hidden rounded-[24px]"><div className="relative aspect-[4/3] bg-stone"><Image src={p.image} alt={p.title} fill sizes="33vw" className="object-cover transition-transform duration-700 group-hover:scale-[1.04]" style={{ filter: 'saturate(0.85)' }} /></div><div className="flex flex-1 flex-col p-6"><p className="mono text-xs text-gold">{p.date} · {p.readTime}</p><h3 className="display-sm mt-2 text-[1.35rem] group-hover:text-command">{p.title}</h3><p className="mt-2 flex-1 text-[14px] text-ink-soft">{p.excerpt}</p><span className="link mt-4 text-sm">Read the full story <ArrowRight size={15} /></span></div></Link></Item>
             ))}
           </Stagger>
         </div>

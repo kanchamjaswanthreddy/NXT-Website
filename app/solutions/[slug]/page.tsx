@@ -53,7 +53,7 @@ export default async function SolutionPage({ params }: Params) {
       <section className="bg-stone">
         <div className="container grid grid-cols-1 gap-8 py-20 md:grid-cols-2 md:items-center">
           <Reveal><p className="label-sm mb-4">Next solution</p><Link href={`/solutions/${next.slug}`} className="group inline-block"><span className="display block group-hover:text-command">{next.title}</span><span className="mt-2 block text-ink-soft">{next.short}</span></Link></Reveal>
-          <Reveal delay={0.1} className="relative aspect-[16/10] overflow-hidden rounded-[24px]"><Image src={next.image} alt="" fill sizes="50vw" className="object-cover" style={{ filter: 'saturate(0.85)' }} /></Reveal>
+          <Reveal delay={0.1} className="relative aspect-[16/10] overflow-hidden rounded-[24px]"><Image src={next.image} alt={next.title} fill sizes="50vw" className="object-cover" style={{ filter: 'saturate(0.85)' }} /></Reveal>
         </div>
       </section>
     </>

@@ -69,6 +69,12 @@ const FAQ = [
   { q: 'Does NXT handle claims?', a: 'Claims are filed directly with your carrier, but your NXT advisor advocates on your behalf throughout the process — helping document the loss, following up on timelines and ensuring fair settlement.' },
 ]
 
+const faqJsonLd = {
+  '@context': 'https://schema.org',
+  '@type': 'FAQPage',
+  mainEntity: FAQ.map(({ q, a }) => ({ '@type': 'Question', name: q, acceptedAnswer: { '@type': 'Answer', text: a } })),
+}
+
 export default function HomeAutoPage() {
   const s = getSolution('home-auto')!
   const group = carrierGroups.find((g) => g.solution === 'home-auto')
@@ -77,6 +83,7 @@ export default function HomeAutoPage() {
 
   return (
     <>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }} />
       <PageHero
         eyebrow="Home & Auto"
         title="Your home and your car are more than assets. They are how your life works."
@@ -289,7 +296,7 @@ export default function HomeAutoPage() {
             </Link>
           </Reveal>
           <Reveal delay={0.1} className="relative aspect-[16/10] overflow-hidden rounded-[24px]">
-            <Image src={next.image} alt="" fill sizes="50vw" className="object-cover" style={{ filter: 'saturate(0.85)' }} />
+            <Image src={next.image} alt={next.title} fill sizes="50vw" className="object-cover" style={{ filter: 'saturate(0.85)' }} />
           </Reveal>
         </div>
       </section>
