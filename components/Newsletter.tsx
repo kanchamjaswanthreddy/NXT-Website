@@ -25,7 +25,7 @@ export default function Newsletter() {
               <p className="mono mt-4 text-xs text-silver">Free. Unsubscribe any time.</p>
             </form>
           )}
-          <div className="mt-8 flex items-center gap-4 border-t border-white/15 pt-6"><Image src="/logo.png" alt="" width={110} height={49} className="h-8 w-auto opacity-80" /><p className="text-xs text-silver">Written by the advisors you would be speaking with.</p></div>
+          <div className="mt-8 flex items-center gap-4 border-t border-white/15 pt-6"><Image src="/logo.png" alt="NXT Financial Group" width={110} height={49} className="h-8 w-auto brightness-0 invert opacity-80" /><p className="text-xs text-silver">Written by the advisors you would be speaking with.</p></div>
         </div>
       </div>
     </section>
