@@ -16,8 +16,8 @@ export const team: TeamMember[] = [
   // Team
   { name: 'Jaswanth Reddy', role: 'Chief Technology Officer', image: '/images/team/jaswanth-reddy.png', group: 'team' },
   { name: 'Andrew Barnett', role: 'Senior Technology Partner', image: '/images/team/andrew-barnett.png', group: 'team' },
+  { name: 'Rigoberto Antonio Ayala Rodas', role: 'Director of Business Development', image: '/images/team/rigoberto-ayala.png', group: 'team' },
   { name: 'Carmelo Aguilar', role: 'Director of Strategic Partnerships', image: '/images/agents/carmelo-aguilar.png', group: 'team' },
-  { name: 'Rigoberto Antonio Ayala Rodas', role: 'Director of Strategic Partnerships', image: '/images/team/rigoberto-ayala.png', group: 'team' },
   { name: 'Uday Chaudhary', role: 'Head of Marketing', image: '/images/team/uday-chaudhary.png', group: 'team' },
   { name: 'Gita Thakur', role: 'Agency Relationship Manager', image: '/images/gita-thakur.jpg', group: 'team' },
 
