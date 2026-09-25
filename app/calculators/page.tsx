@@ -3,8 +3,9 @@ import PageHero from '@/components/PageHero'
 import CalculatorTabs from '@/components/CalculatorTabs'
 
 export const metadata: Metadata = {
-  title: 'Calculators',
-  description: 'Financial calculators for retirement income, life insurance, long-term care, annuities, 401(k), Rule of 72, mortgage, smoking cost and breakfast savings from NXT Financial Group.',
+  title: 'Financial Calculators — Free Planning Tools',
+  description: 'Free financial calculators from NXT Financial Group: retirement income, life insurance needs, long-term care costs, annuity comparison, 401(k) growth, Rule of 72, mortgage, smoking cost and breakfast savings.',
+  alternates: { canonical: 'https://www.nxtfinancialgroup.com/calculators' },
 }
 
 export default function CalculatorsPage() {

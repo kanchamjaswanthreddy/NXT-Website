@@ -3,7 +3,7 @@ import { Check } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import PartnerForm from '@/components/PartnerForm'
 import { Reveal, Stagger, Item } from '@/components/motion'
-export const metadata: Metadata = { title: 'Partner With Us', description: 'Join the NXT Financial Group partner network: 104+ carriers, competitive commissions and dedicated support for agents, advisors and referral partners.' }
+export const metadata: Metadata = { title: 'Partner With Us — IMO Agent Network', description: 'Join the NXT Financial Group IMO partner network: 70+ top-rated carriers, competitive commissions, case design support and back-office services for independent agents and advisors.' }
 const BENEFITS = ['Appointments with A-rated annuity, life, LTC, Medicare and DI carriers', 'Transparent, structured compensation, every level earned through production', 'Case design and advanced planning support', 'Certified training modules plus weekly live coaching', 'Back-office, contracting and compliance support', 'Co-branded marketing and lead programs']
 export default function PartnerPage() {
   return (

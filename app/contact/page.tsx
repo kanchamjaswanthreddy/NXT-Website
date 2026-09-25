@@ -5,8 +5,10 @@ import PageHero from '@/components/PageHero'
 import ContactForm from '@/components/ContactForm'
 
 export const metadata: Metadata = {
-  title: 'Contact',
-  description: 'Book a free consultation with an NXT Financial Group advisor.',
+  title: 'Contact — Free Consultation',
+  description: 'Book a free, no-obligation consultation with an NXT Financial Group advisor. Compare quotes from 70+ carriers across annuities, life insurance, Medicare, disability, care planning and home & auto.',
+  openGraph: { title: 'Contact NXT Financial Group', description: 'Get a free quote from an independent advisor who shops 70+ carriers for you.' },
+  alternates: { canonical: 'https://www.nxtfinancialgroup.com/contact' },
 }
 
 const INFO = [

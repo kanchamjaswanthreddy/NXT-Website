@@ -4,7 +4,7 @@ import Link from 'next/link'
 import PageHero from '@/components/PageHero'
 import { Stagger, Item } from '@/components/motion'
 import { posts } from '@/lib/insights'
-export const metadata: Metadata = { title: 'Insights', description: 'Plain-language guidance on annuities, life insurance, care planning, Medicare and disability income.' }
+export const metadata: Metadata = { title: 'Insights — Insurance & Retirement Guidance', description: 'Plain-language articles on annuities, life insurance, care planning, Medicare and disability income from NXT Financial Group advisors.', alternates: { canonical: 'https://www.nxtfinancialgroup.com/insights' } }
 export default function InsightsPage() {
   const [first, ...rest] = posts
   return (<><PageHero eyebrow="Insights" title="Retirement, explained plainly." intro="Notes from our advisors on what each product actually does, what it costs and when it is worth it." />

@@ -5,9 +5,9 @@ import PageHero from '@/components/PageHero'
 import { Reveal, Stagger, Item } from '@/components/motion'
 
 export const metadata: Metadata = {
-  title: 'Careers',
+  title: 'Careers — Join Our IMO',
   description:
-    'Join NXT Financial Group. Explore open positions in financial services and build a rewarding career helping clients plan for retirement.',
+    'Join NXT Financial Group, a growing Independent Marketing Organization (IMO). Explore careers in financial services — competitive commissions, 70+ carrier appointments, training and support.',
 }
 
 const TOP_REASONS = [

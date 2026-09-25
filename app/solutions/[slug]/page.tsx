@@ -10,7 +10,7 @@ import { carrierGroups } from '@/lib/carriers'
 
 type Params = { params: Promise<{ slug: string }> }
 export function generateStaticParams() { return solutions.map((s) => ({ slug: s.slug })) }
-export async function generateMetadata({ params }: Params): Promise<Metadata> { const { slug } = await params; const s = getSolution(slug); return s ? { title: s.title, description: s.short } : {} }
+export async function generateMetadata({ params }: Params): Promise<Metadata> { const { slug } = await params; const s = getSolution(slug); return s ? { title: `${s.title} — Compare Top Carriers`, description: `${s.short} NXT Financial Group compares 70+ carriers to find the right ${s.title.toLowerCase()} coverage for you.`, alternates: { canonical: `https://www.nxtfinancialgroup.com/solutions/${slug}` } } : {} }
 
 export default async function SolutionPage({ params }: Params) {
   const { slug } = await params

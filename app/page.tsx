@@ -1,3 +1,4 @@
+import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
 import { ArrowRight, ArrowUpRight, Check, Scale, Landmark, Users, PhoneCall } from 'lucide-react'
@@ -12,6 +13,13 @@ import { Reveal, Stagger, Item, Counter } from '@/components/motion'
 import { posts } from '@/lib/insights'
 
 const STATS = [[Landmark, 70, '+', 'Carrier partners'], [Users, 50, '', 'States licensed'], [Scale, 5, '', 'Disciplines, practiced daily'], [PhoneCall, 1, ' day', 'To hear back from us']] as const
+
+export const metadata: Metadata = {
+  title: 'NXT Financial Group | IMO — Independent Marketing Organization',
+  description: 'NXT Financial Group is a leading IMO (Independent Marketing Organization) comparing 70+ top-rated insurance carriers. Annuities, life insurance, Medicare, disability, care planning and home & auto — all 50 states.',
+  openGraph: { title: 'NXT Financial Group | IMO — Independent Marketing Organization', description: 'Compare 70+ carriers across 6 insurance disciplines. One advisor, one plan, every option.', images: ['/og-image.png'] },
+  alternates: { canonical: 'https://www.nxtfinancialgroup.com' },
+}
 
 export default function Home() {
   return (

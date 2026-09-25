@@ -8,8 +8,10 @@ import { getSolution, solutions } from '@/lib/solutions'
 import { carrierGroups } from '@/lib/carriers'
 
 export const metadata: Metadata = {
-  title: 'Home & Auto Insurance',
-  description: 'Homeowners, auto, umbrella and specialty property coverage compared across top-rated carriers. Protect your home, vehicles and everything in between.',
+  title: 'Home & Auto Insurance — Compare Top Carriers',
+  description: 'Compare homeowners, auto, umbrella and specialty property insurance from top-rated carriers. Bundle and save up to 25%. NXT Financial Group shops the market for you.',
+  openGraph: { title: 'Home & Auto Insurance | NXT Financial Group', description: 'Homeowners, auto, umbrella and renters coverage compared across top carriers. Get a free quote.' },
+  alternates: { canonical: 'https://www.nxtfinancialgroup.com/solutions/home-auto' },
 }
 
 const COVERAGE_TYPES = [

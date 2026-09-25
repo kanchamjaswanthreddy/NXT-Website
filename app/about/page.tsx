@@ -8,8 +8,10 @@ import { leadership, coreTeam, advisors } from '@/lib/team'
 import { getAgentsByState } from '@/lib/agents'
 
 export const metadata: Metadata = {
-  title: 'About',
-  description: 'NXT Financial Group is an independent marketing organization (IMO) headquartered in Malden, Massachusetts — built for advisors and families, serving all 50 states.',
+  title: 'About — IMO Built for Advisors & Families',
+  description: 'NXT Financial Group is an Independent Marketing Organization (IMO) headquartered in Malden, Massachusetts. 70+ carrier appointments, 6 insurance disciplines, serving advisors and families across all 50 states.',
+  openGraph: { title: 'About NXT Financial Group — Independent Marketing Organization', description: 'Meet the IMO built for advisors and families. 70+ carriers, 6 disciplines, all 50 states.' },
+  alternates: { canonical: 'https://www.nxtfinancialgroup.com/about' },
 }
 
 const DIFFERENTIATORS = [
