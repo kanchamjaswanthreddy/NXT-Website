@@ -23,7 +23,8 @@ export const team: TeamMember[] = [
 
   // Advisors
   { name: 'Matt Earhart', role: 'Strategic Industry Advisor', image: '/images/team/matt-earhart.png', group: 'advisors' },
-  { name: 'Ashish Sood', role: 'Technology & AI Advisor', image: '/images/team/ashish-sood.png', group: 'advisors' },
+  { name: 'Ashish Sood', role: 'AI & Digital Transformation Advisor', image: '/images/team/ashish-sood.png', group: 'advisors' },
+  { name: 'James R. Vigeant', role: 'Strategic Leadership & Innovation Advisor', image: '/images/team/james-vigeant.jpeg', group: 'advisors' },
   { name: 'Nikhil Bhatt', role: 'Strategic Compliance Advisor', image: '/images/team/nikhil-bhatt.png', group: 'advisors' },
 ]
 
