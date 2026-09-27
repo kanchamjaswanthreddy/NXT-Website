@@ -134,7 +134,7 @@ export default function AboutPage() {
           </Reveal>
           <Reveal delay={0.1} className="space-y-5 text-[17px] leading-8">
             <p>NXT Financial Group was founded on a simple frustration: the financial services industry was not built for the people working inside it. Advisors were capped. Clients were confused. The old model rewarded institutions over individuals, and the people doing the hardest work — sitting across from families, asking the difficult questions, building trust one conversation at a time — had no real ownership of what they were building.</p>
-            <p>We decided to change that. NXT Financial Group is a licensed Independent Marketing Organization (IMO) and Managing General Agency (MGA) appointed with 70+ top-rated U.S. carriers across life, health, annuity, and wealth products. We operate as a nationwide platform where advisors are not just producers — they are owners.</p>
+            <p>We decided to change that. NXT Financial Group is a licensed Independent Marketing Organization (IMO) appointed with 70+ top-rated U.S. carriers across life, health, annuity, and wealth products. We operate as a nationwide platform where advisors are not just producers — they are owners.</p>
             <p>On the client side, our advisors are trained to lead with education, not sales. They sit down with families, listen first, and build protection plans that make sense — clearly explained, honestly priced, and built to last.</p>
           </Reveal>
         </div>

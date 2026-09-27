@@ -61,7 +61,7 @@ export default function MortgageCalculator() {
         </div>
         <div className="space-y-5">
           <Slider id="mc-price" label="Home price" value={price} display={usd(price)} min={100000} max={2000000} step={10000} onChange={setPrice} minLabel="$100k" maxLabel="$2M" />
-          <Slider id="mc-down" label="Down payment" value={down} display={`${down}%`} min={0} max={30} step={1} onChange={setDown} minLabel="0%" maxLabel="30%" />
+          <Slider id="mc-down" label="Down payment" value={down} display={`${down}%`} min={0} max={100} step={1} onChange={setDown} minLabel="0%" maxLabel="100%" />
           <Slider id="mc-rate" label="Interest rate" value={rate} display={`${rate}%`} min={2} max={10} step={0.125} onChange={setRate} minLabel="2%" maxLabel="10%" />
         </div>
         <Result label="Monthly payment (P&I)" value={usd(monthly)} note={`Total cost over ${term} years: ${usd(totalPaid)}. Does not include taxes, insurance, or PMI. Rates change daily; an advisor or lender will lock your actual rate.`} />
