@@ -298,7 +298,7 @@ export default function Nav() {
               <Phone size={15} className="text-gold" /> 857-205-3333
             </a>
             <a
-              href="https://nxt-crm-beta.vercel.app/auth/login"
+              href="https://crm.nxtfinancialgroup.com/auth/login"
               target="_blank"
               rel="noopener noreferrer"
               className="btn btn-outline btn-sm"
@@ -360,7 +360,7 @@ export default function Nav() {
               Book a consultation
             </Link>
             <a
-              href="https://nxt-crm-beta.vercel.app/auth/login"
+              href="https://crm.nxtfinancialgroup.com/auth/login"
               target="_blank"
               rel="noopener noreferrer"
               onClick={() => setOpen(false)}
