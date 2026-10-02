@@ -20,7 +20,7 @@ export const team: TeamMember[] = [
   { name: 'Carmelo Aguilar', role: 'Senior Staff Accountant', image: '/images/team/carmelo-aguilar.png', group: 'leadership' },
   { name: 'Samyak Jain', role: 'Director of Risk & Analytics', image: '/images/team/samyak-jain.jpeg', group: 'leadership' },
   { name: 'Naresh Gajula', role: 'Director of Commissions', image: '/images/team/naresh-gajula.jpeg', group: 'leadership' },
-  { name: 'Uday Chaudhary', role: 'Director of Marketing', image: '/images/team/uday-chaudhary.png', group: 'leadership' },
+  { name: 'Uday Chaudhary', role: 'Director of Marketing', image: '/images/team/uday-chaudhary.jpeg', group: 'leadership' },
   { name: 'Gita Thakur', role: 'Director of Events Operations', image: '/images/team/gita-thakur.jpg', group: 'leadership' },
 ]
 
