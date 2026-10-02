@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, Phone, Mail, MapPin, ShieldCheck, Building2, BookOpen, Eye, Globe, HeartHandshake, Handshake, CheckCircle, Crown, Lock, GraduationCap, Target, Heart } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import { Reveal, Stagger, Item } from '@/components/motion'
-import { leadership, advisors } from '@/lib/team'
+import { leadership } from '@/lib/team'
 import { getAgentsByState } from '@/lib/agents'
 
 export const metadata: Metadata = {
@@ -249,17 +249,6 @@ export default function AboutPage() {
             <h2 className="display">The people leading NXT Financial.</h2>
           </Reveal>
           <TeamGrid members={leadership} cols="md:grid-cols-4" />
-        </div>
-      </section>
-
-      {/* Advisors */}
-      <section className="section">
-        <div className="container">
-          <Reveal className="mb-12 max-w-[600px]">
-            <p className="label-sm mb-5">Advisors</p>
-            <h2 className="display">Seasoned advisors across insurance &amp; technology.</h2>
-          </Reveal>
-          <TeamGrid members={advisors} cols="md:grid-cols-4" />
         </div>
       </section>
 
