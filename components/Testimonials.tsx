@@ -36,12 +36,6 @@ const TESTIMONIALS = [
     quote: 'I came to NXT with a lot of questions and some skepticism. I left with a coverage plan I understood completely and a level of confidence I did not expect. My advisor was professional, knowledgeable, and never made me feel like just another sale. NXT truly cares about the people they serve.',
   },
   {
-    name: 'Dhwani Mandlia',
-    role: 'Client',
-    image: '/images/testimonials/dhwani-mandlia.png',
-    quote: 'As someone who is careful about every financial decision I make, I did my research before choosing NXT. The advisor I worked with was thorough, transparent, and genuinely interested in finding the right solution for my situation. The entire process was smooth and professional. NXT has earned a client for life.',
-  },
-  {
     name: 'Andy M. Martinez',
     role: 'Client',
     image: '/images/testimonials/andy-martinez.jpg',
@@ -70,12 +64,6 @@ const TESTIMONIALS = [
     role: 'Technology & AI Advisor',
     image: '/images/team/ashish-sood.png',
     quote: 'The financial services industry is undergoing a fundamental transformation driven by technology and artificial intelligence — and NXT is positioning itself at the forefront of that shift. NXT is not trying to digitize the old model. They are building the new one.',
-  },
-  {
-    name: 'Nikhil Bhatt',
-    role: 'Strategic Compliance Advisor',
-    image: '/images/testimonials/nikhil-bhatt.png',
-    quote: 'In an industry where regulatory complexity can make or break an organization, NXT stands out for taking compliance seriously from day one. NXT\'s commitment to building a durable, compliant business is something I rarely see at this stage of a company\'s growth.',
   },
   {
     name: 'Sony Pradhan',
