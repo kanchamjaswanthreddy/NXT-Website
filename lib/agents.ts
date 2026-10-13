@@ -18,7 +18,6 @@ export const agents: Agent[] = [
   { name: 'Carmelo Aguilar', rank: 'Senior Staff Accountant', city: 'Peabody', state: 'Massachusetts', phone: '(857) 294-2204', email: 'carmelonxtfinancialgroup@gmail.com', image: '/images/agents/carmelo-aguilar.png' },
   { name: 'Makeshwar Yadav', rank: 'Financial Director', city: 'Worcester', state: 'Texas', phone: '(512) 521-8817', email: 'makeshwarnxtfinancialgroup@gmail.com', image: '/images/agents/makeshwar-yadav.png' },
   { name: 'Rigoberto Antonio Ayala Rodas', rank: 'Director, Business Development', city: 'Everett', state: 'Massachusetts', phone: '(617) 331-4093', email: 'rigonxtfinancialgroup@gmail.com', image: '/images/team/rigoberto-ayala.png' },
-  { name: 'Chintan Atulbhai Shah', rank: 'Financial Associate', city: 'Sayreville', state: 'New Jersey', phone: '(973) 572-2963', email: 'chintannxtfinancialgroup@gmail.com', image: '/images/agents/chintan-shah.png' },
   { name: 'Maira Elisabeth Ochoa Umana', rank: 'Financial Associate', city: 'Revere', state: 'Massachusetts', phone: '(617) 953-8118', email: 'mairanxtfinancialgroup@gmail.com', image: '/images/agents/maira-ochoa.png' },
   { name: 'Josue Araujo', rank: 'Financial Associate', city: 'Malden', state: 'Massachusetts', phone: '(781) 333-0908', email: 'josuenxtfinancialgroup@gmail.com', image: '/images/agents/josue-araujo.png' },
   { name: 'Vivek Daruka', rank: 'Financial Associate', city: 'Worcester', state: 'Massachusetts', phone: '(318) 789-4199', email: 'viveknxtfinancialgroup@gmail.com', image: null },

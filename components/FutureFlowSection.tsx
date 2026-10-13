@@ -8,7 +8,6 @@ import {
   CreditCard,
   DollarSign,
   TrendingUp,
-  PhoneCall,
   Shield,
   Link2,
   Cpu,
@@ -53,13 +52,6 @@ const FEATURES = [
     statLabel: 'avg net worth tracked',
   },
   {
-    icon: PhoneCall,
-    title: 'Bill Negotiation',
-    desc: 'AI agents call your providers to lower cable, insurance, and utility bills — automatically.',
-    stat: '$840',
-    statLabel: 'saved per year',
-  },
-  {
     icon: Shield,
     title: 'Financial Health Score',
     desc: 'A real-time 0–850 score with actionable steps — like a credit score for your whole financial life.',
@@ -75,9 +67,9 @@ const STEPS = [
 ]
 
 const TESTIMONIALS = [
-  { name: 'Sarah Chen', role: 'Marketing Manager, Austin TX', quote: 'FutureFlow found $420 in forgotten subscriptions and saved another $60/month on my internet bill. It paid for itself in the first week.' },
-  { name: 'Marcus Rivera', role: 'Software Engineer, Chicago IL', quote: 'I paid off $28,000 in student loans 14 months ahead of schedule using FutureFlow\u2019s payoff plan. This app genuinely changed my financial life.' },
-  { name: 'Aisha Johnson', role: 'Nurse Practitioner, Atlanta GA', quote: 'Finally a finance app that doesn\u2019t feel like filing taxes. My Health Score went from 620 to 781 in just 8 months.' },
+  { name: 'Ri Mule', role: 'App Store Review', quote: 'FutureFlow paid for itself in the first week by flagging three subscriptions I\u2019d completely forgotten about. The budgeting and spending alerts keep me on top of my finances without any effort, and the interface is clean and easy to navigate.' },
+  { name: 'Dipak Katuwal', role: 'App Store Review', quote: 'My friend recommended me this app and I am loving it because it breaks down all of my income and spending. I have a whole picture of my money flow and even found 4 subscriptions I don\u2019t even use. Highly recommend everyone to use this app.' },
+  { name: 'ssgade98', role: 'App Store Review', quote: 'Clean, intuitive UI, easy to navigate, and it brings all my spending, subscriptions, bills, budgets, and savings together in one place. The AI assistant is surprisingly good and provides quick, helpful insights. Excited to see what future updates bring.' },
 ]
 
 const PLANS = [
@@ -94,7 +86,7 @@ const PLANS = [
     desc: 'The complete FutureFlow experience.',
     cta: 'Start Free Trial',
     popular: true,
-    features: ['Everything in Free', 'Unlimited accounts', 'AI subscription manager', 'Debt payoff planner', 'Cash flow forecasting', 'Credit score monitor', 'Net worth tracker', 'Autonomous tax engine', 'Bill negotiation AI'],
+    features: ['Everything in Free', 'Unlimited accounts', 'AI subscription manager', 'Debt payoff planner', 'Cash flow forecasting', 'Credit score monitor', 'Net worth tracker', 'Autonomous tax engine'],
   },
   {
     name: 'Household',
@@ -138,9 +130,9 @@ export default function FutureFlowSection() {
           {/* Stats */}
           <Stagger as="ul" className="mx-auto mt-16 grid max-w-3xl grid-cols-2 gap-y-10 md:grid-cols-4">
             {([
-              [500, 'K+', 'Active users'],
-              [18, 'M+', 'Saved for users'],
               [12, 'K+', 'Institutions'],
+              [4.8, '', 'App Store rating'],
+              [6, '+', 'Financial tools'],
             ] as const).map(([v, suf, label]) => (
               <Item as="li" key={label} className="text-center">
                 <p className="font-display text-4xl font-semibold text-white md:text-5xl">
@@ -151,9 +143,9 @@ export default function FutureFlowSection() {
             ))}
             <Item as="li" className="text-center">
               <p className="font-display text-4xl font-semibold text-white md:text-5xl">
-                4.8<span className="text-gold">{'\u2605'}</span>
+                90<span className="text-gold">s</span>
               </p>
-              <p className="mt-1 text-sm text-platinum">App Store</p>
+              <p className="mt-1 text-sm text-platinum">Setup time</p>
             </Item>
           </Stagger>
         </div>
@@ -464,7 +456,7 @@ export default function FutureFlowSection() {
         <div className="container">
           <Reveal className="mb-14 max-w-[600px]">
             <p className="label-sm mb-5">Testimonials</p>
-            <h3 className="display">500,000 people can&rsquo;t be wrong.</h3>
+            <h3 className="display">Real reviews from the App&nbsp;Store.</h3>
           </Reveal>
 
           <Stagger as="div" className="grid grid-cols-1 gap-6 md:grid-cols-3">
