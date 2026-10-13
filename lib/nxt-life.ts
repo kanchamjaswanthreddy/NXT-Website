@@ -93,7 +93,7 @@ export const articles: Article[] = [
     category: 'Leadership',
     date: 'August 15, 2026',
     readTime: '6 min',
-    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&h=800&fit=crop&q=80',
+    image: 'https://images.unsplash.com/photo-1517245386807-bb43f82c33c4?w=1200&h=800&fit=crop&q=80',
     body: [
       { type: 'p', text: 'Before there was a brand, a website, or a carrier wall, there were conversations at kitchen tables. The founding team at NXT Financial Group spent years in the field, learning what families actually need versus what the industry assumes they want.' },
       { type: 'h2', text: 'What stuck' },

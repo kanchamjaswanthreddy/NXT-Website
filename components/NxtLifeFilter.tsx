@@ -15,7 +15,7 @@ export default function NxtLifeFilter({ articles }: { articles: Article[] }) {
     <section className="section">
       <div className="container">
         <div className="mb-10 flex flex-wrap items-center gap-3">
-          <p className="eyebrow mr-4">Browse</p>
+          <p className="kicker mr-4 text-sm tracking-wide uppercase">Browse</p>
           {CATEGORIES.map((cat) => (
             <button
               key={cat}

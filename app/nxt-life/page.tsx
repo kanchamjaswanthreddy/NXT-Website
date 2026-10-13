@@ -62,7 +62,7 @@ export default function NxtLifePage() {
       <section className="section pb-0">
         <div className="container">
           <Reveal>
-            <p className="eyebrow mb-6">Featured Story</p>
+            <p className="kicker mb-6 text-sm tracking-wide uppercase">Featured Story</p>
           </Reveal>
           <Reveal delay={0.08}>
             <Link
