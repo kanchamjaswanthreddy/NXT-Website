@@ -41,17 +41,17 @@ export default function NxtLifePage() {
           </Reveal>
 
           <Reveal delay={0.24}>
-            <div className="mt-12 grid grid-cols-2 gap-4 sm:grid-cols-4 sm:gap-6 max-w-[680px]">
+            <div className="mt-12 grid grid-cols-2 gap-5 sm:grid-cols-4 sm:gap-6 max-w-[760px]">
               {[
                 { icon: Newspaper, label: 'Company News', count: articles.filter((a) => a.category === 'Company News').length },
                 { icon: TrendingUp, label: 'Industry Trends', count: articles.filter((a) => a.category === 'Industry Trends').length },
                 { icon: Users, label: 'Culture & People', count: articles.filter((a) => a.category === 'Culture' || a.category === 'Leadership').length },
                 { icon: Lightbulb, label: 'Innovation', count: articles.filter((a) => a.category === 'Innovation').length },
               ].map((stat) => (
-                <div key={stat.label} className="glass rounded-xl p-4 text-center">
-                  <stat.icon size={20} className="mx-auto mb-2 text-sunrise" />
-                  <p className="text-2xl font-display font-semibold text-white">{stat.count}</p>
-                  <p className="mt-1 text-xs text-silver">{stat.label}</p>
+                <div key={stat.label} className="glass rounded-2xl px-5 py-6 text-center">
+                  <stat.icon size={28} className="mx-auto mb-3 text-sunrise" />
+                  <p className="text-4xl font-display font-bold text-white">{stat.count}</p>
+                  <p className="mt-2 text-sm font-medium text-platinum">{stat.label}</p>
                 </div>
               ))}
             </div>

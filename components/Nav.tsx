@@ -121,12 +121,19 @@ const dropdownVariants = {
   exit: { opacity: 0, y: -4 },
 }
 
+const DARK_HERO_ROUTES = ['/nxt-life']
+
 export default function Nav() {
   const pathname = usePathname()
   const [open, setOpen] = useState(false)
   const [scrolled, setScrolled] = useState(false)
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
   const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+
+  const isDarkHero = DARK_HERO_ROUTES.some(
+    (r) => pathname === r || pathname?.startsWith(r + '/'),
+  )
+  const showLight = isDarkHero && !scrolled && !open
 
   useEffect(() => {
     const handleScroll = () => setScrolled(window.scrollY > 12)
@@ -202,7 +209,7 @@ export default function Nav() {
             className="shrink-0"
           >
             <Image
-              src="/logo.png"
+              src={showLight ? '/logo-white.png' : '/logo.png'}
               alt="NXT Financial Group"
               width={200}
               height={88}
@@ -228,10 +235,14 @@ export default function Nav() {
                   {hasDropdown ? (
                     <button
                       type="button"
-                      className={`relative flex items-center gap-1 py-2 text-[15px] font-medium text-ink transition-colors hover:text-navy after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px] after:rounded-full after:bg-gold after:transition-transform ${
-                        active
-                          ? 'text-navy after:scale-x-100'
-                          : 'after:scale-x-0 hover:after:scale-x-100'
+                      className={`relative flex items-center gap-1 py-2 text-[15px] font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px] after:rounded-full after:bg-gold after:transition-transform ${
+                        showLight
+                          ? active
+                            ? 'text-white after:scale-x-100'
+                            : 'text-white/80 hover:text-white after:scale-x-0 hover:after:scale-x-100'
+                          : active
+                            ? 'text-navy after:scale-x-100'
+                            : 'text-ink hover:text-navy after:scale-x-0 hover:after:scale-x-100'
                       }`}
                       aria-expanded={activeDropdown === item.key}
                       aria-haspopup="true"
@@ -247,10 +258,14 @@ export default function Nav() {
                   ) : (
                     <Link
                       href={item.href}
-                      className={`relative py-2 text-[15px] font-medium text-ink transition-colors hover:text-navy after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px] after:rounded-full after:bg-gold after:transition-transform ${
-                        active
-                          ? 'text-navy after:scale-x-100'
-                          : 'after:scale-x-0 hover:after:scale-x-100'
+                      className={`relative py-2 text-[15px] font-medium transition-colors after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px] after:rounded-full after:bg-gold after:transition-transform ${
+                        showLight
+                          ? active
+                            ? 'text-white after:scale-x-100'
+                            : 'text-white/80 hover:text-white after:scale-x-0 hover:after:scale-x-100'
+                          : active
+                            ? 'text-navy after:scale-x-100'
+                            : 'text-ink hover:text-navy after:scale-x-0 hover:after:scale-x-100'
                       }`}
                     >
                       {item.label}
@@ -299,7 +314,11 @@ export default function Nav() {
           <div className="hidden items-center gap-5 lg:flex">
             <a
               href="tel:8572053333"
-              className="mono flex items-center gap-2 text-sm text-ink hover:text-navy"
+              className={`mono flex items-center gap-2 text-sm transition-colors ${
+                showLight
+                  ? 'text-white/80 hover:text-white'
+                  : 'text-ink hover:text-navy'
+              }`}
             >
               <Phone size={15} className="text-gold" /> 857-205-3333
             </a>
@@ -307,7 +326,11 @@ export default function Nav() {
               href="https://crm.nxtfinancialgroup.com/auth/login"
               target="_blank"
               rel="noopener noreferrer"
-              className="btn btn-outline btn-sm"
+              className={`btn btn-sm ${
+                showLight
+                  ? 'border-white/30 text-white hover:border-white hover:bg-white/10'
+                  : 'btn-outline'
+              }`}
             >
               Agent Login
             </a>
@@ -322,7 +345,9 @@ export default function Nav() {
             aria-expanded={open}
             aria-controls="mobile-nav"
             aria-label={open ? 'Close menu' : 'Open menu'}
-            className="relative z-[60] flex h-12 w-12 items-center justify-center rounded-full text-navy active:bg-platinum/60 lg:hidden"
+            className={`relative z-[60] flex h-12 w-12 items-center justify-center rounded-full active:bg-platinum/60 lg:hidden ${
+              showLight ? 'text-white' : 'text-navy'
+            }`}
           >
             {open ? <X size={24} /> : <Menu size={24} />}
           </button>

@@ -20,7 +20,7 @@ export const articles: Article[] = [
     category: 'Company News',
     date: 'October 8, 2026',
     readTime: '5 min',
-    image: '/images/team-meeting.png',
+    image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=800&fit=crop&q=80',
     featured: true,
     body: [
       { type: 'p', text: 'When NXT Financial Group opened its doors, the goal was never to become the biggest brokerage in the room. It was to become the most trusted. That mission has not changed, but the geography has. As of this month, NXT is licensed and actively writing business in every state in the country.' },
@@ -37,7 +37,7 @@ export const articles: Article[] = [
     category: 'Industry Trends',
     date: 'September 25, 2026',
     readTime: '7 min',
-    image: '/images/retirement.png',
+    image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=1200&h=800&fit=crop&q=80',
     body: [
       { type: 'p', text: 'The retirement landscape is shifting faster than most planning models can accommodate. Americans are living longer, working differently, and expecting more transparency from their financial partners. The advisors who thrive in the next decade will be those who treat planning as an ongoing conversation, not a one-time transaction.' },
       { type: 'h2', text: 'Three forces reshaping the industry' },
@@ -57,7 +57,7 @@ export const articles: Article[] = [
     category: 'Culture',
     date: 'September 12, 2026',
     readTime: '6 min',
-    image: '/images/team.png',
+    image: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=1200&h=800&fit=crop&q=80',
     body: [
       { type: 'p', text: 'Insurance is not famous for retention. New agents burn out, experienced ones jump ship for higher commissions, and the cycle repeats. NXT Financial Group decided early on that this cycle was a choice, not a given.' },
       { type: 'h2', text: 'What we measure' },
@@ -77,7 +77,7 @@ export const articles: Article[] = [
     category: 'Industry Trends',
     date: 'August 30, 2026',
     readTime: '8 min',
-    image: '/images/family-advisor.png',
+    image: 'https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=1200&h=800&fit=crop&q=80',
     body: [
       { type: 'p', text: 'A recent industry survey found that fewer than one in three Americans can correctly identify what long-term care insurance covers. Nearly half believe Medicare will pay for extended nursing home stays. It will not. This gap between perception and reality leaves millions of families exposed to catastrophic financial risk.' },
       { type: 'h2', text: 'Why clarity matters more than products' },
@@ -93,7 +93,7 @@ export const articles: Article[] = [
     category: 'Leadership',
     date: 'August 15, 2026',
     readTime: '6 min',
-    image: '/images/advisors.png',
+    image: 'https://images.unsplash.com/photo-1560250097-0b93528c311a?w=1200&h=800&fit=crop&q=80',
     body: [
       { type: 'p', text: 'Before there was a brand, a website, or a carrier wall, there were conversations at kitchen tables. The founding team at NXT Financial Group spent years in the field, learning what families actually need versus what the industry assumes they want.' },
       { type: 'h2', text: 'What stuck' },
@@ -114,7 +114,7 @@ export const articles: Article[] = [
     category: 'Innovation',
     date: 'July 28, 2026',
     readTime: '7 min',
-    image: '/images/desk.png',
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=1200&h=800&fit=crop&q=80',
     body: [
       { type: 'p', text: 'The insurance industry has historically been slow to adopt new technology. That is changing rapidly. Carriers are using machine learning for underwriting decisions, agencies are automating compliance workflows, and clients expect instant quotes on their phones.' },
       { type: 'h2', text: 'Where technology helps' },
