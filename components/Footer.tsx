@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react'
 import { solutions } from '@/lib/solutions'
 
-const COMPANY = [['/about', 'About NXT'], ['/carriers', 'Carrier partners'], ['/calculators', 'Calculators'], ['/resources', 'Planning tools'], ['/insights', 'Insights'], ['/careers', 'Careers'], ['/partner', 'For advisors'], ['/referral', 'Refer a friend'], ['/contact', 'Contact']]
+const COMPANY = [['/about', 'About NXT'], ['/carriers', 'Carrier partners'], ['/calculators', 'Calculators'], ['/resources', 'Planning tools'], ['/nxt-life', 'NXT Life'], ['/insights', 'Insights'], ['/careers', 'Careers'], ['/partner', 'For advisors'], ['/referral', 'Refer a friend'], ['/contact', 'Contact']]
 
 export default function Footer() {
   return (

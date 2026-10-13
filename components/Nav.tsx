@@ -57,6 +57,11 @@ const NAV_ITEMS: NavItem[] = [
     label: 'Carriers',
   },
   {
+    key: 'nxt-life',
+    href: '/nxt-life',
+    label: 'NXT Life',
+  },
+  {
     key: 'insights',
     href: '/insights',
     label: 'Insights',
@@ -103,6 +108,7 @@ const MOBILE_SECTIONS = [
     heading: null,
     links: [
       { href: '/carriers', label: 'Carriers' },
+      { href: '/nxt-life', label: 'NXT Life' },
       { href: '/insights', label: 'Insights' },
       { href: '/careers', label: 'Careers' },
     ],

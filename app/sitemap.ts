@@ -1,6 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { solutions } from '@/lib/solutions'
 import { posts } from '@/lib/insights'
+import { articles } from '@/lib/nxt-life'
 
 const SITE = 'https://www.nxtfinancialgroup.com'
 
@@ -16,6 +17,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE}/careers`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
     { url: `${SITE}/partner`, lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: `${SITE}/calculators`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
+    { url: `${SITE}/nxt-life`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/insights`, lastModified: now, changeFrequency: 'weekly', priority: 0.8 },
     { url: `${SITE}/referral`, lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
     { url: `${SITE}/resources`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
@@ -37,5 +39,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }))
 
-  return [...staticPages, ...solutionPages, ...insightPages]
+  const nxtLifePages: MetadataRoute.Sitemap = articles.map((a) => ({
+    url: `${SITE}/nxt-life/${a.slug}`,
+    lastModified: now,
+    changeFrequency: 'monthly' as const,
+    priority: 0.6,
+  }))
+
+  return [...staticPages, ...solutionPages, ...insightPages, ...nxtLifePages]
 }
