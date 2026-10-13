@@ -19,21 +19,20 @@ export default function NxtLifePage() {
   return (
     <>
       {/* Masthead */}
-      <section className="relative isolate overflow-hidden bg-midnight on-dark">
-        <div aria-hidden="true" className="glow -right-40 top-0 h-[600px] w-[600px] bg-gold/10" />
-        <div aria-hidden="true" className="glow -left-32 bottom-0 h-[400px] w-[400px] bg-navy-light/20" />
+      <section className="relative isolate overflow-hidden bg-stone">
+        <div aria-hidden="true" className="glow -right-32 -top-32 h-[480px] w-[480px] bg-sunrise/20" />
 
-        <div className="container pb-20 pt-32 md:pt-40 md:pb-28">
+        <div className="container pb-16 pt-32 md:pt-40 lg:pb-24">
           <Reveal>
             <p className="label-sm mb-8">Editorial</p>
           </Reveal>
           <Reveal delay={0.08}>
-            <h1 className="display-xl max-w-[900px]">
-              NXT <span className="italic text-sunrise">Life</span>
+            <h1 className="display-xl max-w-[900px] text-navy">
+              NXT <span className="italic text-gold">Life</span>
             </h1>
           </Reveal>
           <Reveal delay={0.16}>
-            <p className="lead mt-6 max-w-[640px] text-platinum">
+            <p className="lead mt-6 max-w-[640px] text-ink-soft">
               The official corporate editorial publication of NXT Financial Group — featuring
               company announcements, industry trends, and the stories behind the people who
               protect families every day.
@@ -48,17 +47,15 @@ export default function NxtLifePage() {
                 { icon: Users, label: 'Culture & People', count: articles.filter((a) => a.category === 'Culture' || a.category === 'Leadership').length },
                 { icon: Lightbulb, label: 'Innovation', count: articles.filter((a) => a.category === 'Innovation').length },
               ].map((stat) => (
-                <div key={stat.label} className="glass rounded-2xl px-5 py-6 text-center">
-                  <stat.icon size={28} className="mx-auto mb-3 text-sunrise" />
-                  <p className="text-4xl font-display font-bold text-white">{stat.count}</p>
-                  <p className="mt-2 text-sm font-medium text-platinum">{stat.label}</p>
+                <div key={stat.label} className="card rounded-2xl px-5 py-6 text-center">
+                  <stat.icon size={28} className="mx-auto mb-3 text-gold" />
+                  <p className="text-4xl font-display font-bold text-navy">{stat.count}</p>
+                  <p className="mt-2 text-sm font-medium text-ink-soft">{stat.label}</p>
                 </div>
               ))}
             </div>
           </Reveal>
         </div>
-
-        <div className="swoosh-band" />
       </section>
 
       {/* Featured story */}
@@ -104,15 +101,16 @@ export default function NxtLifePage() {
       <NxtLifeFilter articles={rest} />
 
       {/* Quote / brand strip */}
-      <section className="bg-midnight on-dark grain">
+      <section className="bg-stone">
         <div className="container py-20 md:py-28 text-center">
           <Reveal>
             <blockquote className="mx-auto max-w-[720px]">
-              <p className="display-sm italic text-sunrise leading-snug">
+              <div className="gold-rule mx-auto mb-8" />
+              <p className="display-sm italic text-navy leading-snug">
                 &ldquo;We do not just sell policies. We build a culture of protection,
                 education, and service that outlasts any single transaction.&rdquo;
               </p>
-              <footer className="mt-8 text-sm text-silver">
+              <footer className="mt-8 text-sm text-ink-soft">
                 — NXT Financial Group Leadership
               </footer>
             </blockquote>

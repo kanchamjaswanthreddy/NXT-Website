@@ -30,21 +30,20 @@ export default async function NxtLifeArticlePage({ params }: Params) {
   return (
     <>
       {/* Header */}
-      <section className="bg-midnight on-dark">
+      <section className="bg-stone">
         <div className="container max-w-[880px] pb-12 pt-32 md:pt-40">
           <Link
             href="/nxt-life"
-            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-silver hover:text-white"
+            className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-ink-soft hover:text-navy"
           >
             <ArrowLeft size={16} /> NXT Life
           </Link>
-          <p className="mono mb-4 text-sm text-sunrise">
+          <p className="mono mb-4 text-sm text-gold">
             {article.category} · {article.date} · {article.readTime}
           </p>
-          <h1 className="display-xl">{article.title}</h1>
-          <p className="lead mt-6 text-platinum">{article.excerpt}</p>
+          <h1 className="display-xl text-navy">{article.title}</h1>
+          <p className="lead mt-6 text-ink-soft">{article.excerpt}</p>
         </div>
-        <div className="swoosh-band" />
       </section>
 
       {/* Body */}
