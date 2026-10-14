@@ -47,7 +47,7 @@ export default async function NxtLifeArticlePage({ params }: Params) {
               <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">
                 {/* Left: text */}
                 <div className="flex-1 max-w-[560px] text-center md:text-left">
-                  <p className="mono text-[11px] tracking-[0.25em] uppercase text-gold mb-3">Welcome to NXT</p>
+                  <p className="mono text-sm tracking-[0.2em] uppercase text-gold mb-3 font-bold">Welcome to NXT</p>
                   <h1 className="font-display text-5xl font-bold leading-[1.05] text-navy md:text-7xl">
                     James R. Vigeant
                   </h1>
@@ -62,12 +62,6 @@ export default async function NxtLifeArticlePage({ params }: Params) {
 
                 {/* Right: round photo */}
                 <div className="relative flex-shrink-0">
-                  <span
-                    aria-hidden="true"
-                    className="absolute -right-2 -top-5 z-20 font-display text-2xl italic text-gold/30 select-none md:text-3xl"
-                  >
-                    Welcome
-                  </span>
                   <div className="relative h-[260px] w-[260px] md:h-[340px] md:w-[340px] rounded-full overflow-hidden shadow-xl ring-[4px] ring-gold/20">
                     <Image
                       src={article.image}
