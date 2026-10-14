@@ -7,6 +7,9 @@ export interface Article {
   readTime: string
   image: string
   featured?: boolean
+  heroName?: string
+  heroRole?: string
+  heroSummary?: string
   body: ({ type: 'p'; text: string } | { type: 'h2'; text: string } | { type: 'ul'; items: string[] } | { type: 'callout'; text: string } | { type: 'quote'; text: string; attribution: string })[]
 }
 
@@ -22,6 +25,9 @@ export const articles: Article[] = [
     readTime: '4 min',
     image: '/images/team/james-vigeant.jpeg',
     featured: true,
+    heroName: 'James R. Vigeant',
+    heroRole: 'Chief Strategy & Innovation Officer',
+    heroSummary: '40+ years of experience in science, corporate strategy, technology, small business ownership and community engagement.',
     body: [
       { type: 'p', text: 'NXT Financial Group is proud to announce that James R. Vigeant has joined the company as Chief Strategy & Innovation Officer. In this role, James will help shape NXT\'s long-term strategy, guide its investment in technology and infrastructure, and strengthen the systems and teams that support NXT\'s associates and the families they serve.' },
       { type: 'p', text: 'James brings more than four decades of experience across science, corporate strategic planning and logistics, technology, small business ownership and community engagement. He has spent his career on one idea: lasting success comes from people and institutions working together as a single, connected network toward a shared goal.' },
@@ -50,6 +56,9 @@ export const articles: Article[] = [
     date: 'October 14, 2026',
     readTime: '4 min',
     image: '/images/team/ashish-sood.png',
+    heroName: 'Ashish Sood',
+    heroRole: 'Chief Financial Officer',
+    heroSummary: '30+ years of senior leadership in banking, payments and fintech across global markets.',
     body: [
       { type: 'p', text: 'NXT Financial Group is pleased to announce the appointment of Ashish Sood as Chief Financial Officer. Ashish will lead NXT\'s financial strategy, planning and governance. His work will help make sure the company\'s growth stays profitable, well managed and built for the long term.' },
       { type: 'p', text: 'Ashish brings more than three decades of senior leadership experience at some of the world\'s most respected financial institutions. He has led businesses across multiple markets with full profit-and-loss and balance sheet accountability. He brings deep expertise in deposits, lending, cards, payments, digital banking and wealth management, along with a strong understanding of customer economics and lifetime value.' },
@@ -79,6 +88,9 @@ export const articles: Article[] = [
     date: 'October 14, 2026',
     readTime: '4 min',
     image: '/images/team/sandeep-charaya.png',
+    heroName: 'Sandeep Charaya',
+    heroRole: 'Chief Technology Officer',
+    heroSummary: '19+ years of experience in IT operations, service delivery and business transformation across the US, Germany and India.',
     body: [
       { type: 'p', text: 'NXT Financial Group is pleased to announce that Sandeep Charaya, PMP\u00ae, PRINCE2\u00ae, has joined the company as Chief Technology Officer. Sandeep will lead NXT\'s technology strategy and the platforms and systems that support its associates, clients and day-to-day operations as the company grows nationwide.' },
       { type: 'p', text: 'Sandeep has more than 19 years of experience in IT operations, service delivery and business transformation. He has worked across the United States, Germany and India, and has supported clients in North and South America, Europe and Asia. He is known for combining strong technical skill with practical leadership, and for using technology to make organizations run more smoothly, reliably and efficiently.' },
@@ -114,6 +126,9 @@ export const articles: Article[] = [
     date: 'October 14, 2026',
     readTime: '4 min',
     image: '/images/team/sony-pradhan.png',
+    heroName: 'Sony Pradhan',
+    heroRole: 'Chief Growth Officer',
+    heroSummary: 'Experience in financial services leadership, marketing, business development and over a decade of community engagement.',
     body: [
       { type: 'p', text: 'NXT Financial Group is pleased to announce that Sony Pradhan has joined the company as Chief Growth Officer. In this role, Sony will lead NXT\'s efforts to grow its network of licensed associates, build high-performing teams and develop future leaders across the organization.' },
       { type: 'p', text: 'Sony brings a unique mix of experience in financial services leadership, marketing, business development and community engagement. Sony\'s leadership philosophy is simple: build strong relationships, lead with integrity, and help people grow.' },

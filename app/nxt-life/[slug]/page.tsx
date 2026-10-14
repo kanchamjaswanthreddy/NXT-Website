@@ -49,14 +49,14 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                 <div className="flex-1 max-w-[560px] text-center md:text-left">
                   <p className="mono text-sm tracking-[0.2em] uppercase text-gold mb-3 font-bold">Welcome to NXT</p>
                   <h1 className="font-display text-5xl font-bold leading-[1.05] text-navy md:text-7xl">
-                    James R. Vigeant
+                    {article.heroName}
                   </h1>
                   <p className="mt-2 text-xl font-semibold text-gold italic md:text-2xl">
-                    Chief Strategy &amp; Innovation Officer
+                    {article.heroRole}
                   </p>
                   <div className="mt-6 h-[2px] w-20 rounded bg-gold/30 mx-auto md:mx-0" />
                   <p className="mt-6 max-w-[480px] text-base leading-relaxed text-ink-soft mx-auto md:mx-0">
-                    40+ years of experience in science, corporate strategy, technology, small business ownership and community engagement.
+                    {article.heroSummary}
                   </p>
                 </div>
 
@@ -65,7 +65,7 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                   <div className="relative h-[260px] w-[260px] md:h-[340px] md:w-[340px] rounded-full overflow-hidden shadow-xl ring-[4px] ring-gold/20">
                     <Image
                       src={article.image}
-                      alt="James R. Vigeant"
+                      alt={article.heroName || article.title}
                       fill
                       priority
                       sizes="340px"
