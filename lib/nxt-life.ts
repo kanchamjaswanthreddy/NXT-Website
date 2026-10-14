@@ -7,12 +7,41 @@ export interface Article {
   readTime: string
   image: string
   featured?: boolean
-  body: ({ type: 'p'; text: string } | { type: 'h2'; text: string } | { type: 'ul'; items: string[] } | { type: 'callout'; text: string })[]
+  body: ({ type: 'p'; text: string } | { type: 'h2'; text: string } | { type: 'ul'; items: string[] } | { type: 'callout'; text: string } | { type: 'quote'; text: string; attribution: string })[]
 }
 
 export const CATEGORIES = ['All', 'Company News', 'Industry Trends', 'Culture', 'Leadership', 'Innovation'] as const
 
 export const articles: Article[] = [
+  {
+    slug: 'james-vigeant-joins-nxt-as-csio',
+    title: 'NXT Financial Group welcomes James R. Vigeant as Chief Strategy & Innovation Officer',
+    excerpt: 'A leader with 40 years of experience in science, corporate strategy, technology and community engagement joins NXT to help guide the company\'s next stage of growth.',
+    category: 'Company News',
+    date: 'October 14, 2026',
+    readTime: '4 min',
+    image: '/images/team/james-vigeant.jpeg',
+    featured: true,
+    body: [
+      { type: 'p', text: 'NXT Financial Group is proud to announce that James R. Vigeant has joined the company as Chief Strategy & Innovation Officer. In this role, James will help shape NXT\'s long-term strategy, guide its investment in technology and infrastructure, and strengthen the systems and teams that support NXT\'s associates and the families they serve.' },
+      { type: 'p', text: 'James brings more than four decades of experience across science, corporate strategic planning and logistics, technology, small business ownership and community engagement. He has spent his career on one idea: lasting success comes from people and institutions working together as a single, connected network toward a shared goal.' },
+      { type: 'h2', text: 'A career built on collaboration' },
+      { type: 'p', text: 'James started out in scientific work. He moved into corporate strategic planning and logistics, where he learned how large organizations plan, coordinate and carry out work at scale. He recognized the power of technology and innovation early, well before digital tools became central to business. He later owned and ran several small businesses of his own, which gave him a firsthand understanding of what it takes to build something from the ground up.' },
+      { type: 'callout', text: 'James calls his approach "Leadership for Success." It rests on a simple belief: success comes from using collaborative assets well, so that people, partners and resources work as a unified network with clear, positive goals.' },
+      { type: 'h2', text: 'Leading with purpose in the community' },
+      { type: 'p', text: 'James is also President of The Ealey Project (TEP), a nonprofit dedicated to preserving the legacy of civil rights attorney Roland "Duke" Ealey and the history of Richmond, Virginia\'s Jackson Ward. Through archiving, oral history and public outreach, TEP works to bring fuller, more authentic stories into the historical record. James describes this as the difference between genuine history and the narratives told by a few.' },
+      { type: 'p', text: 'That commitment to authenticity and community fits naturally with NXT\'s mission: making financial protection simple, honest and accessible for every family, especially communities the traditional financial industry has often overlooked.' },
+      { type: 'h2', text: 'What James brings to NXT' },
+      { type: 'p', text: 'As NXT Financial Group grows its network of licensed associates across the country, James will focus on three areas:' },
+      { type: 'ul', items: [
+        'Technology and infrastructure: guiding the platforms, systems and tools that help NXT scale efficiently and serve clients well',
+        'Team building and protocols: helping NXT build strong teams and clear, consistent processes that support long-term growth',
+        'Authentic social impact: making sure NXT\'s growth benefits the communities it serves and creates real, lasting value',
+      ] },
+      { type: 'quote', text: 'James has spent his career bringing people, technology and purpose together. His experience and his heart for community are exactly what NXT needs as we grow. We are honored to have him on our leadership team.', attribution: 'Shiv Thakur, Founder & CEO, NXT Financial Group' },
+      { type: 'quote', text: 'NXT is building something that matters: a company that protects families and opens real opportunity for the people who serve them. I\'m excited to help build the strategy, systems and teams that will carry that mission forward.', attribution: 'James R. Vigeant, Chief Strategy & Innovation Officer' },
+    ],
+  },
   {
     slug: 'nxt-expands-to-all-50-states',
     title: 'NXT Financial Group now serves families and advisors in all 50 states',
@@ -21,7 +50,6 @@ export const articles: Article[] = [
     date: 'October 8, 2026',
     readTime: '5 min',
     image: 'https://images.unsplash.com/photo-1521737604893-d14cc237f11d?w=1200&h=800&fit=crop&q=80',
-    featured: true,
     body: [
       { type: 'p', text: 'When NXT Financial Group opened its doors, the goal was never to become the biggest brokerage in the room. It was to become the most trusted. That mission has not changed, but the geography has. As of this month, NXT is licensed and actively writing business in every state in the country.' },
       { type: 'h2', text: 'Growing with intention' },

@@ -75,8 +75,8 @@ export default function NxtLifePage() {
                   alt={featured.title}
                   fill
                   sizes="(min-width:768px) 55vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  style={{ filter: 'saturate(0.85)' }}
+                  className={`object-cover transition-transform duration-700 group-hover:scale-[1.03] ${featured.image.includes('/team/') ? 'object-top' : ''}`}
+                  style={featured.image.includes('/team/') ? undefined : { filter: 'saturate(0.85)' }}
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-transparent" />

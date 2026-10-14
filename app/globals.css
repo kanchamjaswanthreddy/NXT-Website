@@ -98,6 +98,10 @@
   .prose-nxt ul { margin: 0 0 1.25rem 1.25rem; list-style: disc; }
   .prose-nxt li { margin-bottom: .5rem; line-height: 1.65; }
   .prose-nxt .callout { border-left: 3px solid var(--color-gold); background: #fff; padding: 20px 24px; margin: 1.75rem 0; border-radius: 0 var(--radius-sm) var(--radius-sm) 0; font-family: var(--font-display); font-size: 1.5rem; font-weight: 600; line-height: 1.35; color: var(--color-navy); }
+  .prose-nxt .quote-block { background: linear-gradient(135deg, rgba(15,42,82,.03), rgba(201,154,61,.06)); border-radius: var(--radius-sm); padding: 28px 32px; margin: 2rem 0; position: relative; }
+  .prose-nxt .quote-block::before { content: "\201C"; position: absolute; top: 12px; left: 16px; font-size: 3.5rem; line-height: 1; color: var(--color-gold); opacity: .35; font-family: var(--font-display); }
+  .prose-nxt .quote-block p { font-family: var(--font-display); font-size: 1.125rem; font-weight: 500; line-height: 1.55; color: var(--color-navy); font-style: italic; margin-bottom: .5rem; }
+  .prose-nxt .quote-block cite { display: block; font-style: normal; font-size: .875rem; font-weight: 600; color: var(--color-gold); }
   .eyebrow { display: inline-flex; align-items: center; gap: 10px; font-size: .8125rem; font-weight: 600; color: var(--color-navy); }
   .eyebrow::before { content: ""; width: 24px; height: 2px; background: var(--color-gold); border-radius: 2px; }
   .on-dark .eyebrow { color: var(--color-sunrise); }

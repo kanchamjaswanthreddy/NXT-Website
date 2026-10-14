@@ -49,17 +49,43 @@ export default async function NxtLifeArticlePage({ params }: Params) {
       {/* Body */}
       <article className="section pt-12">
         <div className="container max-w-[880px]">
-          <div className="relative mb-12 aspect-[16/9] overflow-hidden rounded-[24px] bg-stone">
-            <Image
-              src={article.image}
-              alt={article.title}
-              fill
-              priority
-              sizes="880px"
-              className="object-cover"
-              style={{ filter: 'saturate(0.85)' }}
-            />
-          </div>
+          {article.image.includes('/team/') ? (
+            <div className="mb-12 rounded-[24px] bg-navy p-8 md:p-10 flex flex-col-reverse md:flex-row items-center gap-8 md:gap-12">
+              <div className="flex-1 text-center md:text-left">
+                <p className="mono text-xs text-sunrise mb-4 tracking-widest uppercase">Welcome to NXT</p>
+                <h2 className="font-display text-2xl md:text-[2rem] font-bold text-white leading-tight">
+                  James R. Vigeant
+                </h2>
+                <p className="mt-1 text-lg text-gold font-medium">Chief Strategy & Innovation Officer</p>
+                <div className="mt-5 h-[2px] w-16 bg-gold/40 rounded mx-auto md:mx-0" />
+                <p className="mt-5 text-[15px] text-platinum/70 leading-relaxed">
+                  40+ years of experience in science, corporate strategy, technology, small business ownership and community engagement.
+                </p>
+              </div>
+              <div className="relative w-[220px] h-[220px] md:w-[260px] md:h-[260px] rounded-full overflow-hidden ring-4 ring-gold/20 flex-shrink-0">
+                <Image
+                  src={article.image}
+                  alt={article.title}
+                  fill
+                  priority
+                  sizes="260px"
+                  className="object-cover object-top"
+                />
+              </div>
+            </div>
+          ) : (
+            <div className="relative mb-12 aspect-[16/9] overflow-hidden rounded-[24px] bg-stone">
+              <Image
+                src={article.image}
+                alt={article.title}
+                fill
+                priority
+                sizes="880px"
+                className="object-cover"
+                style={{ filter: 'saturate(0.85)' }}
+              />
+            </div>
+          )}
 
           <div className="prose-nxt mx-auto max-w-[720px]">
             {article.body.map((b, i) =>
@@ -75,6 +101,11 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                 <p key={i} className="callout">
                   {b.text}
                 </p>
+              ) : b.type === 'quote' ? (
+                <blockquote key={i} className="quote-block">
+                  <p>{b.text}</p>
+                  <cite>— {b.attribution}</cite>
+                </blockquote>
               ) : (
                 <p key={i}>{b.text}</p>
               ),
