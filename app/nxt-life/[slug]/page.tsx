@@ -48,14 +48,14 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                 {/* Left: text */}
                 <div className="flex-1 text-center md:text-left">
                   <p className="mono text-[11px] tracking-[0.25em] uppercase text-gold mb-3">Welcome to NXT</p>
-                  <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] text-navy md:text-5xl">
+                  <h1 className="font-display text-5xl font-bold leading-[1.05] text-navy md:text-7xl">
                     James R. Vigeant
                   </h1>
-                  <p className="mt-1.5 text-lg font-semibold text-gold italic">
+                  <p className="mt-2 text-xl font-semibold text-gold italic md:text-2xl">
                     Chief Strategy &amp; Innovation Officer
                   </p>
-                  <div className="mt-5 h-[2px] w-16 rounded bg-gold/30 mx-auto md:mx-0" />
-                  <p className="mt-5 max-w-[440px] text-[14px] leading-relaxed text-ink-soft mx-auto md:mx-0">
+                  <div className="mt-6 h-[2px] w-20 rounded bg-gold/30 mx-auto md:mx-0" />
+                  <p className="mt-6 max-w-[480px] text-base leading-relaxed text-ink-soft mx-auto md:mx-0">
                     40+ years of experience in science, corporate strategy, technology, small business ownership and community engagement.
                   </p>
                 </div>
