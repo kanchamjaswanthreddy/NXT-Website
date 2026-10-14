@@ -243,8 +243,8 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                       alt={a.title}
                       fill
                       sizes="(min-width:768px) 33vw, 100vw"
-                      className="object-cover transition-transform duration-500 group-hover:scale-[1.04]"
-                      style={{ filter: 'saturate(0.85)' }}
+                      className={`object-cover transition-transform duration-500 group-hover:scale-[1.04] ${a.image.includes('/team/') ? 'object-top' : ''}`}
+                      style={a.image.includes('/team/') ? undefined : { filter: 'saturate(0.85)' }}
                     />
                   </div>
                   <p className="mono text-xs text-gold">{a.category}</p>

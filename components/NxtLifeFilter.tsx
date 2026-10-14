@@ -53,8 +53,8 @@ export default function NxtLifeFilter({ articles }: { articles: Article[] }) {
                     alt={article.title}
                     fill
                     sizes="(min-width:1024px) 33vw, (min-width:768px) 50vw, 100vw"
-                    className="object-cover transition-transform duration-700 group-hover:scale-[1.04]"
-                    style={{ filter: 'saturate(0.85)' }}
+                    className={`object-cover transition-transform duration-700 group-hover:scale-[1.04] ${article.image.includes('/team/') ? 'object-top' : ''}`}
+                    style={article.image.includes('/team/') ? undefined : { filter: 'saturate(0.85)' }}
                   />
                   <div className="absolute left-4 top-4">
                     <span className="inline-block rounded-full bg-white/90 px-3 py-1 text-xs font-semibold text-navy backdrop-blur-sm">
