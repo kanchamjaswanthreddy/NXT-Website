@@ -34,82 +34,67 @@ export default async function NxtLifeArticlePage({ params }: Params) {
     <>
       {isTeamArticle ? (
         <>
-          {/* Navy hero for team announcements */}
+          {/* Hero — compact navy banner with photo overlapping into body */}
           <section className="relative overflow-hidden bg-navy">
-            {/* Gold arc decoration */}
-            <div
-              aria-hidden="true"
-              className="absolute right-[-10%] top-[-20%] h-[140%] w-[55%] rounded-full border-[3px] border-gold/15"
-            />
-            <div
-              aria-hidden="true"
-              className="absolute right-[-5%] top-[-10%] h-[120%] w-[45%] rounded-full border-[2px] border-gold/8"
-            />
+            {/* Decorative arcs */}
+            <div aria-hidden="true" className="pointer-events-none absolute inset-0">
+              <div className="absolute right-[5%] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full border-[2px] border-white/[.06]" />
+              <div className="absolute right-[10%] top-1/2 h-[380px] w-[380px] -translate-y-1/2 rounded-full border-[2px] border-gold/[.1]" />
+            </div>
 
-            <div className="container relative z-10 pb-16 pt-32 md:pt-40 lg:pb-20">
+            <div className="container relative z-10 pt-28 md:pt-36">
               <Link
                 href="/nxt-life"
-                className="mb-10 inline-flex items-center gap-2 text-sm font-medium text-platinum/60 hover:text-white"
+                className="inline-flex items-center gap-2 text-xs font-medium text-platinum/50 hover:text-white transition-colors"
               >
-                <ArrowLeft size={16} /> NXT Life
+                <ArrowLeft size={14} /> NXT Life
               </Link>
 
-              <div className="flex flex-col items-center gap-10 md:flex-row md:items-center md:gap-16 lg:gap-20">
-                {/* Left: text */}
-                <div className="flex-1 text-center md:text-left">
-                  <p className="mono mb-4 text-xs tracking-[0.2em] uppercase text-gold">
-                    Welcome to NXT
-                  </p>
-                  <h1 className="font-display text-4xl font-bold leading-[1.1] text-white md:text-5xl lg:text-[3.5rem]">
+              <div className="mt-6 flex flex-col items-center gap-8 pb-20 md:flex-row md:items-end md:gap-12 md:pb-24">
+                {/* Text */}
+                <div className="flex-1 text-center md:text-left md:pb-4">
+                  <p className="mono text-[11px] tracking-[0.25em] uppercase text-gold mb-3">Welcome to NXT</p>
+                  <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] text-white md:text-5xl">
                     James R. Vigeant
                   </h1>
-                  <p className="mt-2 text-xl font-medium text-gold md:text-2xl">
+                  <p className="mt-1.5 text-lg font-medium text-gold">
                     Chief Strategy &amp; Innovation Officer
                   </p>
-                  <div className="mt-6 h-[2px] w-20 rounded bg-gold/30 mx-auto md:mx-0" />
-                  <p className="mt-6 max-w-[480px] text-[15px] leading-relaxed text-platinum/70 mx-auto md:mx-0">
+                  <p className="mt-4 max-w-[440px] text-[14px] leading-relaxed text-platinum/60 mx-auto md:mx-0">
                     40+ years of experience in science, corporate strategy, technology, small business ownership and community engagement.
                   </p>
                 </div>
 
-                {/* Right: photo */}
-                <div className="relative flex-shrink-0">
-                  {/* "Welcome" script */}
+                {/* Photo — positioned to overlap hero/body boundary */}
+                <div className="relative flex-shrink-0 mb-[-80px] md:mb-[-90px]">
                   <span
-                    className="absolute -right-4 -top-6 z-20 font-display text-3xl italic text-gold/50 select-none md:text-4xl"
                     aria-hidden="true"
+                    className="absolute -right-2 -top-5 z-20 font-display text-2xl italic text-gold/40 select-none md:text-3xl"
                   >
                     Welcome
                   </span>
-                  <div className="relative h-[260px] w-[260px] md:h-[320px] md:w-[320px]">
-                    {/* Gold ring */}
-                    <div className="absolute inset-0 rounded-full ring-[5px] ring-gold/25 ring-offset-4 ring-offset-navy" />
-                    <div className="relative h-full w-full overflow-hidden rounded-full">
-                      <Image
-                        src={article.image}
-                        alt="James R. Vigeant"
-                        fill
-                        priority
-                        sizes="320px"
-                        className="object-cover object-top"
-                      />
-                    </div>
+                  <div className="relative h-[220px] w-[220px] md:h-[280px] md:w-[280px] rounded-full overflow-hidden shadow-2xl shadow-black/30 ring-[4px] ring-gold/20">
+                    <Image
+                      src={article.image}
+                      alt="James R. Vigeant"
+                      fill
+                      priority
+                      sizes="280px"
+                      className="object-cover object-top"
+                    />
                   </div>
                 </div>
               </div>
             </div>
-
-            {/* Bottom gold line */}
-            <div className="h-[3px] bg-gradient-to-r from-transparent via-gold/60 to-transparent" />
+            <div className="h-[3px] bg-gradient-to-r from-gold/0 via-gold/50 to-gold/0" />
           </section>
 
-          {/* Two-column body: content + quote sidebar */}
-          <article className="section pt-12">
-            <div className="container max-w-[1100px]">
-              <div className="flex flex-col gap-10 lg:flex-row lg:gap-16">
+          {/* Body */}
+          <article className="bg-white pb-12 pt-28 md:pt-24">
+            <div className="container max-w-[1060px]">
+              <div className="flex flex-col gap-10 lg:flex-row lg:gap-14">
                 {/* Main content */}
                 <div className="prose-nxt flex-1 min-w-0">
-                  <h2 className="!mt-0">NXT Financial Group is proud to announce</h2>
                   {bodyWithoutQuotes.map((b, i) =>
                     b.type === 'h2' ? (
                       <h2 key={i}>{b.text}</h2>
@@ -120,9 +105,7 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                         ))}
                       </ul>
                     ) : b.type === 'callout' ? (
-                      <p key={i} className="callout">
-                        {b.text}
-                      </p>
+                      <p key={i} className="callout">{b.text}</p>
                     ) : (
                       <p key={i}>{b.text}</p>
                     ),
@@ -131,21 +114,21 @@ export default async function NxtLifeArticlePage({ params }: Params) {
 
                 {/* Quote sidebar */}
                 {quotes.length > 0 && (
-                  <aside className="w-full lg:w-[340px] flex-shrink-0 flex flex-col gap-6">
+                  <aside className="w-full lg:w-[300px] flex-shrink-0 flex flex-col gap-5 lg:pt-2">
                     {quotes.map((q, i) => (
                       <div
                         key={i}
-                        className="rounded-[20px] border border-platinum bg-gradient-to-br from-stone to-white p-7"
+                        className="rounded-2xl bg-stone p-6 border border-platinum/60"
                       >
-                        <div className="mb-4 font-display text-4xl leading-none text-gold/40">&ldquo;</div>
-                        <p className="text-[15px] font-medium italic leading-relaxed text-navy">
+                        <div className="font-display text-3xl leading-none text-gold/30 mb-2">&ldquo;</div>
+                        <p className="text-[14px] font-medium italic leading-[1.65] text-navy">
                           {q.type === 'quote' && q.text}
                         </p>
-                        <div className="mt-5 h-[2px] w-10 rounded bg-gold/30" />
-                        <p className="mt-3 text-sm font-semibold text-navy">
+                        <div className="mt-4 h-[2px] w-8 rounded bg-gold/25" />
+                        <p className="mt-3 text-[13px] font-bold text-navy">
                           {q.type === 'quote' && q.attribution.split(',')[0]}
                         </p>
-                        <p className="text-xs text-ink-soft">
+                        <p className="text-[11px] text-ink-soft leading-snug">
                           {q.type === 'quote' && q.attribution.split(',').slice(1).join(',').trim()}
                         </p>
                       </div>
@@ -156,36 +139,22 @@ export default async function NxtLifeArticlePage({ params }: Params) {
 
               {/* Focus area cards */}
               <Reveal>
-                <div className="mt-16 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
+                <div className="mt-14 grid grid-cols-2 gap-4 lg:grid-cols-4">
                   {[
-                    { icon: Eye, title: 'Strategic Vision', desc: 'Shaping NXT\'s long-term direction and growth strategy' },
-                    { icon: Cpu, title: 'Technology & Innovation', desc: 'Guiding platforms, systems and tools that help NXT scale' },
-                    { icon: Users, title: 'People & Community', desc: 'Building strong teams and authentic social impact' },
-                    { icon: TrendingUp, title: 'Sustainable Growth', desc: 'Clear processes and protocols for lasting success' },
+                    { icon: Eye, title: 'Strategic Vision', desc: 'Long-term direction and growth strategy' },
+                    { icon: Cpu, title: 'Technology & Innovation', desc: 'Platforms and tools that help NXT scale' },
+                    { icon: Users, title: 'People & Community', desc: 'Strong teams and authentic social impact' },
+                    { icon: TrendingUp, title: 'Sustainable Growth', desc: 'Clear processes for lasting success' },
                   ].map((card) => (
-                    <div
-                      key={card.title}
-                      className="rounded-[16px] border border-platinum bg-white p-6 text-center"
-                    >
-                      <div className="mx-auto mb-4 flex h-12 w-12 items-center justify-center rounded-full bg-navy/5">
-                        <card.icon size={22} className="text-navy" />
+                    <div key={card.title} className="rounded-2xl border border-platinum bg-white p-5 text-center">
+                      <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-navy/5">
+                        <card.icon size={18} className="text-navy" />
                       </div>
-                      <h3 className="text-sm font-bold text-navy">{card.title}</h3>
-                      <p className="mt-2 text-xs leading-relaxed text-ink-soft">{card.desc}</p>
+                      <h3 className="text-[13px] font-bold text-navy">{card.title}</h3>
+                      <p className="mt-1.5 text-[11px] leading-relaxed text-ink-soft">{card.desc}</p>
                     </div>
                   ))}
                 </div>
-              </Reveal>
-
-              {/* CTA */}
-              <Reveal className="mx-auto mt-14 max-w-[720px] rounded-[24px] bg-navy p-8 on-dark md:p-10">
-                <h2 className="display-sm mb-2">Ready to take the next step?</h2>
-                <p className="mb-6">
-                  Connect with an NXT advisor — no cost, no obligation.
-                </p>
-                <Link href="/contact" className="btn btn-cta">
-                  Book a consultation <ArrowRight size={16} />
-                </Link>
               </Reveal>
             </div>
           </article>
@@ -235,9 +204,7 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                       ))}
                     </ul>
                   ) : b.type === 'callout' ? (
-                    <p key={i} className="callout">
-                      {b.text}
-                    </p>
+                    <p key={i} className="callout">{b.text}</p>
                   ) : b.type === 'quote' ? (
                     <blockquote key={i} className="quote-block">
                       <p>{b.text}</p>
@@ -252,9 +219,7 @@ export default async function NxtLifeArticlePage({ params }: Params) {
               {/* CTA */}
               <Reveal className="mx-auto mt-14 max-w-[720px] rounded-[24px] bg-navy p-8 on-dark md:p-10">
                 <h2 className="display-sm mb-2">Ready to take the next step?</h2>
-                <p className="mb-6">
-                  Connect with an NXT advisor — no cost, no obligation.
-                </p>
+                <p className="mb-6">Connect with an NXT advisor — no cost, no obligation.</p>
                 <Link href="/contact" className="btn btn-cta">
                   Book a consultation <ArrowRight size={16} />
                 </Link>
@@ -283,9 +248,7 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                     />
                   </div>
                   <p className="mono text-xs text-gold">{a.category}</p>
-                  <h3 className="display-sm mt-2 text-[1.2rem] group-hover:text-command">
-                    {a.title}
-                  </h3>
+                  <h3 className="display-sm mt-2 text-[1.2rem] group-hover:text-command">{a.title}</h3>
                   <p className="mt-2 text-[15px] text-ink-soft">{a.excerpt}</p>
                 </Link>
               </li>
