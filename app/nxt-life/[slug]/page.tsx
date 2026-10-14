@@ -34,46 +34,41 @@ export default async function NxtLifeArticlePage({ params }: Params) {
     <>
       {isTeamArticle ? (
         <>
-          {/* Hero — compact navy banner with photo overlapping into body */}
-          <section className="relative overflow-hidden bg-navy">
-            {/* Decorative arcs */}
-            <div aria-hidden="true" className="pointer-events-none absolute inset-0">
-              <div className="absolute right-[5%] top-1/2 h-[500px] w-[500px] -translate-y-1/2 rounded-full border-[2px] border-white/[.06]" />
-              <div className="absolute right-[10%] top-1/2 h-[380px] w-[380px] -translate-y-1/2 rounded-full border-[2px] border-gold/[.1]" />
-            </div>
-
-            <div className="container relative z-10 pt-28 md:pt-36">
+          {/* Light hero with photo on right */}
+          <section className="bg-stone">
+            <div className="container pb-12 pt-32 md:pt-40">
               <Link
                 href="/nxt-life"
-                className="inline-flex items-center gap-2 text-xs font-medium text-platinum/50 hover:text-white transition-colors"
+                className="mb-8 inline-flex items-center gap-2 text-sm font-medium text-ink-soft hover:text-navy"
               >
-                <ArrowLeft size={14} /> NXT Life
+                <ArrowLeft size={16} /> NXT Life
               </Link>
 
-              <div className="mt-6 flex flex-col items-center gap-8 pb-20 md:flex-row md:items-end md:gap-12 md:pb-24">
-                {/* Text */}
-                <div className="flex-1 text-center md:text-left md:pb-4">
+              <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:gap-14">
+                {/* Left: text */}
+                <div className="flex-1 text-center md:text-left">
                   <p className="mono text-[11px] tracking-[0.25em] uppercase text-gold mb-3">Welcome to NXT</p>
-                  <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] text-white md:text-5xl">
+                  <h1 className="font-display text-[2.5rem] font-bold leading-[1.05] text-navy md:text-5xl">
                     James R. Vigeant
                   </h1>
-                  <p className="mt-1.5 text-lg font-medium text-gold">
+                  <p className="mt-1.5 text-lg font-semibold text-gold italic">
                     Chief Strategy &amp; Innovation Officer
                   </p>
-                  <p className="mt-4 max-w-[440px] text-[14px] leading-relaxed text-platinum/60 mx-auto md:mx-0">
+                  <div className="mt-5 h-[2px] w-16 rounded bg-gold/30 mx-auto md:mx-0" />
+                  <p className="mt-5 max-w-[440px] text-[14px] leading-relaxed text-ink-soft mx-auto md:mx-0">
                     40+ years of experience in science, corporate strategy, technology, small business ownership and community engagement.
                   </p>
                 </div>
 
-                {/* Photo — positioned to overlap hero/body boundary */}
-                <div className="relative flex-shrink-0 mb-[-80px] md:mb-[-90px]">
+                {/* Right: round photo */}
+                <div className="relative flex-shrink-0">
                   <span
                     aria-hidden="true"
-                    className="absolute -right-2 -top-5 z-20 font-display text-2xl italic text-gold/40 select-none md:text-3xl"
+                    className="absolute -right-2 -top-5 z-20 font-display text-2xl italic text-gold/30 select-none md:text-3xl"
                   >
                     Welcome
                   </span>
-                  <div className="relative h-[220px] w-[220px] md:h-[280px] md:w-[280px] rounded-full overflow-hidden shadow-2xl shadow-black/30 ring-[4px] ring-gold/20">
+                  <div className="relative h-[220px] w-[220px] md:h-[280px] md:w-[280px] rounded-full overflow-hidden shadow-xl ring-[4px] ring-gold/20">
                     <Image
                       src={article.image}
                       alt="James R. Vigeant"
@@ -86,11 +81,13 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                 </div>
               </div>
             </div>
-            <div className="h-[3px] bg-gradient-to-r from-gold/0 via-gold/50 to-gold/0" />
           </section>
 
-          {/* Body */}
-          <article className="bg-white pb-12 pt-28 md:pt-24">
+          {/* Gold divider */}
+          <div className="h-[3px] bg-gradient-to-r from-gold/0 via-gold/40 to-gold/0" />
+
+          {/* Two-column body */}
+          <article className="section pt-12">
             <div className="container max-w-[1060px]">
               <div className="flex flex-col gap-10 lg:flex-row lg:gap-14">
                 {/* Main content */}
@@ -155,6 +152,15 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                     </div>
                   ))}
                 </div>
+              </Reveal>
+
+              {/* CTA */}
+              <Reveal className="mx-auto mt-14 max-w-[720px] rounded-[24px] bg-navy p-8 on-dark md:p-10">
+                <h2 className="display-sm mb-2">Ready to take the next step?</h2>
+                <p className="mb-6">Connect with an NXT advisor — no cost, no obligation.</p>
+                <Link href="/contact" className="btn btn-cta">
+                  Book a consultation <ArrowRight size={16} />
+                </Link>
               </Reveal>
             </div>
           </article>
