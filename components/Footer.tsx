@@ -30,7 +30,7 @@ export default function Footer() {
         </div>
         <div className="mt-14 border-t border-white/10 pt-6">
           <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <p className="text-sm text-silver">© {new Date().getFullYear()} NXT Financial Group. All rights reserved.</p>
+            <p className="text-sm text-silver">© {new Date().getFullYear()} NXT Financial Group, NXT World Holdings, Inc. All Rights Reserved.</p>
             <ul className="flex gap-6 text-sm"><li><Link href="/privacy-policy" className="text-silver hover:text-white">Privacy</Link></li><li><Link href="/terms" className="text-silver hover:text-white">Terms</Link></li></ul>
           </div>
           <p className="mono mt-4 max-w-[900px] text-xs leading-relaxed text-silver">NXT Financial Group is a licensed independent insurance agency headquartered in Massachusetts. Annuity and insurance guarantees are backed by the claims-paying ability of the issuing carrier. Product availability, features and rates vary by carrier and state. We do not offer every plan available in your area; contact Medicare.gov or 1-800-MEDICARE for all options. Estimates on this site are illustrative and not an offer of coverage.</p>
