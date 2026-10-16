@@ -148,7 +148,7 @@ export default function CareersPage() {
                   </p>
                 </div>
                 <Link
-                  href="/contact"
+                  href="/get-started"
                   className="btn btn-primary mt-6 w-fit"
                 >
                   Apply now <ArrowRight size={16} />

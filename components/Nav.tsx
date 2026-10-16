@@ -311,8 +311,8 @@ export default function Nav() {
             >
               Agent Login
             </a>
-            <Link href="/contact" className="btn btn-primary btn-sm">
-              Book a consultation
+            <Link href="/get-started" className="btn btn-primary btn-sm">
+              Get Started
             </Link>
           </div>
 
@@ -359,11 +359,11 @@ export default function Nav() {
 
           <div className="mt-8 flex flex-col gap-3">
             <Link
-              href="/contact"
+              href="/get-started"
               onClick={() => setOpen(false)}
               className="btn btn-primary"
             >
-              Book a consultation
+              Get Started
             </Link>
             <a
               href="https://crm.nxtfinancialgroup.com/auth/login"
