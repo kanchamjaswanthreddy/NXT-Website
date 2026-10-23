@@ -72,6 +72,14 @@ const logoMap: Record<string, string> = {
   'unum': '/logos/unum.png',
   'wellcare': '/logos/wellcare.png',
   'western-southern': '/logos/western-southern.svg',
+  'amtrust': '/logos/amtrust.webp',
+  'biberk': '/logos/biberk.png',
+  'hiscox': '/logos/hiscox.png',
+  'ergo-next': '/logos/ergo-next.jpeg',
+  'plymouth-rock': '/logos/plymouth-rock.png',
+  'simply-business': '/logos/simply-business.png',
+  'openly': '/logos/openly.png',
+  'neptune': '/logos/neptune.png',
 }
 
 /** Slugs whose logo SVGs are white-on-transparent — need CSS invert on light backgrounds */
@@ -199,18 +207,14 @@ export const carrierGroups: CarrierGroup[] = [
     c('unum', 'Unum', 'A-'),
   ]},
   { key: 'home-auto', title: 'Home & Auto', solution: 'home-auto', carriers: [
-    c('nationwide', 'Nationwide', 'A+'),
-    c('progressive', 'Progressive', 'A+'),
-    c('safeco', 'Safeco (Liberty Mutual)', 'A'),
-    c('travelers', 'Travelers', 'A+'),
-    c('hartford', 'The Hartford', 'A+'),
-    c('foremost', 'Foremost Insurance', 'A'),
-    c('bristol-west', 'Bristol West', 'A'),
-    c('national-general', 'National General', 'A-'),
-    c('kemper', 'Kemper', 'A-'),
-    c('stillwater', 'Stillwater Insurance', 'A-'),
-    c('openly', 'Openly', 'A'),
-    c('branch', 'Branch Insurance', 'A-'),
+    c('amtrust', 'AmTrust Financial', 'A'),
+    c('biberk', 'biBerk (Berkshire Hathaway)', 'A++'),
+    c('hiscox', 'Hiscox', 'A'),
+    c('ergo-next', 'ERGO Next'),
+    c('plymouth-rock', 'Plymouth Rock Assurance', 'A-'),
+    c('simply-business', 'Simply Business'),
+    c('openly', 'Openly'),
+    c('neptune', 'Neptune Flood', 'A'),
   ]},
 ]
 
