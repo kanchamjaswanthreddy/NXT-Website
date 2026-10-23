@@ -41,8 +41,8 @@ export default function CarriersByLine() {
                   {list.length ? (
                     <motion.ul layout className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5">
                       {list.map((c) => (
-                        <motion.li layout key={c.slug} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="flex aspect-[3/2] items-center justify-center rounded-xl border border-platinum/60 bg-stone/40 p-4 transition-shadow hover:shadow-soft">
-                          {c.logo ? <Image src={c.logo} alt={c.name} width={240} height={80} className={`h-auto max-h-[56px] w-auto max-w-full object-contain${whiteLogos.has(c.slug) ? ' invert' : ''}`} unoptimized /> : <span className="text-center font-semibold leading-tight text-navy">{c.name}</span>}
+                        <motion.li layout key={c.slug} initial={{ opacity: 0 }} animate={{ opacity: 1 }} exit={{ opacity: 0 }} className="relative flex aspect-[3/2] items-center justify-center overflow-hidden rounded-xl border border-platinum/60 bg-stone/40 transition-shadow hover:shadow-soft">
+                          {c.logo ? <Image src={c.logo} alt={c.name} fill className={`object-contain p-4${whiteLogos.has(c.slug) ? ' invert' : ''}`} sizes="(min-width:1024px) 200px, (min-width:768px) 25vw, 50vw" unoptimized /> : <span className="text-center font-semibold leading-tight text-navy">{c.name}</span>}
                         </motion.li>
                       ))}
                     </motion.ul>
