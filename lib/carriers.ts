@@ -196,7 +196,6 @@ export const carrierGroups: CarrierGroup[] = [
     c('illinois-mutual', 'Illinois Mutual', 'A-'),
     c('assurity', 'Assurity', 'A-'),
     c('the-standard', 'The Standard', 'A'),
-    c('petersen', 'Petersen International'),
     c('mutual-of-omaha', 'Mutual of Omaha', 'A+'),
     c('lincoln', 'Lincoln Financial', 'A'),
     c('prudential', 'Prudential', 'A+'),
