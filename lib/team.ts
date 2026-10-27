@@ -13,6 +13,8 @@ export const team: TeamMember[] = [
   { name: 'Ashish Sood', role: 'Chief Financial Officer', image: '/images/team/ashish-sood.png', group: 'leadership' },
   { name: 'James R. Vigeant', role: 'Chief Strategy & Innovation Officer', image: '/images/team/james-vigeant.jpeg', group: 'leadership' },
   { name: 'Rigoberto Ayala', role: 'Vice President of Sales', image: '/images/team/rigoberto-ayala.png', group: 'leadership' },
+  { name: 'Alana Malla', role: 'Vice President of Agent Development', image: '/images/agents/alana-malla.jpeg', group: 'leadership' },
+  { name: 'Minakshi Rajbanshi', role: 'Vice President of Marketing', image: '/images/agents/minakshi-rajbanshi.jpeg', group: 'leadership' },
   { name: 'Jaswanth Reddy Kancham', role: 'VP of Agent Training & Development', image: '/images/team/jaswanth-reddy.png', group: 'leadership' },
   { name: 'Joe Sabourin', role: 'Senior Partner', image: '/images/team/joe-sabourin.jpg', group: 'leadership' },
   { name: 'Marsha Jones', role: 'Director of Administration', image: '/images/team/marsha-jones.jpeg', group: 'leadership' },

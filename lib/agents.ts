@@ -22,10 +22,10 @@ export const agents: Agent[] = [
   { name: 'Josue Araujo', rank: 'Financial Associate', city: 'Malden', state: 'Massachusetts', phone: '(781) 333-0908', email: 'josuenxtfinancialgroup@gmail.com', image: '/images/agents/josue-araujo.png' },
   { name: 'Vivek Daruka', rank: 'Financial Associate', city: 'Worcester', state: 'Massachusetts', phone: '(318) 789-4199', email: 'viveknxtfinancialgroup@gmail.com', image: null },
   { name: 'Andy M Martinez', rank: 'Financial Associate', city: 'Lynn', state: 'Massachusetts', phone: '(857) 261-5938', email: 'andynxtfinancialgroup@gmail.com', image: '/images/agents/andy-martinez.jpg' },
-  { name: 'Minakshi Rajbanshi', rank: 'Senior Financial Director', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 682-8507', email: 'minakshinxtfinancialgroup@gmail.com', image: '/images/agents/minakshi-rajbanshi.jpeg' },
-  { name: 'Anjali Shrestha', rank: 'Senior Financial Director', city: 'Manchester', state: 'New Hampshire', phone: '(603) 858-3083', email: 'anjalinxtfinancialgroup@gmail.com', image: '/images/agents/anjali-shrestha.jpeg' },
-  { name: 'Alana Malla', rank: 'Senior Financial Director', city: 'Westford', state: 'Massachusetts', phone: '(857) 928-3409', email: 'alananxtfinancialgroup@gmail.com', image: '/images/agents/alana-malla.jpeg' },
-  { name: 'Sharmila Khadka Karki', rank: 'Senior Financial Director', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 203-0062', email: 'sharmilanxtfinancialgroup@gmail.com', image: '/images/agents/sharmila-khadka-karki.jpeg' },
+  { name: 'Minakshi Rajbanshi', rank: 'Vice President of Marketing', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 682-8507', email: 'minakshinxtfinancialgroup@gmail.com', image: '/images/agents/minakshi-rajbanshi.jpeg' },
+  { name: 'Anjali Shrestha', rank: 'Financial Director', city: 'Manchester', state: 'New Hampshire', phone: '(603) 858-3083', email: 'anjalinxtfinancialgroup@gmail.com', image: '/images/agents/anjali-shrestha.jpeg' },
+  { name: 'Alana Malla', rank: 'Vice President of Agent Development', city: 'Westford', state: 'Massachusetts', phone: '(857) 928-3409', email: 'alananxtfinancialgroup@gmail.com', image: '/images/agents/alana-malla.jpeg' },
+  { name: 'Sharmila Khadka Karki', rank: 'Financial Director', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 203-0062', email: 'sharmilanxtfinancialgroup@gmail.com', image: '/images/agents/sharmila-khadka-karki.jpeg' },
   { name: 'Sobi Rajbhandari', rank: 'Financial Director', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 410-9521', email: 'sobinxtfinancialgroup@gmail.com', image: '/images/agents/sobi-rajbhandari.jpeg' },
 ]
 
