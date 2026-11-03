@@ -27,6 +27,7 @@ export const agents: Agent[] = [
   { name: 'Alana Malla', rank: 'Vice President of Agent Development', city: 'Westford', state: 'Massachusetts', phone: '(857) 928-3409', email: 'alananxtfinancialgroup@gmail.com', image: '/images/agents/alana-malla.jpeg' },
   { name: 'Sharmila Khadka Karki', rank: 'Financial Director', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 203-0062', email: 'sharmilanxtfinancialgroup@gmail.com', image: '/images/agents/sharmila-khadka-karki.jpeg' },
   { name: 'Sobi Rajbhandari', rank: 'Financial Director', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 410-9521', email: 'sobinxtfinancialgroup@gmail.com', image: '/images/agents/sobi-rajbhandari.jpeg' },
+  { name: 'Rhea Singh Bisht', rank: 'Financial Associate', city: 'Boston', state: 'Massachusetts', phone: '(603) 546-5101', email: 'rheanxtfinancialgroup@gmail.com', image: '/images/agents/rhea-singh-bisht.jpeg' },
 ]
 
 export function getAgentsByState(): Record<string, Agent[]> {
