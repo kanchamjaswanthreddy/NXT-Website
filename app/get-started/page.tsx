@@ -33,7 +33,14 @@ export default function GetStartedPage() {
         eyebrow="Become an NXT Agent"
         title="Your financial career starts here"
         intro="Join a growing team of independent financial professionals. No invite needed — create your account and start your onboarding today."
-      />
+      >
+        <div className="flex flex-col gap-3 sm:flex-row sm:items-center">
+          <a href={CRM_JOIN_URL} className="btn btn-primary inline-flex">
+            Create account <ArrowRight size={16} />
+          </a>
+          <span className="text-sm text-ink-soft">Free · No credit card required</span>
+        </div>
+      </PageHero>
 
       {/* Benefits */}
       <section className="section">
