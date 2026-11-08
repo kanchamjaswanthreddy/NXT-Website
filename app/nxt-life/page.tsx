@@ -69,14 +69,14 @@ export default function NxtLifePage() {
               href={`/nxt-life/${featured.slug}`}
               className="card card-hover group grid grid-cols-1 overflow-hidden rounded-[24px] md:grid-cols-[1.2fr_1fr]"
             >
-              <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[420px] bg-stone">
+              <div className="relative aspect-[4/3] md:aspect-auto md:min-h-[420px] bg-stone overflow-hidden">
                 <Image
                   src={featured.image}
                   alt={featured.title}
                   fill
                   sizes="(min-width:768px) 55vw, 100vw"
-                  className="object-cover transition-transform duration-700 group-hover:scale-[1.03]"
-                  style={featured.image.includes('/team/') ? { objectPosition: 'center 25%' } : { filter: 'saturate(0.85)' }}
+                  className={`object-cover transition-transform duration-700 group-hover:scale-[1.03] ${featured.image.includes('/team/') ? 'scale-[0.9] object-[center_20%]' : ''}`}
+                  style={featured.image.includes('/team/') ? undefined : { filter: 'saturate(0.85)' }}
                   priority
                 />
                 <div className="absolute inset-0 bg-gradient-to-t from-midnight/60 via-transparent to-transparent md:bg-gradient-to-r md:from-transparent md:via-transparent md:to-transparent" />
