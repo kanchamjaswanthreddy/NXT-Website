@@ -44,7 +44,7 @@ export default function NxtLifePage() {
               {[
                 { icon: Newspaper, label: 'Company News', count: articles.filter((a) => a.category === 'Company News').length },
                 { icon: TrendingUp, label: 'Industry Trends', count: articles.filter((a) => a.category === 'Industry Trends').length },
-                { icon: Users, label: 'Culture & People', count: articles.filter((a) => a.category === 'Culture' || a.category === 'Leadership').length },
+                { icon: Users, label: 'Culture & People', count: articles.filter((a) => a.category === 'Culture' || a.category === 'Leadership' || a.category === 'Founder Story').length },
                 { icon: Lightbulb, label: 'Innovation', count: articles.filter((a) => a.category === 'Innovation').length },
               ].map((stat) => (
                 <div key={stat.label} className="card rounded-2xl px-5 py-6 text-center">
