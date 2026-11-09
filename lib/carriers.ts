@@ -80,6 +80,7 @@ const logoMap: Record<string, string> = {
   'simply-business': '/logos/simply-business.png',
   'openly': '/logos/openly.png',
   'neptune': '/logos/neptune.png',
+  'national-life-group': '/logos/national-life-group.png',
 }
 
 /** Slugs whose logo SVGs are white-on-transparent — need CSS invert on light backgrounds */
@@ -121,6 +122,7 @@ export const carrierGroups: CarrierGroup[] = [
     c('prudential', 'Prudential', 'A+'),
   ]},
   { key: 'life', title: 'Life insurance', solution: 'life-insurance', carriers: [
+    c('national-life-group', 'National Life Group', 'A'),
     c('john-hancock', 'John Hancock', 'A+'),
     c('prudential', 'Prudential', 'A+'),
     c('lincoln', 'Lincoln Financial', 'A'),
