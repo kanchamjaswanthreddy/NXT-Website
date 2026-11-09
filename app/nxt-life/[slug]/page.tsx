@@ -26,7 +26,7 @@ export default async function NxtLifeArticlePage({ params }: Params) {
   if (!article) notFound()
 
   const related = articles.filter((a) => a.slug !== slug).slice(0, 3)
-  const isTeamArticle = article.image.includes('/team/')
+  const isTeamArticle = article.image.includes('/team/') || article.image.includes('/agents/')
   const quotes = article.body.filter((b) => b.type === 'quote')
   const bodyWithoutQuotes = article.body.filter((b) => b.type !== 'quote')
 
