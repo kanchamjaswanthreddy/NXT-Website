@@ -38,7 +38,6 @@ export default function GetStartedPage() {
           <a href={CRM_JOIN_URL} className="btn btn-primary inline-flex">
             Create account <ArrowRight size={16} />
           </a>
-          <span className="text-sm text-ink-soft">Free · No credit card required</span>
         </div>
       </PageHero>
 
@@ -91,7 +90,7 @@ export default function GetStartedPage() {
           <Reveal>
             <h2 className="display">Ready to join?</h2>
             <p className="lead mt-5 text-ink-soft">
-              Create your free account in under two minutes. No credit card required to get started.
+              Create your account in under two minutes and get started today.
             </p>
             <div className="mt-9 flex flex-col items-center gap-4 sm:flex-row sm:justify-center">
               <a href={CRM_JOIN_URL} className="btn btn-primary inline-flex">
