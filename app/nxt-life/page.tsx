@@ -98,7 +98,7 @@ export default function NxtLifePage() {
       </section>
 
       {/* Category filter + article grid */}
-      <NxtLifeFilter articles={rest} />
+      <NxtLifeFilter articles={articles} />
 
       {/* Quote / brand strip */}
       <section className="bg-stone">
