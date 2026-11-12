@@ -46,13 +46,26 @@ const ADVISOR_BENEFITS = [
 function TeamGrid({ members, cols = 'md:grid-cols-4' }: { members: typeof leadership; cols?: string }) {
   return (
     <Stagger as="ul" className={`grid grid-cols-2 gap-6 ${cols}`}>
-      {members.map(({ name, role, image }) => (
+      {members.map(({ name, role, image, link }) => (
         <Item as="li" key={name}>
-          <div className="relative mb-4 aspect-[3/4] overflow-hidden rounded-[20px] bg-stone">
-            <Image src={image} alt={name} fill sizes="(min-width:768px) 25vw, 50vw" className="object-cover object-[center_20%]" />
-          </div>
-          <h3 className="h3">{name}</h3>
-          <p className="text-sm text-ink-soft">{role}</p>
+          {link ? (
+            <Link href={link} className="group block">
+              <div className="relative mb-4 aspect-[3/4] overflow-hidden rounded-[20px] bg-stone">
+                <Image src={image} alt={name} fill sizes="(min-width:768px) 25vw, 50vw" className="object-cover object-[center_20%] transition-transform duration-500 group-hover:scale-[1.03]" />
+              </div>
+              <h3 className="h3 group-hover:text-command transition-colors">{name}</h3>
+              <p className="text-sm text-ink-soft">{role}</p>
+              <span className="mt-1 inline-block text-xs font-medium text-gold">Read story →</span>
+            </Link>
+          ) : (
+            <>
+              <div className="relative mb-4 aspect-[3/4] overflow-hidden rounded-[20px] bg-stone">
+                <Image src={image} alt={name} fill sizes="(min-width:768px) 25vw, 50vw" className="object-cover object-[center_20%]" />
+              </div>
+              <h3 className="h3">{name}</h3>
+              <p className="text-sm text-ink-soft">{role}</p>
+            </>
+          )}
         </Item>
       ))}
     </Stagger>
@@ -136,6 +149,7 @@ export default function AboutPage() {
             <p>NXT Financial Group was founded on a simple frustration: the financial services industry was not built for the people working inside it. Advisors were capped. Clients were confused. The old model rewarded institutions over individuals, and the people doing the hardest work — sitting across from families, asking the difficult questions, building trust one conversation at a time — had no real ownership of what they were building.</p>
             <p>We decided to change that. NXT Financial Group is a licensed Independent Marketing Organization (IMO) appointed with 70+ top-rated U.S. carriers across life, health, annuity, and wealth products. We operate as a nationwide platform where advisors are not just producers — they are owners.</p>
             <p>On the client side, our advisors are trained to lead with education, not sales. They sit down with families, listen first, and build protection plans that make sense — clearly explained, honestly priced, and built to last.</p>
+            <Link href="/nxt-life/shiv-thakur-founder-story" className="link mt-4 inline-flex items-center gap-2 text-sm font-semibold">Read the Founder&apos;s Story <ArrowRight size={15} /></Link>
           </Reveal>
         </div>
       </section>

@@ -33,6 +33,11 @@ export const agents: Agent[] = [
   { name: 'Kanchan Altidor', rank: 'Financial Associate', city: 'North Andover', state: 'Massachusetts', phone: '(617) 483-2750', email: 'kanchannxtfinancialgroup@gmail.com', image: '/images/agents/kanchan-altidor.jpeg' },
   { name: 'Kevin Le', rank: 'Financial Associate', city: 'Brockton', state: 'Massachusetts', phone: '(857) 308-9692', email: 'kevinnxtfinancialgroup@gmail.com', image: '/images/agents/kevin-le.jpeg' },
   { name: 'Purushottam Pudasaini', rank: 'Financial Associate', city: 'Franklin', state: 'Massachusetts', phone: '(619) 724-1977', email: 'purunxtfinancialgroup@gmail.com', image: '/images/agents/purushottam-pudasaini.jpeg' },
+  { name: 'Sunil Rajbanshai', rank: 'Financial Associate', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 682-8509', email: 'sunilnxtfinancialgroup@gmail.com', image: '/images/agents/sunil-rajbanshai.jpeg' },
+  { name: 'Bhushan Pradhan', rank: 'Financial Associate', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 591-7782', email: 'bhushannxtfinancialgroup@gmail.com', image: '/images/agents/bhushan-pradhan.jpeg' },
+  { name: 'Aman Shrestha', rank: 'Financial Associate', city: 'Manchester', state: 'New Hampshire', phone: '(603) 858-3083', email: 'amannxtfinancialgroup@gmail.com', image: '/images/agents/aman-shrestha.jpeg' },
+  { name: 'Ajaya Rajbhandari', rank: 'Financial Associate', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 410-9521', email: 'ajayanxtfinancialgroup@gmail.com', image: '/images/agents/ajaya-rajbhandari.jpeg' },
+  { name: 'Devesh Malla', rank: 'Financial Associate', city: 'Westford', state: 'Massachusetts', phone: '(857) 928-3409', email: 'deveshnxtfinancialgroup@gmail.com', image: '/images/agents/devesh-malla.jpeg' },
 ]
 
 export function getAgentsByState(): Record<string, Agent[]> {

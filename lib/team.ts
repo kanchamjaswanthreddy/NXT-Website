@@ -3,11 +3,12 @@ export interface TeamMember {
   role: string
   image: string
   group: 'leadership' | 'advisors'
+  link?: string
 }
 
 export const team: TeamMember[] = [
   // Executive Leadership
-  { name: 'Shiv Thakur', role: 'Founder & CEO', image: '/images/team/shiv-thakur.jpg', group: 'leadership' },
+  { name: 'Shiv Thakur', role: 'Founder & CEO', image: '/images/team/shiv-thakur.jpg', group: 'leadership', link: '/nxt-life/shiv-thakur-founder-story' },
   { name: 'Sony Pradhan', role: 'Chief Growth Officer', image: '/images/team/sony-pradhan.jpeg', group: 'leadership' },
   { name: 'Sandeep Charaya', role: 'Chief Technology Officer', image: '/images/team/sandeep-charaya.png', group: 'leadership' },
   { name: 'Ashish Sood', role: 'Chief Financial Officer', image: '/images/team/ashish-sood.png', group: 'leadership' },
