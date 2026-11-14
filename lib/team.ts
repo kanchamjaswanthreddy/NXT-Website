@@ -16,7 +16,7 @@ export const team: TeamMember[] = [
   { name: 'Rigoberto Ayala', role: 'Vice President of Sales', image: '/images/team/rigoberto-ayala.png', group: 'leadership', link: '/nxt-life/rigoberto-ayala-rodas-joins-nxt-as-vp-sales' },
   { name: 'Alana Malla', role: 'Vice President of Agent Development', image: '/images/agents/alana-malla.jpeg', group: 'leadership', link: '/nxt-life/alana-malla-joins-nxt-as-vp-agent-development' },
   { name: 'Minakshi Rajbanshi', role: 'Vice President of Marketing', image: '/images/agents/minakshi-rajbanshi.jpeg', group: 'leadership', link: '/nxt-life/minakshi-rajbanshi-joins-nxt-as-licensed-insurance-advisor' },
-  { name: 'Jaswanth Reddy Kancham', role: 'VP of Agent Training & Development', image: '/images/team/jaswanth-reddy.png', group: 'leadership' },
+  { name: 'Jaswanth Reddy Kancham', role: 'VP of Technology Innovation', image: '/images/team/jaswanth-reddy.png', group: 'leadership' },
   { name: 'Joe Sabourin', role: 'Senior Partner', image: '/images/team/joe-sabourin.jpg', group: 'leadership' },
   { name: 'Marsha Jones', role: 'Director of Administration', image: '/images/team/marsha-jones.jpeg', group: 'leadership' },
   { name: 'Wilfredo Munguia', role: 'Director of Technology', image: '/images/team/wilfredo-munguia.jpeg', group: 'leadership' },
