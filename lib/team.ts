@@ -24,6 +24,8 @@ export const team: TeamMember[] = [
   { name: 'Naresh Gajula', role: 'Director of Commissions', image: '/images/team/naresh-gajula.jpeg', group: 'leadership' },
   { name: 'Uday Chaudhary', role: 'Director of Marketing', image: '/images/team/uday-chaudhary.jpeg', group: 'leadership' },
   { name: 'Gita Thakur', role: 'Director of Events Operations', image: '/images/team/gita-thakur.jpeg', group: 'leadership' },
+  { name: 'Gama Altidor', role: 'Director of Agent Success', image: '/images/agents/gama-altidor.jpeg', group: 'leadership' },
+  { name: 'Arbin Poudel', role: 'Director of Agent Development & Experience', image: '/images/agents/arbin-poudel.jpeg', group: 'leadership' },
 ]
 
 export const leadership = team.filter((m) => m.group === 'leadership')
