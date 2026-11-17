@@ -9,10 +9,10 @@ export interface TeamMember {
 export const team: TeamMember[] = [
   // Executive Leadership
   { name: 'Shiv Thakur', role: 'Founder & CEO', image: '/images/team/shiv-thakur.jpg', group: 'leadership', link: '/nxt-life/shiv-thakur-founder-story' },
-  { name: 'Sony Pradhan', role: 'Chief Growth Officer', image: '/images/team/sony-pradhan.jpeg', group: 'leadership', link: '/nxt-life/sony-pradhan-joins-nxt-as-cgo' },
-  { name: 'Sandeep Charaya', role: 'Chief Technology Officer', image: '/images/team/sandeep-charaya.png', group: 'leadership', link: '/nxt-life/sandeep-charaya-joins-nxt-as-cto' },
-  { name: 'Ashish Sood', role: 'Chief Financial Officer', image: '/images/team/ashish-sood.png', group: 'leadership', link: '/nxt-life/ashish-sood-joins-nxt-as-cfo' },
   { name: 'James R. Vigeant', role: 'Chief Strategy & Innovation Officer', image: '/images/team/james-vigeant.jpeg', group: 'leadership', link: '/nxt-life/james-vigeant-joins-nxt-as-csio' },
+  { name: 'Ashish Sood', role: 'Chief Financial Officer', image: '/images/team/ashish-sood.png', group: 'leadership', link: '/nxt-life/ashish-sood-joins-nxt-as-cfo' },
+  { name: 'Sandeep Charaya', role: 'Chief Technology Officer', image: '/images/team/sandeep-charaya.png', group: 'leadership', link: '/nxt-life/sandeep-charaya-joins-nxt-as-cto' },
+  { name: 'Sony Pradhan', role: 'Chief Growth Officer', image: '/images/team/sony-pradhan.jpeg', group: 'leadership', link: '/nxt-life/sony-pradhan-joins-nxt-as-cgo' },
   { name: 'Rigoberto Ayala', role: 'Vice President of Sales', image: '/images/team/rigoberto-ayala.png', group: 'leadership', link: '/nxt-life/rigoberto-ayala-rodas-joins-nxt-as-vp-sales' },
   { name: 'Alana Malla', role: 'Vice President of Agent Development', image: '/images/agents/alana-malla.jpeg', group: 'leadership', link: '/nxt-life/alana-malla-joins-nxt-as-vp-agent-development' },
   { name: 'Minakshi Rajbanshi', role: 'Vice President of Marketing', image: '/images/agents/minakshi-rajbanshi.jpeg', group: 'leadership', link: '/nxt-life/minakshi-rajbanshi-joins-nxt-as-licensed-insurance-advisor' },
