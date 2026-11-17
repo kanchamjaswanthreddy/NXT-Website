@@ -19,7 +19,7 @@ const logoMap: Record<string, string> = {
   'aspida': '/logos/aspida.png',
   'assurity': '/logos/assurity.svg',
   'athene': '/logos/athene.svg',
-  'augustar': '/logos/augustar.png',
+  'augustar': '/logos/augustar.jpeg',
   'banner': '/logos/banner.png',
   'bcbs': '/logos/bcbs.svg',
   'brighthouse': '/logos/brighthouse.svg',
