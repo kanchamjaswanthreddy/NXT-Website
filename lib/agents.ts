@@ -20,7 +20,7 @@ export const agents: Agent[] = [
   { name: 'Rigoberto Antonio Ayala Rodas', rank: 'Vice President of Sales', city: 'Everett', state: 'Massachusetts', phone: '(617) 331-4093', email: 'rigonxtfinancialgroup@gmail.com', image: '/images/team/rigoberto-ayala.png' },
   { name: 'Maira Elisabeth Ochoa Umana', rank: 'Financial Associate', city: 'Revere', state: 'Massachusetts', phone: '(617) 953-8118', email: 'mairanxtfinancialgroup@gmail.com', image: '/images/agents/maira-ochoa.png' },
   { name: 'Josue Araujo', rank: 'Financial Associate', city: 'Malden', state: 'Massachusetts', phone: '(781) 333-0908', email: 'josuenxtfinancialgroup@gmail.com', image: '/images/agents/josue-araujo.png' },
-  { name: 'Vivek Daruka', rank: 'Financial Associate', city: 'Worcester', state: 'Massachusetts', phone: '(318) 789-4199', email: 'viveknxtfinancialgroup@gmail.com', image: null },
+  { name: 'Vivek Daruka', rank: 'Senior Financial Associate', city: 'Carrollton', state: 'Texas', phone: '(318) 789-4199', email: 'viveknxtfinancialgroup@gmail.com', image: '/images/agents/vivek-daruka.jpeg' },
   { name: 'Andy M Martinez', rank: 'Financial Associate', city: 'Lynn', state: 'Massachusetts', phone: '(857) 261-5938', email: 'andynxtfinancialgroup@gmail.com', image: '/images/agents/andy-martinez.jpg' },
   { name: 'Minakshi Rajbanshi', rank: 'Vice President of Marketing', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 682-8507', email: 'minakshinxtfinancialgroup@gmail.com', image: '/images/agents/minakshi-rajbanshi.jpeg' },
   { name: 'Anjali Shrestha', rank: 'Financial Director', city: 'Manchester', state: 'New Hampshire', phone: '(603) 858-3083', email: 'anjalinxtfinancialgroup@gmail.com', image: '/images/agents/anjali-shrestha.jpeg' },
@@ -38,6 +38,9 @@ export const agents: Agent[] = [
   { name: 'Aman Shrestha', rank: 'Financial Associate', city: 'Manchester', state: 'New Hampshire', phone: '(603) 858-3083', email: 'amannxtfinancialgroup@gmail.com', image: '/images/agents/aman-shrestha.jpeg' },
   { name: 'Ajaya Rajbhandari', rank: 'Financial Associate', city: 'Hooksett', state: 'New Hampshire', phone: '(603) 410-9521', email: 'ajayanxtfinancialgroup@gmail.com', image: '/images/agents/ajaya-rajbhandari.jpeg' },
   { name: 'Devesh Malla', rank: 'Financial Associate', city: 'Westford', state: 'Massachusetts', phone: '(857) 928-3409', email: 'deveshnxtfinancialgroup@gmail.com', image: '/images/agents/devesh-malla.jpeg' },
+  { name: 'Gama Altidor', rank: 'Director of Agent Success', city: 'North Andover', state: 'Massachusetts', phone: '(978) 884-7604', email: 'gamanxtfinancialgroup@gmail.com', image: '/images/agents/gama-altidor.jpeg' },
+  { name: 'Arbin Poudel', rank: 'Director of Agent Development & Experience', city: 'Queens', state: 'New York', phone: '(718) 416-5238', email: 'arbinnxtfinancial@gmail.com', image: '/images/agents/arbin-poudel.jpeg' },
+  { name: 'Ashma Tamang', rank: 'Financial Director', city: 'Queens', state: 'New York', phone: '(347) 571-3351', email: 'ashmanxtfinancial@gmail.com', image: '/images/agents/ashma-tamang.jpeg' },
 ]
 
 export function getAgentsByState(): Record<string, Agent[]> {
