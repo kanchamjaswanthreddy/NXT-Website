@@ -18,14 +18,14 @@ export const team: TeamMember[] = [
   { name: 'Minakshi Rajbanshi', role: 'Vice President of Marketing', image: '/images/agents/minakshi-rajbanshi.jpeg', group: 'leadership', link: '/nxt-life/minakshi-rajbanshi-joins-nxt-as-licensed-insurance-advisor' },
   { name: 'Jaswanth Reddy Kancham', role: 'VP of Technology Innovation', image: '/images/team/jaswanth-reddy.png', group: 'leadership' },
   { name: 'Marsha Jones', role: 'Director of Administration', image: '/images/team/marsha-jones.jpeg', group: 'leadership' },
+  { name: 'Gama Altidor', role: 'Director of Agent Success', image: '/images/agents/gama-altidor.jpeg', group: 'leadership' },
+  { name: 'Arbin Poudel', role: 'Director of Agent Development & Experience', image: '/images/agents/arbin-poudel.jpeg', group: 'leadership' },
   { name: 'Wilfredo Munguia', role: 'Director of Technology', image: '/images/team/wilfredo-munguia.jpeg', group: 'leadership' },
   { name: 'Carmelo Aguilar', role: 'Senior Staff Accountant', image: '/images/team/carmelo-aguilar.png', group: 'leadership' },
   { name: 'Samyak Jain', role: 'Director of Risk & Analytics', image: '/images/team/samyak-jain.jpeg', group: 'leadership' },
   { name: 'Naresh Gajula', role: 'Director of Commissions', image: '/images/team/naresh-gajula.jpeg', group: 'leadership' },
   { name: 'Uday Chaudhary', role: 'Director of Marketing', image: '/images/team/uday-chaudhary.jpeg', group: 'leadership' },
   { name: 'Gita Thakur', role: 'Director of Events Operations', image: '/images/team/gita-thakur.jpeg', group: 'leadership' },
-  { name: 'Gama Altidor', role: 'Director of Agent Success', image: '/images/agents/gama-altidor.jpeg', group: 'leadership' },
-  { name: 'Arbin Poudel', role: 'Director of Agent Development & Experience', image: '/images/agents/arbin-poudel.jpeg', group: 'leadership' },
 ]
 
 export const leadership = team.filter((m) => m.group === 'leadership')
