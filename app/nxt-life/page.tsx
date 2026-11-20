@@ -14,7 +14,9 @@ export const metadata: Metadata = {
 
 export default function NxtLifePage() {
   const featured = articles.find((a) => a.featured)!
-  const rest = articles.filter((a) => a.slug !== featured.slug)
+  const rest = articles
+    .filter((a) => a.slug !== featured.slug)
+    .sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime())
 
   return (
     <>
@@ -98,7 +100,7 @@ export default function NxtLifePage() {
       </section>
 
       {/* Category filter + article grid */}
-      <NxtLifeFilter articles={articles} />
+      <NxtLifeFilter articles={[featured, ...rest]} />
 
       {/* Quote / brand strip */}
       <section className="bg-stone">
