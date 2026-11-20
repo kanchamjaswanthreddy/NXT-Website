@@ -4,7 +4,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X, Phone, ChevronDown } from 'lucide-react'
+import { Menu, X, ChevronDown } from 'lucide-react'
 
 interface DropdownItem {
   href: string
@@ -298,12 +298,6 @@ export default function Nav() {
 
           <div className="hidden items-center gap-5 lg:flex">
             <a
-              href="tel:8572053333"
-              className="mono flex items-center gap-2 text-sm text-ink hover:text-navy"
-            >
-              <Phone size={15} className="text-gold" /> 857-205-3333
-            </a>
-            <a
               href="https://crm.nxtfinancialgroup.com/auth/login"
               target="_blank"
               rel="noopener noreferrer"
@@ -373,9 +367,6 @@ export default function Nav() {
               className="btn btn-outline"
             >
               Agent Login
-            </a>
-            <a href="tel:8572053333" className="btn btn-outline">
-              <Phone size={16} /> 857-205-3333
             </a>
           </div>
         </div>
