@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   keywords: ['IMO', 'Independent Marketing Organization', 'insurance brokerage', 'annuities', 'life insurance', 'Medicare', 'disability income', 'care planning', 'home and auto insurance', 'NXT Financial Group', 'independent insurance agent'],
   openGraph: { type: 'website', siteName: 'NXT Financial Group', locale: 'en_US', images: [{ url: '/og-image.png', width: 1200, height: 630, alt: 'NXT Financial Group — Independent Marketing Organization (IMO)' }] },
   twitter: { card: 'summary_large_image', title: 'NXT Financial Group | IMO', description: 'Independent Marketing Organization comparing 70+ top-rated carriers across 6 insurance disciplines.' },
-  icons: { icon: '/favicon.png' },
+  icons: { icon: '/favicon.png', apple: '/favicon.png' },
   alternates: { canonical: SITE },
   robots: { index: true, follow: true, googleBot: { index: true, follow: true, 'max-video-preview': -1, 'max-image-preview': 'large' as const, 'max-snippet': -1 } },
 }
