@@ -1,7 +1,7 @@
 import type { Metadata } from 'next'
 import Image from 'next/image'
 import Link from 'next/link'
-import { ArrowRight, Phone, Mail, MapPin, ShieldCheck, Building2, BookOpen, Eye, Globe, HeartHandshake, Handshake, CheckCircle, Crown, Lock, GraduationCap, Target, Heart } from 'lucide-react'
+import { ArrowRight, MapPin, ShieldCheck, Building2, BookOpen, Eye, Globe, HeartHandshake, Handshake, CheckCircle, Crown, Lock, GraduationCap, Target, Heart } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import { Reveal, Stagger, Item } from '@/components/motion'
 import { leadership } from '@/lib/team'
@@ -105,14 +105,6 @@ function AgentsByState() {
                     <h4 className="font-display text-[15px] font-semibold text-navy">{agent.name}</h4>
                     <p className="text-xs text-gold">{agent.rank}</p>
                     <p className="mt-0.5 text-xs text-ink-soft">{agent.city}, {agent.state}</p>
-                    <div className="mt-2 flex flex-col gap-1">
-                      <a href={`tel:${agent.phone.replace(/\D/g, '')}`} className="flex items-center gap-1.5 text-xs text-ink hover:text-navy">
-                        <Phone size={11} className="text-gold" />{agent.phone}
-                      </a>
-                      <a href={`mailto:${agent.email}`} className="flex items-center gap-1.5 text-xs text-ink hover:text-navy truncate">
-                        <Mail size={11} className="text-gold" />{agent.email}
-                      </a>
-                    </div>
                   </div>
                 </div>
               ))}
