@@ -69,7 +69,7 @@ const STEPS = [
   ['Review', 'The person who met you first goes through the plan with you every year.'],
 ]
 
-const STATS = [[50, '', 'States licensed'], [5, '', 'Disciplines, practiced daily'], [1, ' day', 'To hear back from us']] as const
+const STATS = [[50, '', 'States licensed'], [6, '', 'Disciplines, practiced daily'], [1, ' day', 'To hear back from us']] as const
 const PLAN = ['Guaranteed income sized to your essentials', 'A funded long-term care plan', 'Medicare that keeps your doctors', 'Life insurance sized honestly, not by rule of thumb']
 const CAPTIVE = ['Recommends from one company’s products', 'Works toward a sales quota', 'Starts the conversation with the product']
 const INDEPENDENT = ['Recommends from every carrier on the list', 'Carries no quota with any of them', 'Starts with your income gap, your health, your family, your timeline']
