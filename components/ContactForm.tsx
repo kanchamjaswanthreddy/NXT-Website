@@ -35,7 +35,7 @@ export default function ContactForm() {
   return (
     <form onSubmit={(e) => { e.preventDefault(); setSubmitted(true) }} className="card rounded-[24px] p-7 md:p-10">
       <h2 className="display-sm mb-1">Book a consultation</h2>
-      <p className="mb-8 text-[15px] text-ink-soft">Forty-five minutes, no cost, no obligation.</p>
+      <p className="mb-8 text-[17px] text-ink-soft">Forty-five minutes, no cost, no obligation.</p>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div><label className="field-label" htmlFor="firstName">First name</label><input id="firstName" name="firstName" required value={form.firstName} onChange={update} className="field" autoComplete="given-name" /></div>
         <div><label className="field-label" htmlFor="lastName">Last name</label><input id="lastName" name="lastName" required value={form.lastName} onChange={update} className="field" autoComplete="family-name" /></div>

@@ -1,39 +1,51 @@
 import Link from 'next/link'
-import Image from 'next/image'
-import { Phone, Mail, MapPin, Instagram, Facebook, Linkedin, Youtube } from 'lucide-react'
 import { solutions } from '@/lib/solutions'
 
-const COMPANY = [['/about', 'About NXT'], ['/carriers', 'Carrier partners'], ['/calculators', 'Calculators'], ['/resources', 'Planning tools'], ['/nxt-life', 'NXT Life'], ['/insights', 'Insights'], ['/careers', 'Careers'], ['/partner', 'For advisors'], ['/referral', 'Refer a friend'], ['/contact', 'Contact']]
+const COMPANY = [['/about', 'About NXT'], ['/carriers', 'Carrier partners'], ['/nxt-life', 'NXT Life'], ['/insights', 'Insights'], ['/careers', 'Careers'], ['/partner', 'For advisors'], ['/referral', 'Refer a friend'], ['/contact', 'Contact']]
+const TOOLS = [['/calculators', 'Calculators'], ['/resources', 'Planning tools'], ['/get-started', 'Get started']]
+const SOCIAL = [
+  ['https://www.linkedin.com/company/https-nxtfinancialgroup.com-/', 'LinkedIn'],
+  ['https://www.instagram.com/nxtfinancialgroup', 'Instagram'],
+  ['https://www.facebook.com/people/NXT-Financial-Group/61589938040020/', 'Facebook'],
+  ['https://www.youtube.com/@NXTFinancialGroup', 'YouTube'],
+]
 
+/** The navy-black panel that closes every page inside the frame. */
 export default function Footer() {
   return (
-    <footer className="bg-midnight on-dark">
-      <div className="container py-16 md:py-20">
-        <div className="grid grid-cols-1 gap-12 md:grid-cols-[1.4fr_1fr_1fr] md:gap-16">
+    <footer className="footer">
+      <p className="mq" aria-hidden="true"><span>{Array.from({ length: 4 }, (_, k) => <span key={k}>Protect what matters<i>.</i> Plan what&rsquo;s next<i>.</i></span>)}</span></p>
+      <div className="container">
+        <div className="footer-top">
           <div>
-            <Link href="/" aria-label="NXT Financial Group" className="inline-block rounded-xl bg-white px-5 py-3"><Image src="/logo.png" alt="NXT Financial Group" width={240} height={106} className="h-16 w-auto" /></Link>
-            <p className="mt-6 max-w-[360px] text-[15px] leading-relaxed">Independent retirement and protection planning. Annuities, life insurance, care planning, Medicare and disability income from A-rated carriers, in all 50 states.</p>
-            <ul className="mt-7 space-y-3 text-[15px]">
-              <li><a href="tel:8572053333" className="flex items-center gap-3 text-platinum hover:text-white"><Phone size={16} className="text-sunrise" />857-205-3333</a></li>
-              <li><a href="mailto:info@nxtfinancialgroup.com" className="flex items-center gap-3 text-platinum hover:text-white"><Mail size={16} className="text-sunrise" />info@nxtfinancialgroup.com</a></li>
-              <li className="flex items-center gap-3 text-platinum"><MapPin size={16} className="text-sunrise" />75 Pleasant Street, Unit 207, Malden, MA 02148</li>
-            </ul>
-            <div className="mt-6 flex gap-4">
-              <a href="https://www.instagram.com/nxtfinancialgroup" target="_blank" rel="noopener noreferrer" aria-label="Instagram" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-platinum transition-colors hover:bg-gold hover:text-navy"><Instagram size={18} /></a>
-              <a href="https://www.facebook.com/people/NXT-Financial-Group/61589938040020/" target="_blank" rel="noopener noreferrer" aria-label="Facebook" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-platinum transition-colors hover:bg-gold hover:text-navy"><Facebook size={18} /></a>
-              <a href="https://www.linkedin.com/company/https-nxtfinancialgroup.com-/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-platinum transition-colors hover:bg-gold hover:text-navy"><Linkedin size={18} /></a>
-              <a href="https://www.youtube.com/@NXTFinancialGroup" target="_blank" rel="noopener noreferrer" aria-label="YouTube" className="flex h-10 w-10 items-center justify-center rounded-lg bg-white/10 text-platinum transition-colors hover:bg-gold hover:text-navy"><Youtube size={18} /></a>
-            </div>
+            {/* eslint-disable-next-line @next/next/no-img-element */}
+            <span className="footer-logo"><img src="/media/logo-trim.png" alt="NXT Financial Group" width={420} height={154} loading="lazy" /></span>
+            <p className="footer-h">Talk to us</p>
+            <a href="tel:8572053333" className="footer-big">857-205-3333</a>
+            <a href="mailto:info@nxtfinancialgroup.com" className="footer-big">info@nxtfinancialgroup.com</a>
+            <address className="mt-6 not-italic text-white/70">75 Pleasant Street, Unit 207<br />Malden, MA 02148</address>
           </div>
-          <nav aria-label="Solutions"><h3 className="mb-5 text-sm font-semibold text-sunrise">Solutions</h3><ul className="space-y-3 text-[15px]">{solutions.map((s) => <li key={s.slug}><Link href={`/solutions/${s.slug}`} className="text-platinum hover:text-white">{s.title}</Link></li>)}</ul></nav>
-          <nav aria-label="Company"><h3 className="mb-5 text-sm font-semibold text-sunrise">Company</h3><ul className="space-y-3 text-[15px]">{COMPANY.map(([h, l]) => <li key={h}><Link href={h} className="text-platinum hover:text-white">{l}</Link></li>)}</ul></nav>
+          <div className="footer-cols">
+            <nav aria-label="Solutions">
+              <p className="footer-h">Solutions</p>
+              <ul>{solutions.map((s) => <li key={s.slug}><Link href={`/solutions/${s.slug}`}>{s.title}</Link></li>)}</ul>
+            </nav>
+            <nav aria-label="Company">
+              <p className="footer-h">Company</p>
+              <ul>{COMPANY.map(([href, label]) => <li key={href}><Link href={href}>{label}</Link></li>)}</ul>
+            </nav>
+            <nav aria-label="Tools and social">
+              <p className="footer-h">Tools</p>
+              <ul>{TOOLS.map(([href, label]) => <li key={href}><Link href={href}>{label}</Link></li>)}</ul>
+              <p className="footer-h mt-7">Follow</p>
+              <ul>{SOCIAL.map(([href, label]) => <li key={label}><a href={href} target="_blank" rel="noopener noreferrer">{label}</a></li>)}</ul>
+            </nav>
+          </div>
         </div>
-        <div className="mt-14 border-t border-white/10 pt-6">
-          <div className="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
-            <p className="text-sm text-silver">© {new Date().getFullYear()} NXT Financial Group, NXT World Holdings, Inc. All Rights Reserved.</p>
-            <ul className="flex gap-6 text-sm"><li><Link href="/privacy-policy" className="text-silver hover:text-white">Privacy</Link></li><li><Link href="/terms" className="text-silver hover:text-white">Terms</Link></li></ul>
-          </div>
-          <p className="mono mt-4 max-w-[900px] text-xs leading-relaxed text-silver">NXT Financial Group is a licensed independent insurance agency headquartered in Massachusetts. Annuity and insurance guarantees are backed by the claims-paying ability of the issuing carrier. Product availability, features and rates vary by carrier and state. We do not offer every plan available in your area; contact Medicare.gov or 1-800-MEDICARE for all options. Estimates on this site are illustrative and not an offer of coverage.</p>
+        <p className="footer-legal">NXT Financial Group is a licensed independent insurance agency headquartered in Massachusetts. Annuity and insurance guarantees are backed by the claims-paying ability of the issuing carrier. Product availability, features and rates vary by carrier and state. We do not offer every plan available in your area; contact Medicare.gov or 1-800-MEDICARE for all options. Estimates on this site are illustrative and not an offer of coverage.</p>
+        <div className="footer-base">
+          <p>© {new Date().getFullYear()} NXT Financial Group, NXT World Holdings, Inc. All Rights Reserved.</p>
+          <p className="flex gap-6"><a href="https://crm.nxtfinancialgroup.com/auth/login" target="_blank" rel="noopener noreferrer">Agent login</a><Link href="/privacy-policy">Privacy</Link><Link href="/terms">Terms</Link></p>
         </div>
       </div>
     </footer>

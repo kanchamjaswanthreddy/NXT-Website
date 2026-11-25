@@ -52,7 +52,7 @@ export default function GetStartedPage() {
               <Item key={b.title} className="rounded-2xl border border-rule bg-white p-7">
                 <b.icon size={28} className="text-sunrise" />
                 <h3 className="display-sm mt-4">{b.title}</h3>
-                <p className="mt-2 text-[15px] text-ink-soft">{b.desc}</p>
+                <p className="mt-2 text-[17px] text-ink-soft">{b.desc}</p>
               </Item>
             ))}
           </Stagger>
@@ -71,12 +71,12 @@ export default function GetStartedPage() {
           <Stagger className="mt-14 space-y-6">
             {STEPS.map((step) => (
               <Item key={step.num} className="flex items-start gap-5 rounded-2xl border border-rule bg-white p-6">
-                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-midnight text-sm font-bold text-gold">
+                <div className="flex h-10 w-10 shrink-0 items-center justify-center rounded-full bg-midnight text-sm font-semibold text-gold">
                   {step.num}
                 </div>
                 <div>
                   <h3 className="text-lg font-semibold text-midnight">{step.title}</h3>
-                  <p className="mt-1 text-[15px] text-ink-soft">{step.desc}</p>
+                  <p className="mt-1 text-[17px] text-ink-soft">{step.desc}</p>
                 </div>
               </Item>
             ))}

@@ -1,377 +1,119 @@
 'use client'
-import { useEffect, useState, useRef, useCallback } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import Link from 'next/link'
-import Image from 'next/image'
 import { usePathname } from 'next/navigation'
-import { AnimatePresence, motion } from 'framer-motion'
-import { Menu, X, ChevronDown } from 'lucide-react'
+import { Menu, Phone, X } from 'lucide-react'
+import { solutions } from '@/lib/solutions'
 
-interface DropdownItem {
-  href: string
-  label: string
-}
+const LOGIN = 'https://crm.nxtfinancialgroup.com/auth/login'
+const PILLS = [['/solutions', 'Solutions'], ['/carriers', 'Carriers'], ['/about', 'About'], ['/insights', 'Insights']] as const
 
-interface NavItem {
-  key: string
-  href: string
-  label: string
-  children?: DropdownItem[]
-}
-
-const NAV_ITEMS: NavItem[] = [
-  {
-    key: 'solutions',
-    href: '/solutions',
-    label: 'Solutions',
-  },
-  {
-    key: 'about',
-    href: '/about',
-    label: 'About',
-    children: [
-      { href: '/about', label: 'About Us' },
-      { href: '/about#why-nxt', label: 'Why NXT' },
-      { href: '/about#team', label: 'Meet Our Team' },
-      { href: '/contact', label: 'Contact an Agent' },
-    ],
-  },
-  {
-    key: 'calculators',
-    href: '/calculators',
-    label: 'Calculators',
-    children: [
-      { href: '/calculators#life', label: 'Life Insurance Needs' },
-      { href: '/calculators#income', label: 'Retirement Income Gap' },
-      { href: '/calculators#annuity', label: 'Annuity Calculator' },
-      { href: '/calculators#401k', label: '401(k) Calculator' },
-      { href: '/calculators#mortgage', label: 'Mortgage Calculator' },
-      { href: '/calculators#care', label: 'Care Cost Calculator' },
-      { href: '/calculators#rule72', label: 'Rule of 72' },
-      { href: '/calculators#smoking', label: 'Smoking Cost' },
-      { href: '/calculators#breakfast', label: 'Breakfast Savings' },
-    ],
-  },
-  {
-    key: 'carriers',
-    href: '/carriers',
-    label: 'Carriers',
-  },
-  {
-    key: 'nxt-life',
-    href: '/nxt-life',
-    label: 'NXT Life',
-  },
-  {
-    key: 'insights',
-    href: '/insights',
-    label: 'Insights',
-  },
-  {
-    key: 'careers',
-    href: '/careers',
-    label: 'Careers',
-  },
+const GROUPS: { title: string; links: [string, string][] }[] = [
+  { title: 'Solutions', links: solutions.map((s) => [`/solutions/${s.slug}`, s.title] as [string, string]) },
+  { title: 'Company', links: [['/about', 'About NXT'], ['/about#team', 'Meet our team'], ['/carriers', 'Carriers'], ['/nxt-life', 'NXT Life'], ['/insights', 'Insights'], ['/careers', 'Careers'], ['/partner', 'For advisors'], ['/contact', 'Contact an agent']] },
+  { title: 'Tools', links: [['/calculators', 'Calculators'], ['/resources', 'Planning tools'], ['/referral', 'Refer a friend'], ['/solutions', 'All solutions']] },
 ]
 
-const MOBILE_SECTIONS = [
-  {
-    heading: null,
-    links: [
-      { href: '/', label: 'Home' },
-      { href: '/solutions', label: 'Solutions' },
-    ],
-  },
-  {
-    heading: 'About',
-    links: [
-      { href: '/about', label: 'About Us' },
-      { href: '/about#why-nxt', label: 'Why NXT' },
-      { href: '/about#team', label: 'Meet Our Team' },
-      { href: '/contact', label: 'Contact an Agent' },
-    ],
-  },
-  {
-    heading: 'Calculators',
-    links: [
-      { href: '/calculators#life', label: 'Life Insurance Needs' },
-      { href: '/calculators#income', label: 'Retirement Income Gap' },
-      { href: '/calculators#annuity', label: 'Annuity Calculator' },
-      { href: '/calculators#401k', label: '401(k) Calculator' },
-      { href: '/calculators#mortgage', label: 'Mortgage Calculator' },
-      { href: '/calculators#care', label: 'Care Cost Calculator' },
-      { href: '/calculators#rule72', label: 'Rule of 72' },
-      { href: '/calculators#smoking', label: 'Smoking Cost' },
-      { href: '/calculators#breakfast', label: 'Breakfast Savings' },
-    ],
-  },
-  {
-    heading: null,
-    links: [
-      { href: '/carriers', label: 'Carriers' },
-      { href: '/nxt-life', label: 'NXT Life' },
-      { href: '/insights', label: 'Insights' },
-      { href: '/careers', label: 'Careers' },
-    ],
-  },
-]
+/** Sections the header should turn white over: anything marked dark, wide enough to sit under it. */
+const DARK = '[data-tone="dark"], main .on-dark, .footer'
 
-const dropdownVariants = {
-  hidden: { opacity: 0, y: -4 },
-  visible: { opacity: 1, y: 0 },
-  exit: { opacity: 0, y: -4 },
-}
-
+/**
+ * Site header: glass pills inside the frame, either side of the logo's notch. The pills turn
+ * white-on-glass over pictures and dark sections, step out of the way while the page is read
+ * downwards and return on the way back up. Everything else lives in the menu sheet.
+ */
 export default function Nav() {
-  const pathname = usePathname()
+  const pathname = usePathname() ?? ''
   const [open, setOpen] = useState(false)
-  const [scrolled, setScrolled] = useState(false)
-  const [activeDropdown, setActiveDropdown] = useState<string | null>(null)
-  const closeTimeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null)
+  const [tone, setTone] = useState<'light' | 'dark'>('light')
+  const [hide, setHide] = useState(false)
+  const button = useRef<HTMLButtonElement>(null)
+  const sheet = useRef<HTMLDivElement>(null)
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 12)
-    handleScroll()
-    window.addEventListener('scroll', handleScroll, { passive: true })
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+  const close = useCallback(() => setOpen(false), [])
+  useEffect(() => { setOpen(false) }, [pathname])
 
+  // Tone and hiding follow the scroll.
   useEffect(() => {
-    document.body.style.overflow = open ? 'hidden' : ''
-  }, [open])
-
-  useEffect(() => {
-    setActiveDropdown(null)
+    let zones: [number, number][] = []
+    let last = window.scrollY
+    let raf = 0
+    const measure = () => {
+      const y = window.scrollY
+      zones = Array.from(document.querySelectorAll<HTMLElement>(DARK))
+        .filter((el) => el.offsetWidth >= window.innerWidth * 0.6)
+        .map((el) => { const r = el.getBoundingClientRect(); return [r.top + y, r.bottom + y] as [number, number] })
+      apply()
+    }
+    const apply = () => {
+      raf = 0
+      const y = window.scrollY
+      const probe = y + 48
+      setTone(zones.some(([a, b]) => probe >= a && probe < b) ? 'dark' : 'light')
+      if (y < 200) setHide(false)
+      else if (y > last + 6) setHide(true)
+      else if (y < last - 6) setHide(false)
+      last = y
+    }
+    const onScroll = () => { if (!raf) raf = requestAnimationFrame(apply) }
+    measure()
+    const ro = new ResizeObserver(measure)
+    ro.observe(document.body)
+    const settle = window.setTimeout(measure, 600)
+    window.addEventListener('scroll', onScroll, { passive: true })
+    window.addEventListener('resize', measure)
+    return () => { cancelAnimationFrame(raf); window.clearTimeout(settle); ro.disconnect(); window.removeEventListener('scroll', onScroll); window.removeEventListener('resize', measure) }
   }, [pathname])
 
-  const handleMouseEnter = useCallback((key: string) => {
-    if (closeTimeoutRef.current) {
-      clearTimeout(closeTimeoutRef.current)
-      closeTimeoutRef.current = null
-    }
-    setActiveDropdown(key)
-  }, [])
+  // While the menu is open: hold the page still, close on Escape, and keep focus in the sheet.
+  useEffect(() => {
+    if (!open) return
+    const onKey = (e: KeyboardEvent) => { if (e.key === 'Escape') { setOpen(false); button.current?.focus() } }
+    window.addEventListener('keydown', onKey)
+    window.__lenis?.stop()
+    const html = document.documentElement
+    const was = html.style.overflow
+    html.style.overflow = 'hidden'
+    sheet.current?.querySelector<HTMLElement>('button, a')?.focus()
+    return () => { window.removeEventListener('keydown', onKey); window.__lenis?.start(); html.style.overflow = was }
+  }, [open])
 
-  const handleMouseLeave = useCallback(() => {
-    closeTimeoutRef.current = setTimeout(() => {
-      setActiveDropdown(null)
-    }, 150)
-  }, [])
-
-  const handleDropdownLinkClick = useCallback(() => {
-    setActiveDropdown(null)
-  }, [])
-
-  const isActive = (item: NavItem): boolean => {
-    const basePath = item.href.split('#')[0]
-    if (pathname === basePath) return true
-    if (pathname?.startsWith(basePath + '/')) return true
-    if (item.children) {
-      return item.children.some((child) => {
-        const childBase = child.href.split('#')[0]
-        return pathname === childBase || pathname?.startsWith(childBase + '/')
-      })
-    }
-    return false
-  }
+  const current = (href: string) => (pathname === href || (href !== '/' && pathname.startsWith(href + '/')) ? 'page' as const : undefined)
 
   return (
     <>
-    <header
-      className={`fixed inset-x-0 top-0 z-50 transition-all duration-300 ${
-        scrolled || open
-          ? 'border-b border-platinum bg-white/92 backdrop-blur-md'
-          : 'bg-transparent'
-      }`}
-    >
-      <a
-        href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-[60] focus:rounded-full focus:bg-navy focus:px-4 focus:py-2 focus:text-white"
-      >
-        Skip to content
-      </a>
-
-      <div className="container">
-        <nav
-          aria-label="Main"
-          className="flex h-[84px] items-center justify-between gap-6"
-        >
-          <Link
-            href="/"
-            onClick={() => setOpen(false)}
-            aria-label="NXT Financial Group home"
-            className="shrink-0"
-          >
-            <Image
-              src="/logo.png"
-              alt="NXT Financial Group"
-              width={200}
-              height={88}
-              priority
-              className="h-12 w-auto md:h-14"
-            />
-          </Link>
-
-          <ul className="hidden items-center gap-8 lg:flex">
-            {NAV_ITEMS.map((item) => {
-              const active = isActive(item)
-              const hasDropdown = Boolean(item.children)
-
-              return (
-                <li
-                  key={item.key}
-                  className="relative"
-                  onMouseEnter={
-                    hasDropdown ? () => handleMouseEnter(item.key) : undefined
-                  }
-                  onMouseLeave={hasDropdown ? handleMouseLeave : undefined}
-                >
-                  {hasDropdown ? (
-                    <button
-                      type="button"
-                      className={`relative flex items-center gap-1 py-2 text-[15px] font-medium text-ink transition-colors hover:text-navy after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px] after:rounded-full after:bg-gold after:transition-transform ${
-                        active
-                          ? 'text-navy after:scale-x-100'
-                          : 'after:scale-x-0 hover:after:scale-x-100'
-                      }`}
-                      aria-expanded={activeDropdown === item.key}
-                      aria-haspopup="true"
-                    >
-                      {item.label}
-                      <ChevronDown
-                        size={13}
-                        className={`transition-transform duration-200 ${
-                          activeDropdown === item.key ? 'rotate-180' : ''
-                        }`}
-                      />
-                    </button>
-                  ) : (
-                    <Link
-                      href={item.href}
-                      className={`relative py-2 text-[15px] font-medium text-ink transition-colors hover:text-navy after:absolute after:inset-x-0 after:-bottom-1 after:h-[2px] after:rounded-full after:bg-gold after:transition-transform ${
-                        active
-                          ? 'text-navy after:scale-x-100'
-                          : 'after:scale-x-0 hover:after:scale-x-100'
-                      }`}
-                    >
-                      {item.label}
-                    </Link>
-                  )}
-
-                  <AnimatePresence>
-                    {hasDropdown && activeDropdown === item.key && (
-                      <motion.div
-                        variants={dropdownVariants}
-                        initial="hidden"
-                        animate="visible"
-                        exit="exit"
-                        transition={{ duration: 0.15, ease: 'easeOut' }}
-                        className="absolute left-1/2 top-full z-50 mt-2 -translate-x-1/2 rounded-xl border border-platinum bg-white px-2 py-2 shadow-lg shadow-black/8"
-                        style={{ minWidth: '220px' }}
-                      >
-                        {item.children!.map((child) => {
-                          const childBase = child.href.split('#')[0]
-                          const childActive =
-                            pathname === childBase ||
-                            pathname?.startsWith(childBase + '/')
-                          return (
-                            <Link
-                              key={child.href}
-                              href={child.href}
-                              onClick={handleDropdownLinkClick}
-                              className={`block rounded-lg px-4 py-2.5 text-[14px] font-medium transition-colors ${
-                                childActive
-                                  ? 'bg-navy/5 text-navy'
-                                  : 'text-ink hover:bg-platinum/50 hover:text-navy'
-                              }`}
-                            >
-                              {child.label}
-                            </Link>
-                          )
-                        })}
-                      </motion.div>
-                    )}
-                  </AnimatePresence>
-                </li>
-              )
-            })}
-          </ul>
-
-          <div className="hidden items-center gap-5 lg:flex">
-            <a
-              href="https://crm.nxtfinancialgroup.com/auth/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="btn btn-outline btn-sm"
-            >
-              Agent Login
-            </a>
-            <Link href="/get-started" className="btn btn-primary btn-sm">
-              Get Started
-            </Link>
-          </div>
-
-          <button
-            type="button"
-            onClick={() => setOpen((v) => !v)}
-            aria-expanded={open}
-            aria-controls="mobile-nav"
-            aria-label={open ? 'Close menu' : 'Open menu'}
-            className="relative z-[60] flex h-12 w-12 items-center justify-center rounded-full text-navy active:bg-platinum/60 lg:hidden"
-          >
-            {open ? <X size={24} /> : <Menu size={24} />}
-          </button>
+      <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-1/2 focus:top-24 focus:z-[90] focus:-translate-x-1/2 focus:rounded-full focus:bg-midnight focus:px-5 focus:py-3 focus:text-white">Skip to content</a>
+      <header className="nav" data-tone={tone} data-hide={hide && !open}>
+        <nav className="nav-group" aria-label="Main">
+          {PILLS.map(([href, label]) => <Link key={href} href={href} className="nav-pill nav-wide" aria-current={current(href)}>{label}</Link>)}
         </nav>
-      </div>
+        <div className="nav-group">
+          <a href="https://crm.nxtfinancialgroup.com/auth/login" target="_blank" rel="noopener noreferrer" className="nav-pill nav-login">Agent login</a>
+          <Link href="/get-started" className="nav-pill nav-cta nav-mid">Get started</Link>
+          <button ref={button} type="button" className="nav-pill nav-icon" aria-label="Menu" aria-expanded={open} aria-controls="site-menu" onClick={() => setOpen((o) => !o)}><Menu size={17} aria-hidden="true" /></button>
+        </div>
+      </header>
 
-    </header>
-
-    {open && (
-      <div
-        id="mobile-nav"
-        className="fixed inset-x-0 bottom-0 top-[84px] z-[999] overflow-y-auto bg-white lg:hidden"
-      >
-        <div className="container flex flex-col py-6">
-          {MOBILE_SECTIONS.map((section, sectionIdx) => (
-            <div key={sectionIdx} className="flex flex-col">
-              {section.heading && (
-                <p className="mb-1 mt-6 text-xs font-semibold uppercase tracking-widest text-ink/40">
-                  {section.heading}
-                </p>
-              )}
-              {section.links.map(({ href, label }) => (
-                <Link
-                  key={href}
-                  href={href}
-                  onClick={() => setOpen(false)}
-                  className="block border-t border-platinum py-4 font-display text-2xl font-semibold text-navy"
-                >
-                  {label}
-                </Link>
-              ))}
+      <div className="menu-scrim" data-open={open} onClick={close} aria-hidden="true" />
+      <div ref={sheet} id="site-menu" className="menu" data-open={open} role="dialog" aria-modal="true" aria-label="Menu" inert={!open}>
+        <div className="menu-head">
+          <span>Menu</span>
+          <button type="button" className="round-btn !h-10 !w-10" aria-label="Close the menu" onClick={() => { close(); button.current?.focus() }}><X size={17} aria-hidden="true" /></button>
+        </div>
+        {GROUPS.map((g) => (
+          <nav key={g.title} className="menu-group" aria-label={g.title}>
+            <p>{g.title}</p>
+            <div className="menu-links">
+              {g.links.map(([href, label]) => <Link key={href} href={href} onClick={close} aria-current={current(href)}>{label}</Link>)}
             </div>
-          ))}
-
-          <div className="mt-8 flex flex-col gap-3">
-            <Link
-              href="/get-started"
-              onClick={() => setOpen(false)}
-              className="btn btn-primary"
-            >
-              Get Started
-            </Link>
-            <a
-              href="https://crm.nxtfinancialgroup.com/auth/login"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setOpen(false)}
-              className="btn btn-outline"
-            >
-              Agent Login
-            </a>
-          </div>
+          </nav>
+        ))}
+        <div className="menu-foot">
+          <Link href="/get-started" onClick={close} className="btn btn-primary">Get started</Link>
+          <a href={LOGIN} target="_blank" rel="noopener noreferrer" onClick={close} className="btn btn-outline">Agent login</a>
+          <a href="tel:8572053333" className="menu-tel"><Phone size={15} aria-hidden="true" />857-205-3333</a>
         </div>
       </div>
-    )}
     </>
   )
 }

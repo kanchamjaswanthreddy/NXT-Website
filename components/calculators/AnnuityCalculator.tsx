@@ -53,7 +53,7 @@ export default function AnnuityCalculator() {
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="card rounded-[24px] p-7 md:p-8">
         <h3 className="display-sm">Annuity payout estimator</h3>
-        <p className="mb-6 mt-1 text-[15px] text-ink-soft">See how deferral and growth rate affect your monthly retirement income.</p>
+        <p className="mb-6 mt-1 text-[17px] text-ink-soft">See how deferral and growth rate affect your monthly retirement income.</p>
         <div className="space-y-5">
           <Slider id="an-inv" label="Initial investment" value={investment} display={usd(investment)} min={50000} max={2000000} step={10000} onChange={setInvestment} minLabel="$50k" maxLabel="$2M" />
           <Slider id="an-rate" label="Annual growth rate" value={rate} display={`${rate}%`} min={3} max={80} step={0.5} onChange={setRate} minLabel="3%" maxLabel="80%" />

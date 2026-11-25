@@ -47,8 +47,8 @@ export default async function NxtLifeArticlePage({ params }: Params) {
               <div className="flex flex-col items-center gap-8 md:flex-row md:items-center md:justify-between">
                 {/* Left: text */}
                 <div className="flex-1 max-w-[560px] text-center md:text-left">
-                  <p className="mono text-sm tracking-[0.2em] uppercase text-gold mb-3 font-bold">Welcome to NXT</p>
-                  <h1 className="font-display text-5xl font-bold leading-[1.05] text-navy md:text-7xl">
+                  <p className="mono text-sm tracking-[0.2em] uppercase text-gold mb-3 font-semibold">Welcome to NXT</p>
+                  <h1 className="font-display text-5xl font-semibold leading-[1.05] text-navy md:text-7xl">
                     {article.heroName}
                   </h1>
                   <p className="mt-2 text-xl font-semibold text-gold italic md:text-2xl">
@@ -112,14 +112,14 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                         className="rounded-2xl bg-stone p-6 border border-platinum/60"
                       >
                         <div className="font-display text-3xl leading-none text-gold/30 mb-2">&ldquo;</div>
-                        <p className="text-[14px] font-medium italic leading-[1.65] text-navy">
+                        <p className="text-[16px] font-medium italic leading-[1.65] text-navy">
                           {q.type === 'quote' && q.text}
                         </p>
                         <div className="mt-4 h-[2px] w-8 rounded bg-gold/25" />
-                        <p className="mt-3 text-[13px] font-bold text-navy">
+                        <p className="mt-3 text-[15px] font-semibold text-navy">
                           {q.type === 'quote' && q.attribution.split(',')[0]}
                         </p>
-                        <p className="text-[11px] text-ink-soft leading-snug">
+                        <p className="text-[13px] text-ink-soft leading-snug">
                           {q.type === 'quote' && q.attribution.split(',').slice(1).join(',').trim()}
                         </p>
                       </div>
@@ -141,8 +141,8 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                       <div className="mx-auto mb-3 flex h-10 w-10 items-center justify-center rounded-full bg-navy/5">
                         <card.icon size={18} className="text-navy" />
                       </div>
-                      <h3 className="text-[13px] font-bold text-navy">{card.title}</h3>
-                      <p className="mt-1.5 text-[11px] leading-relaxed text-ink-soft">{card.desc}</p>
+                      <h3 className="text-[15px] font-semibold text-navy">{card.title}</h3>
+                      <p className="mt-1.5 text-[13px] leading-relaxed text-ink-soft">{card.desc}</p>
                     </div>
                   ))}
                 </div>
@@ -249,7 +249,7 @@ export default async function NxtLifeArticlePage({ params }: Params) {
                   </div>
                   <p className="mono text-xs text-gold">{a.category}</p>
                   <h3 className="display-sm mt-2 text-[1.2rem] group-hover:text-command">{a.title}</h3>
-                  <p className="mt-2 text-[15px] text-ink-soft">{a.excerpt}</p>
+                  <p className="mt-2 text-[17px] text-ink-soft">{a.excerpt}</p>
                 </Link>
               </li>
             ))}

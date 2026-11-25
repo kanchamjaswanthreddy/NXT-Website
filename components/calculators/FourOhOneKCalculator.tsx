@@ -55,7 +55,7 @@ export default function FourOhOneKCalculator() {
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="card rounded-[24px] p-7 md:p-8">
         <h3 className="display-sm">401(k) projector</h3>
-        <p className="mb-6 mt-1 text-[15px] text-ink-soft">Estimate your balance at retirement with employer matching.</p>
+        <p className="mb-6 mt-1 text-[17px] text-ink-soft">Estimate your balance at retirement with employer matching.</p>
         <div className="space-y-5">
           <Slider id="4k-age" label="Current age" value={age} display={`${age}`} min={22} max={60} step={1} onChange={setAge} minLabel="22" maxLabel="60" />
           <Slider id="4k-ret" label="Retirement age" value={retireAge} display={`${retireAge}`} min={55} max={70} step={1} onChange={setRetireAge} minLabel="55" maxLabel="70" />

@@ -27,11 +27,11 @@ export default function CarriersByLine() {
       {carrierGroups.map((g) => {
         const list = g.carriers.filter((c) => c.name.toLowerCase().includes(q.toLowerCase()))
         return (
-          <section key={g.key} id={g.key} className="scroll-mt-40 py-16 md:py-20" style={{ background: 'linear-gradient(135deg, #fdf8ef 0%, #faf3e2 50%, #f7efd8 100%)' }}>
+          <section key={g.key} id={g.key} className="scroll-mt-40 bg-stone py-16 md:py-20">
             <div className="container">
               <div className="mb-10 flex flex-col gap-2 md:flex-row md:items-end md:justify-between">
                 <div>
-                  <p className="mono text-sm text-gold">{list.length} carriers</p>
+                  <p className="mono text-sm text-ink-soft">{list.length} carriers</p>
                   <h2 className="display-sm mt-2">{g.title}</h2>
                 </div>
                 <Link href={`/solutions/${g.solution}`} className="link text-sm">About {g.title.toLowerCase()} <ArrowUpRight size={15} /></Link>

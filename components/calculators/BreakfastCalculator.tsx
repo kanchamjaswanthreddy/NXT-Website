@@ -59,7 +59,7 @@ export default function BreakfastCalculator() {
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="card rounded-[24px] p-7 md:p-8">
         <h3 className="display-sm">Breakfast savings</h3>
-        <p className="mb-6 mt-1 text-[15px] text-ink-soft">What buying breakfast costs you versus making it at home, and what the difference could become.</p>
+        <p className="mb-6 mt-1 text-[17px] text-ink-soft">What buying breakfast costs you versus making it at home, and what the difference could become.</p>
         <div className="space-y-5">
           <Slider id="bf-daily" label="Daily breakfast spend" value={daily} display={usd(daily)} min={5} max={25} step={1} onChange={setDaily} minLabel="$5" maxLabel="$25" />
           <Slider id="bf-home" label="Homemade cost" value={homemade} display={usd(homemade)} min={1} max={10} step={0.5} onChange={setHomemade} minLabel="$1" maxLabel="$10" />

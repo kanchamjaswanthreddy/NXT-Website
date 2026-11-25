@@ -60,7 +60,7 @@ export default function LifeProductTable() {
                 <p className="mt-1 text-sm text-ink-soft">{type.description}</p>
                 <ul className="mt-4 space-y-2 border-t border-platinum pt-4">
                   {type.carriers.map((name) => (
-                    <li key={name} className="flex items-center gap-2 text-[14px] text-ink">
+                    <li key={name} className="flex items-center gap-2 text-[16px] text-ink">
                       <span className="h-1.5 w-1.5 shrink-0 rounded-full bg-gold" />
                       {name}
                     </li>

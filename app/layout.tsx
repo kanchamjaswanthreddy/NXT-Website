@@ -1,7 +1,14 @@
 import type { Metadata } from 'next'
+// The typeface is bundled with the site (no request to a font service at load time).
+import '@fontsource-variable/inter/opsz.css'
 import './globals.css'
 import Nav from '@/components/Nav'
 import Footer from '@/components/Footer'
+import SmoothScroll from '@/components/SmoothScroll'
+import ClosingFilm from '@/components/ClosingFilm'
+import SiteFrame from '@/components/SiteFrame'
+import Frame from '@/components/Frame'
+import Fx from '@/components/Fx'
 
 const SITE = 'https://www.nxtfinancialgroup.com'
 
@@ -43,16 +50,15 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
   return (
     <html lang="en">
       <head>
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="" />
-        <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,600;0,700;1,600&family=Plus+Jakarta+Sans:wght@400;500;600;700&family=DM+Mono:wght@400;500&display=swap" rel="stylesheet" />
-        <meta name="theme-color" content="#080E28" />
+        <meta name="theme-color" content="#3a2b1c" />
+        {/* Without JavaScript: show everything that would otherwise fade in on scroll. */}
+        <noscript><style>{'[data-reveal]{opacity:1!important;transform:none!important}'}</style></noscript>
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }} />
       </head>
       <body className="flex min-h-screen flex-col">
-        <Nav />
-        <main id="main" className="flex-1">{children}</main>
-        <Footer />
+        <SmoothScroll />
+        <SiteFrame frame={<Frame />} nav={<Nav />} closing={<ClosingFilm />} footer={<Footer />}>{children}</SiteFrame>
+        <Fx />
       </body>
     </html>
   )

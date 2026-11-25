@@ -15,7 +15,7 @@ export default function CalculatorsPage() {
         eyebrow="Calculators"
         title="Run the numbers before you decide."
         intro="Nine interactive calculators with live charts to help you understand your financial picture. All estimates are illustrative — an advisor will run exact numbers."
-        image="/images/desk.png"
+        image="/media/desk.jpg"
       />
       <CalculatorTabs />
     </>

@@ -60,8 +60,8 @@ function KpiCard({ kpi }: { kpi: Kpi }) {
           </span>
         )}
       </div>
-      <p className="mono text-2xl font-extrabold tracking-tight text-navy">{kpi.value}</p>
-      <p className="mt-1 text-[13px] font-semibold text-ink">{kpi.label}</p>
+      <p className="mono text-2xl font-semibold tracking-tight text-navy">{kpi.value}</p>
+      <p className="mt-1 text-[15px] font-semibold text-ink">{kpi.label}</p>
       {kpi.sub && <p className="mono mt-1 text-xs font-medium text-ink-soft">{kpi.sub}</p>}
     </div>
   )
@@ -75,8 +75,8 @@ function ProgressBar({ item }: { item: ProgressItem }) {
   return (
     <div>
       <div className="mb-1.5 flex items-baseline justify-between">
-        <span className="text-[13px] font-semibold text-ink">{item.label}</span>
-        <span className="mono text-[13px] font-bold text-navy">{item.displayValue}</span>
+        <span className="text-[15px] font-semibold text-ink">{item.label}</span>
+        <span className="mono text-[15px] font-semibold text-navy">{item.displayValue}</span>
       </div>
       <div className="h-2 overflow-hidden rounded-full bg-platinum/60">
         <div className="h-full rounded-full transition-all duration-500" style={{ width: `${pct}%`, backgroundColor: item.color }} />
@@ -95,7 +95,7 @@ function ComparisonRow({ items }: { items: ComparisonItem[] }) {
         <div key={item.label} className="flex items-center gap-2.5 rounded-xl bg-white/60 px-3 py-2.5 ring-1 ring-platinum/40">
           <span className="h-3 w-3 shrink-0 rounded-full" style={{ backgroundColor: item.color }} />
           <div>
-            <p className="mono text-sm font-extrabold text-navy">{item.value}</p>
+            <p className="mono text-sm font-semibold text-navy">{item.value}</p>
             <p className="text-xs font-medium text-ink">{item.label}</p>
           </div>
         </div>
@@ -116,12 +116,12 @@ const CustomTooltip = ({ active, payload, label, formatValue }: { active?: boole
   if (!active || !payload?.length) return null
   return (
     <div className="rounded-xl border border-platinum bg-white/95 px-4 py-3 shadow-lg backdrop-blur">
-      {label !== undefined && <p className="mb-1.5 text-xs font-bold text-ink">{label}</p>}
+      {label !== undefined && <p className="mb-1.5 text-xs font-semibold text-ink">{label}</p>}
       {payload.map((p) => (
         <div key={p.name} className="flex items-center gap-2 text-sm">
           <span className="h-2.5 w-2.5 rounded-full" style={{ backgroundColor: p.color }} />
           <span className="font-medium text-ink">{p.name}:</span>
-          <span className="mono font-extrabold text-navy">{formatValue(p.value)}</span>
+          <span className="mono font-semibold text-navy">{formatValue(p.value)}</span>
         </div>
       ))}
     </div>
@@ -220,7 +220,7 @@ export default function CalcDashboard({ kpis, children, progress, comparisons }:
       {/* Progress bars */}
       {progress && progress.length > 0 && (
         <div className="space-y-3 rounded-2xl bg-white/60 p-4 ring-1 ring-platinum/40">
-          <p className="text-[13px] font-bold tracking-tight text-navy">Breakdown</p>
+          <p className="text-[15px] font-semibold tracking-tight text-navy">Breakdown</p>
           {progress.map((p) => <ProgressBar key={p.label} item={p} />)}
         </div>
       )}
@@ -240,7 +240,7 @@ export default function CalcDashboard({ kpis, children, progress, comparisons }:
 export function ChartBlock({ title, children }: ChartSection) {
   return (
     <div className="rounded-2xl bg-white/60 p-4 ring-1 ring-platinum/40">
-      <p className="mb-3 text-[13px] font-bold tracking-tight text-navy">{title}</p>
+      <p className="mb-3 text-[15px] font-semibold tracking-tight text-navy">{title}</p>
       {children}
     </div>
   )

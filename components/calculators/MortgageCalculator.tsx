@@ -51,7 +51,7 @@ export default function MortgageCalculator() {
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="card rounded-[24px] p-7 md:p-8">
         <h3 className="display-sm">Mortgage payment</h3>
-        <p className="mb-6 mt-1 text-[15px] text-ink-soft">Estimate your monthly principal & interest and total cost over the life of the loan.</p>
+        <p className="mb-6 mt-1 text-[17px] text-ink-soft">Estimate your monthly principal & interest and total cost over the life of the loan.</p>
         <div className="mb-5">
           <label htmlFor="mc-term" className="field-label">Loan term</label>
           <select id="mc-term" value={term} onChange={(e) => setTerm(Number(e.target.value))} className="field">

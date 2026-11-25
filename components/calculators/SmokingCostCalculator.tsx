@@ -50,7 +50,7 @@ export default function SmokingCostCalculator() {
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="card rounded-[24px] p-7 md:p-8">
         <h3 className="display-sm">Cost of smoking</h3>
-        <p className="mb-6 mt-1 text-[15px] text-ink-soft">What your smoking habit costs outright, and what that money could become if invested instead.</p>
+        <p className="mb-6 mt-1 text-[17px] text-ink-soft">What your smoking habit costs outright, and what that money could become if invested instead.</p>
         <div className="space-y-5">
           <Slider id="sc-pk" label="Packs per day" value={packs} display={`${packs}`} min={0.5} max={3} step={0.5} onChange={setPacks} minLabel="0.5" maxLabel="3" />
           <Slider id="sc-pr" label="Price per pack" value={price} display={usd(price)} min={5} max={20} step={0.5} onChange={setPrice} minLabel="$5" maxLabel="$20" />

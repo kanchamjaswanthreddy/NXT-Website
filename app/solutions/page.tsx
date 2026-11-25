@@ -1,12 +1,10 @@
 import type { Metadata } from 'next'
 import PageHero from '@/components/PageHero'
-import SolutionsIndex from '@/components/SolutionsIndex'
-import FutureFlowSection from '@/components/FutureFlowSection'
-import { Reveal } from '@/components/motion'
+import SolutionCards from '@/components/SolutionCards'
 
 export const metadata: Metadata = {
-  title: 'Insurance Solutions — 6 Disciplines + FutureFlow',
-  description: 'Annuities, life insurance, care planning, Medicare planning, disability income, home & auto insurance, and FutureFlow — AI-powered personal finance. Six disciplines, 70+ carriers, one IMO.',
+  title: 'Insurance Solutions — 6 Disciplines',
+  description: 'Annuities, life insurance, care planning, Medicare planning, disability income and home & auto insurance. Six disciplines, 70+ carriers, one IMO.',
   alternates: { canonical: 'https://www.nxtfinancialgroup.com/solutions' },
 }
 
@@ -19,15 +17,12 @@ export default function SolutionsPage() {
         intro="From retirement income to your front door — we cover the decisions that shape your financial life, and we do them for a living."
       />
 
-      <section className="section pt-0">
+      <section className="section bg-white">
         <div className="container">
-          <Reveal>
-            <SolutionsIndex />
-          </Reveal>
+          <SolutionCards />
         </div>
       </section>
 
-      <FutureFlowSection />
     </>
   )
 }

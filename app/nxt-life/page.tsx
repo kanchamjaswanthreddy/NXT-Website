@@ -51,7 +51,7 @@ export default function NxtLifePage() {
               ].map((stat) => (
                 <div key={stat.label} className="card rounded-2xl px-5 py-6 text-center">
                   <stat.icon size={28} className="mx-auto mb-3 text-gold" />
-                  <p className="text-4xl font-display font-bold text-navy">{stat.count}</p>
+                  <p className="text-4xl font-display font-semibold text-navy">{stat.count}</p>
                   <p className="mt-2 text-sm font-medium text-ink-soft">{stat.label}</p>
                 </div>
               ))}

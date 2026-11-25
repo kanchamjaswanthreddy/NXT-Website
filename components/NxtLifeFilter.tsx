@@ -66,7 +66,7 @@ export default function NxtLifeFilter({ articles }: { articles: Article[] }) {
                   <p className="mono text-xs text-gold">
                     {article.date} · {article.readTime}
                   </p>
-                  <h3 className="mt-3 text-lg font-display font-bold leading-snug text-navy group-hover:text-command">
+                  <h3 className="mt-3 text-lg font-display font-semibold leading-snug text-navy group-hover:text-command">
                     {article.title}
                   </h3>
                   <p className="mt-3 flex-1 text-sm leading-relaxed text-ink-soft">
