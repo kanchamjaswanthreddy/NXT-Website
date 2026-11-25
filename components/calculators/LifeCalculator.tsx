@@ -46,7 +46,7 @@ export default function LifeCalculator() {
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="card rounded-[24px] p-7 md:p-8">
         <h3 className="display-sm">Life insurance needs</h3>
-        <p className="mb-6 mt-1 text-[15px] text-ink-soft">The DIME method: Debt, Income, Mortgage, Education.</p>
+        <p className="mb-6 mt-1 text-[17px] text-ink-soft">The DIME method: Debt, Income, Mortgage, Education.</p>
         <div className="space-y-5">
           <Slider id="lc-inc" label="Annual income to replace" value={income} display={usd(income)} min={25000} max={500000} step={5000} onChange={setIncome} minLabel="$25k" maxLabel="$500k" />
           <Slider id="lc-yrs" label="Years of replacement" value={years} display={`${years} yrs`} min={5} max={40} step={1} onChange={setYears} minLabel="5" maxLabel="40" />

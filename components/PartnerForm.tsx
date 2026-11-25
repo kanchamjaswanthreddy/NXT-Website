@@ -9,7 +9,7 @@ export default function PartnerForm() {
   if (done) return <FormSuccess title="Application received." body="A partnership specialist will reach out within two business days." />
   return (
     <form onSubmit={(e) => { e.preventDefault(); setDone(true) }} className="card rounded-[24px] p-7 md:p-10">
-      <h2 className="display-sm mb-1">Partner application</h2><p className="mb-8 text-[15px] text-ink-soft">Tell us about your practice and we will follow up with next steps.</p>
+      <h2 className="display-sm mb-1">Partner application</h2><p className="mb-8 text-[17px] text-ink-soft">Tell us about your practice and we will follow up with next steps.</p>
       <div className="grid grid-cols-1 gap-5 sm:grid-cols-2">
         <div><label className="field-label" htmlFor="p-name">Full name</label><input id="p-name" name="name" required value={f.name} onChange={on} className="field" /></div>
         <div><label className="field-label" htmlFor="p-company">Company or agency</label><input id="p-company" name="company" value={f.company} onChange={on} className="field" /></div>

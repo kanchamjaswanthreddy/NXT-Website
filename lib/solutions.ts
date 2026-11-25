@@ -17,7 +17,7 @@ export const solutions: Solution[] = [
     slug: 'annuities', index: 'I', title: 'Annuities', short: 'Guaranteed income you cannot outlive.',
     headline: 'Turn savings into income that arrives every month, for life.',
     intro: 'An annuity converts part of what you have saved into a contractual promise from an insurance company: a rate you can count on, principal that is protected from market losses, or a paycheck that continues as long as you do. We compare contracts from the highest-rated carriers and explain every term before you sign one.',
-    image: '/images/retirement.png',
+    image: '/media/retirement.jpg',
     sub: [
       { name: 'Fixed annuities', summary: 'A guaranteed interest rate for a set term, similar to a CD but tax-deferred.' },
       { name: 'Multi-year guaranteed (MYGA)', summary: 'Lock a fixed rate for three to ten years with full principal protection.' },
@@ -31,7 +31,7 @@ export const solutions: Solution[] = [
     slug: 'life-insurance', index: 'II', title: 'Life Insurance', short: 'Protection for the people who depend on you.',
     headline: 'The right amount, from the right carrier, at a price that fits.',
     intro: 'Life insurance replaces your income, clears your mortgage and funds your children\'s education if you are not there to do it. Some policies also build cash value you can use while you are alive. We place term, permanent and indexed policies with carriers rated A or better and help you size coverage honestly, not by rule of thumb.',
-    image: '/images/family.png',
+    image: '/media/family.jpg',
     sub: [
       { name: 'Term life', summary: 'Affordable coverage for 10, 20 or 30 years, the years your family relies on your income most.' },
       { name: 'Whole life', summary: 'Permanent protection with guaranteed premiums, guaranteed cash value and dividends.' },
@@ -45,7 +45,7 @@ export const solutions: Solution[] = [
     slug: 'care-planning', index: 'III', title: 'Care Planning', short: 'A plan for long-term care that protects your savings.',
     headline: 'Seven in ten of us will need care. Plan for it while you can still choose how.',
     intro: 'Long-term care (help with daily living at home, in assisted living or in a nursing facility) is not covered by Medicare and can cost more than $100,000 a year. Care planning puts a funded plan in place so the decision is yours, your family is not the default caregiver and your retirement savings stay intact.',
-    image: '/images/care.png',
+    image: '/media/care.jpg',
     sub: [
       { name: 'Traditional long-term care', summary: 'Stand-alone coverage that pays a daily or monthly benefit for qualified care.' },
       { name: 'Hybrid life and LTC', summary: 'Life insurance with a long-term care benefit; if care is never needed, your heirs receive the death benefit.' },
@@ -58,7 +58,7 @@ export const solutions: Solution[] = [
     slug: 'medicare-planning', index: 'IV', title: 'Medicare Planning', short: 'Coverage that fits your doctors, prescriptions and budget.',
     headline: 'Medicare has a hundred moving parts. You need one person who knows them all.',
     intro: 'Turning 65 opens a seven-month window with decisions that follow you for years: Original Medicare with a Supplement, or a Medicare Advantage plan; which Part D drug plan; whether to delay Part B. We review your doctors, medications and travel plans and compare every plan available in your county, at no cost to you.',
-    image: '/images/medicare.png',
+    image: '/media/medicare.jpg',
     sub: [
       { name: 'Medicare Supplement (Medigap)', summary: 'Fills the gaps in Original Medicare (deductibles, coinsurance) and works with any doctor who takes Medicare.' },
       { name: 'Medicare Advantage (Part C)', summary: 'All-in-one plans from private insurers, often with drug, dental and vision coverage and a $0 premium.' },
@@ -71,7 +71,7 @@ export const solutions: Solution[] = [
     slug: 'disability-income', index: 'V', title: 'Disability Income', short: 'Your paycheck, protected.',
     headline: 'Your ability to earn is your largest asset. Insure it like one.',
     intro: 'A serious illness or injury is far more likely to interrupt your career than to end your life, and the average long-term disability lasts nearly three years. Disability income insurance replaces a portion of your paycheck, typically 60 percent, so the mortgage, tuition and retirement contributions keep going while you recover.',
-    image: '/images/professional.png',
+    image: '/media/professional.jpg',
     sub: [
       { name: 'Individual disability income', summary: 'Portable, own-occupation coverage that stays with you between jobs and tops up group benefits.' },
       { name: 'Business overhead expense', summary: 'Keeps rent, payroll and loan payments covered if a business owner cannot work.' },
@@ -84,7 +84,7 @@ export const solutions: Solution[] = [
     slug: 'home-auto', index: 'VI', title: 'Home & Auto', short: 'Protect your home, your vehicles and everything in between.',
     headline: 'Your home and your car are more than assets. They are how your life works.',
     intro: 'A single storm, accident or liability claim can wipe out years of savings in minutes. We shop homeowners, auto, umbrella and specialty property coverage across top-rated carriers so you get the right limits, the right deductibles and a price that makes sense — bundled or standalone.',
-    image: '/images/atrium.png',
+    image: '/media/atrium.jpg',
     sub: [
       { name: 'Homeowners insurance', summary: 'Dwelling, personal property, liability and loss-of-use coverage tailored to your home\'s replacement cost and your area\'s risks.' },
       { name: 'Auto insurance', summary: 'Liability, collision, comprehensive and uninsured motorist coverage compared across carriers for the best rate at the limits you actually need.' },

@@ -53,7 +53,7 @@ export default function CareCostCalculator() {
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="card rounded-[24px] p-7 md:p-8">
         <h3 className="display-sm">Long-term care cost</h3>
-        <p className="mb-6 mt-1 text-[15px] text-ink-soft">What a care event could cost by the time it happens.</p>
+        <p className="mb-6 mt-1 text-[17px] text-ink-soft">What a care event could cost by the time it happens.</p>
         <div className="mb-5">
           <label htmlFor="cc-set" className="field-label">Care setting</label>
           <select id="cc-set" value={setting} onChange={(e) => setSetting(e.target.value)} className="field">

@@ -44,7 +44,7 @@ export default function RuleOf72Calculator() {
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="card rounded-[24px] p-7 md:p-8">
         <h3 className="display-sm">Rule of 72</h3>
-        <p className="mb-6 mt-1 text-[15px] text-ink-soft">A quick way to estimate how long it takes your money to double.</p>
+        <p className="mb-6 mt-1 text-[17px] text-ink-soft">A quick way to estimate how long it takes your money to double.</p>
         <div className="space-y-5">
           <Slider id="r72-rate" label="Annual return rate" value={rate} display={`${rate}%`} min={1} max={20} step={0.5} onChange={setRate} minLabel="1%" maxLabel="20%" />
           <Slider id="r72-inv" label="Initial investment" value={investment} display={usd(investment)} min={1000} max={1000000} step={1000} onChange={setInvestment} minLabel="$1k" maxLabel="$1M" />

@@ -41,7 +41,7 @@ export default function IncomeGapCalculator() {
     <div className="grid grid-cols-1 gap-8 lg:grid-cols-2">
       <div className="card rounded-[24px] p-7 md:p-8">
         <h3 className="display-sm">Retirement income gap</h3>
-        <p className="mb-6 mt-1 text-[15px] text-ink-soft">How much of your essential spending is guaranteed, and what an annuity would need to cover the rest.</p>
+        <p className="mb-6 mt-1 text-[17px] text-ink-soft">How much of your essential spending is guaranteed, and what an annuity would need to cover the rest.</p>
         <div className="space-y-5">
           <Slider id="ig-ess" label="Essential monthly expenses" value={essentials} display={usd(essentials)} min={1500} max={15000} step={100} onChange={setEssentials} minLabel="$1.5k" maxLabel="$15k" />
           <Slider id="ig-ss" label="Social Security (monthly, household)" value={ss} display={usd(ss)} min={0} max={8000} step={50} onChange={setSs} minLabel="$0" maxLabel="$8k" />

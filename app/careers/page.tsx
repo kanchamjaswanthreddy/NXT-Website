@@ -83,7 +83,7 @@ export default function CareersPage() {
         eyebrow="Careers"
         title="Build your career in financial services."
         intro="Join a growing team of independent financial professionals. We provide training, carrier access and back-office support so you can focus on helping clients."
-        image="/images/team.png"
+        image="/media/team.jpg"
       />
 
       {/* Top 10 Reasons */}
@@ -103,10 +103,10 @@ export default function CareersPage() {
                   key={reason.title}
                   className="card flex gap-5 rounded-[24px] p-7"
                 >
-                  <span className="shrink-0 font-display text-3xl font-black text-navy">{i + 1}.</span>
+                  <span className="shrink-0 font-display text-3xl font-semibold text-navy">{i + 1}.</span>
                   <div className="flex-1">
-                    <h3 className="mb-2 text-[15px] font-bold text-navy">{reason.title}</h3>
-                    <p className="text-[14px] leading-relaxed text-ink-soft">{reason.desc}</p>
+                    <h3 className="mb-2 text-[17px] font-semibold text-navy">{reason.title}</h3>
+                    <p className="text-[16px] leading-relaxed text-ink-soft">{reason.desc}</p>
                   </div>
                 </Item>
               )
@@ -116,7 +116,7 @@ export default function CareersPage() {
           {/* The NXT Promise */}
           <Reveal className="mt-14">
             <div className="rounded-[24px] bg-navy p-8 text-center md:p-12">
-              <p className="text-sm font-bold uppercase tracking-widest text-gold">The NXT Promise</p>
+              <p className="text-sm font-semibold uppercase tracking-widest text-gold">The NXT Promise</p>
               <p className="mx-auto mt-4 max-w-[640px] font-display text-2xl font-semibold leading-snug text-white md:text-3xl">
                 Build a career worth having. Own a business worth keeping. Leave a legacy worth passing down.
               </p>
@@ -141,9 +141,9 @@ export default function CareersPage() {
                 className="card flex flex-col justify-between rounded-[24px] p-8"
               >
                 <div>
-                  <span className="inline-block rounded-full bg-navy/8 px-3 py-1 text-[11px] font-bold uppercase tracking-wider text-navy">{pos.dept}</span>
+                  <span className="inline-block rounded-full bg-navy/8 px-3 py-1 text-[13px] font-semibold uppercase tracking-wider text-navy">{pos.dept}</span>
                   <h3 className="display-sm mt-3">{pos.title}</h3>
-                  <p className="mt-2 text-[15px] text-ink-soft">
+                  <p className="mt-2 text-[17px] text-ink-soft">
                     {pos.location} &middot; {pos.type}
                   </p>
                 </div>
