@@ -25,8 +25,6 @@ export const team: TeamMember[] = [
   { name: 'Wilfredo Munguia', role: 'Director of Technology', image: '/images/team/wilfredo-munguia.jpeg', group: 'leadership' },
   { name: 'Carmelo Aguilar', role: 'Senior Staff Accountant', image: '/images/team/carmelo-aguilar.png', group: 'leadership' },
   { name: 'Samyak Jain', role: 'Director of Risk & Analytics', image: '/images/team/samyak-jain.jpeg', group: 'leadership' },
-  { name: 'Paul Elie', role: 'Financial Associate', image: '/images/team/paul-elie.jpeg', group: 'leadership' },
-  { name: 'Gisela Romero', role: 'Financial Associate', image: '/images/team/gisela-romero.jpeg', group: 'leadership' },
   { name: 'Gita Thakur', role: 'Director of Events Operations', image: '/images/team/gita-thakur.jpeg', group: 'leadership' },
 ]
 
