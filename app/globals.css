@@ -623,3 +623,17 @@ html.lenis.lenis-stopped { overflow: hidden; }
   .menu-tel { margin-top: 6px; }
   @media (max-width: 380px) { .menu-foot { grid-template-columns: 1fr; } }
 }
+
+/* Bigger hot buttons in the top bar */
+@layer components {
+  @media (min-width: 640px) {
+    .nav .nav-cta, .nav[data-tone="dark"] .nav-cta { height: 54px; padding: 0 8px 0 26px; gap: 14px; font-size: 1.1875rem; }
+    .nav-cta::after { width: 40px; height: 40px; background-size: 17px; }
+    .nav .nav-login, .nav[data-tone="dark"] .nav-login { height: 54px; padding: 0 24px 0 18px; gap: 11px; font-size: 1.1875rem; }
+    .nav-login::after { width: 11px; height: 11px; }
+    .nav .nav-icon { width: 54px; height: 54px; }
+    .nav .nav-group:last-child { gap: 18px; }
+  }
+}
+/* Agent login needs the room of a wide screen beside the notch; below that it lives in the menu and footer */
+@layer components { @media (max-width: 1239.98px) { .nav .nav-login { display: none; } } }
