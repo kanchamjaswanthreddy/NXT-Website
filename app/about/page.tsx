@@ -4,7 +4,7 @@ import Link from 'next/link'
 import { ArrowRight, MapPin, ShieldCheck, Building2, BookOpen, Eye, Globe, HeartHandshake, Handshake, CheckCircle, Crown, Lock, GraduationCap, Target, Heart } from 'lucide-react'
 import PageHero from '@/components/PageHero'
 import { Reveal, Stagger, Item } from '@/components/motion'
-import { leadership } from '@/lib/team'
+import { executive, seniorLeadership } from '@/lib/team'
 import { getAgentsByState } from '@/lib/agents'
 
 export const metadata: Metadata = {
@@ -43,7 +43,7 @@ const ADVISOR_BENEFITS = [
   'Access to 70+ top-rated U.S. carriers',
 ]
 
-function TeamGrid({ members, cols = 'md:grid-cols-4' }: { members: typeof leadership; cols?: string }) {
+function TeamGrid({ members, cols = 'md:grid-cols-4' }: { members: typeof executive; cols?: string }) {
   return (
     <Stagger as="ul" className={`grid grid-cols-2 gap-6 ${cols}`}>
       {members.map(({ name, role, image, link }) => (
@@ -252,7 +252,19 @@ export default function AboutPage() {
             <p className="label-sm mb-5">Leadership</p>
             <h2 className="display">The people leading NXT Financial.</h2>
           </Reveal>
-          <TeamGrid members={leadership} cols="md:grid-cols-4" />
+          <div className="org">
+            <Reveal className="org-tier org-tier-1">
+              <h3><span>1.</span> Executive team</h3>
+              <p>Founder &amp; CEO <i>•</i> Chief Officers <i>•</i> Senior Executive Partners</p>
+            </Reveal>
+            <TeamGrid members={executive} cols="md:grid-cols-4" />
+            <div className="org-arrow" aria-hidden="true"><i /></div>
+            <Reveal className="org-tier org-tier-2">
+              <h3><span>2.</span> Senior leadership team</h3>
+              <p>Vice Presidents <i>•</i> Directors <i>•</i> Department Heads</p>
+            </Reveal>
+            <TeamGrid members={seniorLeadership} cols="md:grid-cols-4" />
+          </div>
         </div>
       </section>
 

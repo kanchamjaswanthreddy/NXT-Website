@@ -637,3 +637,29 @@ html.lenis.lenis-stopped { overflow: hidden; }
 }
 /* Agent login needs the room of a wide screen beside the notch; below that it lives in the menu and footer */
 @layer components { @media (max-width: 1239.98px) { .nav .nav-login { display: none; } } }
+
+/* ================= About: the leadership tiers ================= */
+@layer components {
+  .org { display: grid; gap: clamp(1.75rem, 3.5vw, 3rem); }
+  .org-tier { position: relative; overflow: hidden; justify-self: center; width: 100%; padding: clamp(1.4rem, 3vw, 2.4rem) clamp(1.25rem, 4vw, 3rem); border-radius: clamp(22px, 2.6vw, 34px); color: #fff; text-align: center; box-shadow: 0 30px 60px -34px rgba(12, 16, 34, .7); }
+  .org-tier-1 { background: linear-gradient(120deg, #0c1022, #1b2a4e); }
+  .org-tier-2 { max-width: 92%; background: linear-gradient(120deg, #1d3f66, #2a5a86); }
+  .org-tier h3 { font-size: clamp(1.5rem, 3.2vw, 2.6rem); font-weight: 600; line-height: 1.08; letter-spacing: .02em; text-transform: uppercase; color: #fff; }
+  .org-tier h3 span { color: var(--color-sunrise); }
+  .org-tier p { margin-top: .5em; font-size: clamp(1.0625rem, 1.7vw, 1.5rem); line-height: 1.35; color: rgba(255, 255, 255, .9); }
+  .org-tier p i { margin: 0 .35em; font-style: normal; color: var(--color-sunrise); }
+  /* light runs along the bottom edge of each tier */
+  .org-tier::after { content: ""; position: absolute; left: 0; right: 0; bottom: 0; height: 3px; background: linear-gradient(90deg, rgba(246, 165, 43, 0), #f6a52b 55%, #ffd58a 70%, rgba(246, 165, 43, 0)) -50% 0 / 40% 100% no-repeat; animation: gx-flow 2.6s linear infinite; }
+  /* the arrow between the tiers, with a pulse running down it */
+  .org-arrow { position: relative; justify-self: center; width: 2px; height: clamp(54px, 7vw, 86px); background: repeating-linear-gradient(0deg, rgba(12, 16, 34, .38) 0 7px, rgba(12, 16, 34, 0) 7px 14px); }
+  .org-arrow::after { content: ""; position: absolute; left: 50%; bottom: -3px; width: 16px; height: 16px; border-right: 2.5px solid var(--color-midnight); border-bottom: 2.5px solid var(--color-midnight); translate: -50% 0; rotate: 45deg; }
+  .org-arrow i { position: absolute; left: -4px; top: 0; width: 10px; height: 10px; border-radius: 50%; background: var(--color-sunrise); box-shadow: 0 0 0 4px rgba(246, 165, 43, .22), 0 0 16px 3px rgba(246, 165, 43, .8); animation: org-drop 1.8s cubic-bezier(.45, 0, .55, 1) infinite; }
+  @keyframes org-drop { 0% { top: 0; opacity: 0; } 15% { opacity: 1; } 85% { opacity: 1; } 100% { top: calc(100% - 12px); opacity: 0; } }
+  .org .org-tier h3 { background: none; padding-bottom: 0; }
+}
+
+/* ================= Larger supporting sentences ================= */
+@layer components {
+  .lead { font-size: clamp(1.25rem, 1.65vw, 1.5rem); }
+  .ph-intro { max-width: 40rem; font-size: clamp(1.25rem, 1.6vw, 1.5rem); }
+}

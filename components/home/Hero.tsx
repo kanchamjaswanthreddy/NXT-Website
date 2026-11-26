@@ -164,8 +164,8 @@ export default function Hero({ scenes }: { scenes: Scene[] }) {
         <div className="hero-stat">
           <p className="hero-stat-n">70+</p>
           <p className="hero-stat-t">carrier partners,<br />licensed in 50 states</p>
-          <Link href="#voices-h" className="hero-faces" aria-label="Read what clients say">
-            {['bimlesh-yadav', 'carmelo-aguilar', 'andy-martinez'].map((n) => <span key={n}><Image src={`/media/avatars/${n}.jpg`} alt="" fill sizes="40px" /></span>)}
+          <Link href="/about#team" className="hero-faces" aria-label="Meet the leadership team">
+            {['rigoberto-ayala', 'alana-malla', 'gama-altidor'].map((n) => <span key={n}><Image src={`/media/avatars/${n}.jpg`} alt="" fill sizes="40px" /></span>)}
           </Link>
         </div>
 
