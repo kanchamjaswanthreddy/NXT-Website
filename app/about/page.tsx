@@ -5,6 +5,7 @@ import { ArrowRight, MapPin, ShieldCheck, Building2, BookOpen, Eye, Globe, Heart
 import PageHero from '@/components/PageHero'
 import { Reveal, Stagger, Item } from '@/components/motion'
 import { executive, seniorLeadership } from '@/lib/team'
+import Protect from '@/components/about/Protect'
 import { getAgentsByState } from '@/lib/agents'
 
 export const metadata: Metadata = {
@@ -217,33 +218,7 @@ export default function AboutPage() {
       </section>
 
       {/* P.R.O.T.E.C.T Values */}
-      <section className="relative overflow-hidden bg-stone py-28 md:py-36">
-        <div className="container">
-          <Reveal className="mb-16 text-center">
-            <p className="label-sm mb-6">Our Values</p>
-            <h2 className="mx-auto max-w-3xl font-display text-[clamp(2.5rem,5vw,4.5rem)] font-semibold leading-[1.05] tracking-tight text-navy">
-              P.R.O.T.E.C.T
-            </h2>
-            <p className="mx-auto mt-6 max-w-2xl text-lg leading-relaxed text-ink-soft">
-              Seven principles that guide every decision we make — for our advisors and for the families we serve.
-            </p>
-          </Reveal>
-
-          <Stagger as="div" className="mx-auto max-w-4xl divide-y divide-navy/10">
-            {PROTECT_VALUES.map(({ letter, word, desc }) => (
-              <Item as="div" key={word} className="grid grid-cols-[auto_1fr] items-start gap-6 py-8 md:grid-cols-[80px_200px_1fr] md:items-center md:gap-10 md:py-10">
-                <span className="flex h-14 w-14 items-center justify-center rounded-full bg-midnight text-2xl font-semibold text-white md:h-16 md:w-16 md:text-[1.75rem]">
-                  {letter}
-                </span>
-                <div className="md:contents">
-                  <h3 className="font-display text-2xl font-semibold text-navy md:text-[1.75rem]">{word}</h3>
-                  <p className="col-span-2 mt-2 text-[18px] leading-relaxed text-ink-soft md:col-span-1 md:mt-0">{desc}</p>
-                </div>
-              </Item>
-            ))}
-          </Stagger>
-        </div>
-      </section>
+      <Protect values={PROTECT_VALUES} />
 
       {/* Leadership */}
       <section id="team" className="section">
