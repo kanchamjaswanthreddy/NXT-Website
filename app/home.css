@@ -374,3 +374,14 @@
 }
 
 @layer components { @media (max-width: 999.98px) { .hub-core { width: calc(var(--t) * .92); height: calc(var(--t) * .92); } } }
+
+/* Larger supporting text in the hero */
+@layer components {
+  .hero-sub { max-width: 27em; font-size: clamp(1.3125rem, 1.85vw, 1.875rem); font-weight: 450; line-height: 1.32; letter-spacing: -.02em; color: #fff; text-shadow: 0 2px 22px rgba(12, 16, 34, .55); text-wrap: balance; }
+  .hero-note, .pin { height: 44px; padding: 0 20px 0 7px; gap: 10px; font-size: 1.125rem; }
+  .hero-note i, .pin i { width: 30px; height: 30px; }
+  .hero-stat-t { font-size: clamp(1.0625rem, 1.2vw, 1.25rem); }
+  .hero-faces span { width: 46px; height: 46px; border-radius: 14px; }
+  .hero-faces { border-radius: 19px; }
+  @media (max-width: 900px) { .hero-sub { font-size: clamp(1.125rem, 4.6vw, 1.375rem); } .hero-faces span { width: 32px; height: 32px; border-radius: 10px; } .hero-note, .pin { height: 38px; font-size: 1rem; } .hero-note i, .pin i { width: 26px; height: 26px; } .hero-stat-t { font-size: .875rem; line-height: 1.25; } }
+}
